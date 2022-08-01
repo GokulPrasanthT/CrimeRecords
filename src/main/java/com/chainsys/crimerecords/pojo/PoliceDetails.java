@@ -2,6 +2,7 @@ package com.chainsys.crimerecords.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,75 +11,75 @@ import javax.persistence.Table;
 @Table(name = "Police_Detail")
 public class PoliceDetails {
 	@Id
-	private int Police_Id;
-	private String Police_Rank;
-	private String Police_Name;
-	private long Mobile_No;
-	private String Email;
-	private Date DOB;
-	private String Station_Name;
+	@Column(name = "Police_Id")
+	private int policeId;
+	@Column(name = "Police_Rank")
+	private String policeRank;
+	@Column(name = "Police_Name")
+	private String policeName;
+	@Column(name = "Mobile_No")
+	private long mobileNo;
+	@Column(name = "Email")
+	private String email;
+	@Column(name = "DOB")
+	private Date dateOfbirth;
+	@Column(name = "Station_Name")
+	private String stationName;
 
-	public int getPolice_Id() {
-		return Police_Id;
+	public int getPoliceId() {
+		return policeId;
 	}
 
-	public void setPolice_Id(int police_Id) {
-		Police_Id = police_Id;
+	public void setPoliceId(int policeId) {
+		this.policeId = policeId;
 	}
 
-	public String getPolice_Rank() {
-		return Police_Rank;
+	public String getPoliceRank() {
+		return policeRank;
 	}
 
-	public void setPolice_Rank(String police_Rank) {
-		Police_Rank = police_Rank;
+	public void setPoliceRank(String policeRank) {
+		this.policeRank = policeRank;
 	}
 
-	public String getPolice_Name() {
-		return Police_Name;
+	public String getPoliceName() {
+		return policeName;
 	}
 
-	public void setPolice_Name(String police_Name) {
-		Police_Name = police_Name;
+	public void setPoliceName(String policeName) {
+		this.policeName = policeName;
 	}
 
-	public long getMobile_No() {
-		return Mobile_No;
+	public long getMobileNo() {
+		return mobileNo;
 	}
 
-	public void setMobile_No(long mobile_No) {
-		Mobile_No = mobile_No;
+	public void setMobileNo(long mobileNo) {
+		this.mobileNo = mobileNo;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
-	public Date getDOB() {
-		return DOB;
+	public Date getDateOfbirth() {
+		return dateOfbirth;
 	}
 
-	public void setDOB(Date dOB) {
-		DOB = dOB;
+	public void setDateOfbirth(Date dateOfbirth) {
+		this.dateOfbirth = dateOfbirth;
 	}
 
-	public String getStation_Name() {
-		return Station_Name;
+	public String getStationName() {
+		return stationName;
 	}
 
-	public void setStation_Name(String station_Name) {
-		Station_Name = station_Name;
+	public void setStationName(String stationName) {
+		this.stationName = stationName;
 	}
 
-	/*
-	 * @Override public String toString() { return
-	 * String.format("%d, %s, %s, %l, %s, %s, %s",
-	 * Police_Id,Police_Rank,Police_Name, Mobile_No,DOB,Email,Station_Name);
-	 * 
-	 * }
-	 */
 }

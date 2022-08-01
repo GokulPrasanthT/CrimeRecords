@@ -6,12 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add User</title>
+<title>Update Users</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="adduser" method="post" modelAttribute="addUsers">
+			<form:form action="updateusers" method="post"
+				modelAttribute="updateuser">
 				<div>
 					<label for="userName">User Name</label>
 					<div>
@@ -25,7 +26,7 @@
 					</div>
 				</div>
 				<div>
-					<label for="userid">User ID</label>
+					<label for="userid">User Id</label>
 					<div>
 						<form:input path="userid" />
 					</div>
@@ -43,7 +44,7 @@
 					</div>
 				</div>
 				<div>
-					<label for="phoneno">Phone No</label>
+					<label for="phoneno">Phone_NO</label>
 					<div>
 						<form:input path="phoneno" />
 					</div>
@@ -53,22 +54,24 @@
 					<div>
 						<form:input path="email" />
 					</div>
+				</div>
+				<div>
+					<label for="city">City</label>
 					<div>
-						<label for="city">City</label>
-						<div>
-							<form:input path="city" />
-						</div>
-						<div>
-							<div>
-								<label for="userRole">Choose a Role:</label> <select id="user">
-									<option value="Admin">ADMIN</option>
-									<option value="User">USER</option>
-								</select>
-							</div>
-						</div>
-						<div>
-							<form:button>Add User</form:button>
-						</div>
+						<form:input path="city" />
+					</div>
+					<!-- <div>
+							<label for="userRole">Choose a Role:</label> <select id="user">
+								<option value="Admin">ADMIN</option>
+								<option value="User">USER</option>
+							</select>
+						</div> -->
+				</div>
+				<div>
+					<div>
+						<form:button>Update User</form:button>
+					</div>
+				</div>
 			</form:form>
 		</div>
 	</div>

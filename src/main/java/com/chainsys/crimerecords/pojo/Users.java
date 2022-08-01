@@ -1,6 +1,8 @@
 package com.chainsys.crimerecords.pojo;
 
 import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,97 +12,78 @@ import javax.persistence.Table;
 @Table(name = "Users")
 public class Users {
 
-	private String User_Name;
-	private String User_Password;
+	@Column(name = "User_Name")
+	private String userName;
+	@Column(name = "User_Password")
+	private String userPassword;
 	@Id
-	private int User_id;
-	private Date Date_Of_Birth;
-	private String Gender;
-	private Long Phone_No;
-	private String Email;
-	private String City;
-	private String User_Role;
-
-	public String getUser_Name() {
-		return User_Name;
+	@Column(name = "User_id")
+	private int userid;
+	@Column(name = "date_Of_Birth")
+	private Date dateOfBirth;
+	@Column(name = "gender")
+	private String gender;
+	@Column(name = "Phone_No")
+	private Long phoneno;
+	@Column(name = "Email")
+	private String email;
+	@Column(name = "City")
+	private String city;
+	@Column(name = "User_Role")
+	private String userRole;
+	public String getUserName() {
+		return userName;
 	}
-
-	public void setUser_Name(String user_Name) {
-		User_Name = user_Name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-
-	public String getUser_Password() {
-		return User_Password;
+	public String getUserPassword() {
+		return userPassword;
 	}
-
-	public void setUser_Password(String user_Password) {
-		User_Password = user_Password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
-
-	public int getUser_id() {
-		return User_id;
+	public int getUserid() {
+		return userid;
 	}
-
-	public void setUser_id(int user_id) {
-		User_id = user_id;
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
-
-	public Date getDate_Of_Birth() {
-		return Date_Of_Birth;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
-
-	public void setDate_Of_Birth(Date date_Of_Birth) {
-		Date_Of_Birth = date_Of_Birth;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
-
 	public String getGender() {
-		return Gender;
+		return gender;
 	}
-
 	public void setGender(String gender) {
-		Gender = gender;
+		this.gender = gender;
 	}
-
-	public Long getPhone_No() {
-		return Phone_No;
+	public Long getPhoneno() {
+		return phoneno;
 	}
-
-	public void setPhone_No(Long phone_No) {
-		Phone_No = phone_No;
+	public void setPhoneno(Long phoneno) {
+		this.phoneno = phoneno;
 	}
-
 	public String getEmail() {
-		return Email;
+		return email;
 	}
-
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
-
 	public String getCity() {
-		return City;
+		return city;
 	}
-
 	public void setCity(String city) {
-		City = city;
+		this.city = city;
 	}
-
-	public String getUser_Role() {
-		return User_Role;
+	public String getUserRole() {
+		return userRole;
 	}
-
-	public void setUser_Role(String user_Role) {
-		User_Role = user_Role;
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
 	}
 	
-
-	
-	/*
-	 * @Override public String toString() { return
-	 * String.format("%s, %s, %d, %s, %s, %l, %s, %s, %s", User_Name, User_Password,
-	 * User_id, Date_Of_Birth, Gender, Phone_No, Email, City, User_Role);
-	 * 
-	 * }
-	 */
-
 }

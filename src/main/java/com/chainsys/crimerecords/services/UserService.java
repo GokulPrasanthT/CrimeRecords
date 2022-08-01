@@ -13,8 +13,7 @@ public class UserService {
 	private UsersRepository urepo;
 
 	public List<Users> getUsers() {
-		List<Users> userlist = urepo.findAll();
-		return userlist;
+		return urepo.findAll();
 	}
 
 	public Users findById(int userid) {
@@ -25,7 +24,7 @@ public class UserService {
 		return urepo.save(us);
 	}
 
-	public void deleteUser(int u_id) {
+	public void deleteById(int u_id) {
 		urepo.deleteById(u_id);
 	}
 

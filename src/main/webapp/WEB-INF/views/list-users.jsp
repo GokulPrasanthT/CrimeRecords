@@ -26,15 +26,15 @@
 			<tbody>
 				<c:forEach var="user" items="${viewuser}">
 					<tr>
-						<td>${user.User_Name}</td>
-						<td>${user.User_Password}</td>
-						<td>${user.User_id}</td>
-						<td>${user.Date_Of_Birth}</td>
-						<td>${user.Gender}</td>
-						<td>${user.Phone_No}</td>
-						<td>${user.Email}</td>
-						<td>${user.City}</td>
-						<td>${user.User_Role}</td>
+						<td>${user.userName}</td>
+						<td>${user.userPassword}</td>
+						<td>${user.userid}</td>
+						<td>${user.dateOfBirth}</td>
+						<td>${user.gender}</td>
+						<td>${user.phoneno}</td>
+						<td>${user.email}</td>
+						<td>${user.city}</td>
+						<td>${user.userRole}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

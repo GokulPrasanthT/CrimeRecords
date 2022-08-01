@@ -57,11 +57,9 @@
 							<form:input path="City" readonly="true" />
 						</div>
 						<div>
-							<label for="User_Role">User Role</label>
 							<div>
 
-								<label for="User_Role">Choose a Role:</label> 
-								<select id="role">
+								<label for="User_Role">Choose a Role:</label> <select id="role">
 									<option value="Admin">ADMIN</option>
 									<option value="User">USER</option>
 								</select>

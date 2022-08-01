@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.crimerecords.pojo.Users;
 import com.chainsys.crimerecords.services.UserService;
-import com.chainsys.springmvc.pojo.Doctor;
 
 @Controller
 @RequestMapping("/users")
@@ -30,7 +29,7 @@ public class UsersController {
 	@GetMapping("/adduserform")
 	public String showAddForm(Model model) {
 		Users theuser = new Users();
-		model.addAttribute("adduser", theuser);
+		model.addAttribute("addUsers", theuser);
 		return "add-user-form";
 	}
 
@@ -40,23 +39,31 @@ public class UsersController {
 		return "redirect:/users/userlist";
 
 	}
-	
-	@GetMapping("/updatedocform")
-	public String showUpdateForm(@RequestParam("docId") int id, Model model) {
-		Users theuser = uservice.findById(id);
+
+	@GetMapping("/updateuserform")
+	public String showUpdateForm(@RequestParam("userId") int userid, Model model) {
+		Users theuser = uservice.findById(userid);
 		model.addAttribute("updateuser", theuser);
 		return "update-user-form";
 	}
 
 	@PostMapping("/updateusers")
-	public String updateEmployees(@ModelAttribute("updatedoctor") Users theuser) {
+	public String updateusers(@ModelAttribute("updateUser") Users theuser) {
 		uservice.save(theuser);
-		return "redirect:/user/userlist";
+		return "redirect:/users/userlist";
 	}
 
-	/*
-	 * @GetMapping("/finduserid") public String findUserById(@RequestParam("userId")
-	 * int id, Model model) { Users theuser = uservice.findById(id);
-	 * model.addAttribute("finduserById", theuser); return "find-user-id-form"; }
-	 */
+	@GetMapping("/finduserid")
+	public String findUserById(@RequestParam("userId") int id, Model model) {
+		Users theuser = uservice.findById(id);
+		model.addAttribute("finduserById", theuser);
+		return "find-user-id-form";
+	}
+
+	@GetMapping("/deleteusers")
+	public String deleteUser(@RequestParam("userid") int id) {
+		uservice.deleteById(id);
+		return "redirect:/users/userlist";
+	}
+
 }

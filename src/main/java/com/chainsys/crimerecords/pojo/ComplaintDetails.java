@@ -1,7 +1,9 @@
 package com.chainsys.crimerecords.pojo;
 
+import java.security.Timestamp;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,69 +12,55 @@ import javax.persistence.Table;
 @Table(name = "Complaint_Details")
 public class ComplaintDetails {
 	@Id
-	private int Complaint_Id;
-	private String Type_Of_Complaint;
-	private String Registered_Station;
-	private String Complaint_Status;
-	private Date Date_Time;
-	private int Police_Id;
-
-	public int getComplaint_Id() {
-		return Complaint_Id;
-	}
-
-	public void setComplaint_Id(int complaint_Id) {
-		Complaint_Id = complaint_Id;
-	}
-
-	public String getType_Of_Complaint() {
-		return Type_Of_Complaint;
-	}
-
-	public void setType_Of_Complaint(String type_Of_Complaint) {
-		Type_Of_Complaint = type_Of_Complaint;
-	}
-
-	public String getRegistered_Station() {
-		return Registered_Station;
-	}
-
-	public void setRegistered_Station(String registered_Station) {
-		Registered_Station = registered_Station;
-	}
-
-	public String getComplaint_Status() {
-		return Complaint_Status;
-	}
-
-	public void setComplaint_Status(String complaint_Status) {
-		Complaint_Status = complaint_Status;
-	}
-
-	public Date getDate_Time() {
-		return Date_Time;
-	}
-
-	public void setDate_Time(Date date_Time) {
-		Date_Time = date_Time;
-	}
-
-	public int getPolice_Id() {
-		return Police_Id;
-	}
-
-	public void setPolice_Id(int police_Id) {
-		Police_Id = police_Id;
-	}
+	@Column(name = "Complaint_Id")
+	private int complaintId;
+	@Column(name = "Type_Of_Complaint")
+	private String typeofcomplaint;
+	@Column(name = "Registered_Station")
+	private String registeredstation;
+	@Column(name = "Complaint_Status")
+	private String complaintstatus;
+	@Column(name = "Date_Time")
+	private Timestamp datetime;
+	@Column(name = "Police_Id")
+	private int policeId;
 	
-	/*
-	 * @Override public String toString() { return
-	 * String.format("%s, %s, %d, %s, %s, %l, %s, %s, %s",
-	 * Complaint_Id,Type_Of_Complaint,
-	 * Registered_Station,Complaint_Status,Date_Time,Police_Id);
-	 * 
-	 * 
-	 * 
-	 * }
-	 */
+	public int getComplaintId() {
+		return complaintId;
+	}
+	public void setComplaintId(int complaintId) {
+		this.complaintId = complaintId;
+	}
+	public String getTypeofcomplaint() {
+		return typeofcomplaint;
+	}
+	public void setTypeofcomplaint(String typeofcomplaint) {
+		this.typeofcomplaint = typeofcomplaint;
+	}
+	public String getRegisteredstation() {
+		return registeredstation;
+	}
+	public void setRegisteredstation(String registeredstation) {
+		this.registeredstation = registeredstation;
+	}
+	public String getComplaintstatus() {
+		return complaintstatus;
+	}
+	public void setComplaintstatus(String complaintstatus) {
+		this.complaintstatus = complaintstatus;
+	}
+	public Timestamp getDatetime() {
+		return datetime;
+	}
+	public void setDatetime(Timestamp datetime) {
+		this.datetime = datetime;
+	}
+	public int getPoliceId() {
+		return policeId;
+	}
+	public void setPoliceId(int policeId) {
+		this.policeId = policeId;
+	}
+
+	
 }
