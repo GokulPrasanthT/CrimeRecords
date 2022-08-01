@@ -3,7 +3,14 @@ package com.chainsys.crimerecords.pojo;
 import java.io.File;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Crime_Details")
 public class CrimeDetails {
+	@Id
 	private int Suspect_Id;
 	private String Crime_Location;
 	private Date Issue_Date;
@@ -58,5 +65,12 @@ public class CrimeDetails {
 	public void setImage(File image) {
 		Image = image;
 	}
-	
+
+	/*
+	 * @Override public String toString() { return
+	 * String.format("%d, %s, %s, %s, %d, %s", Suspect_Id, Crime_Location,
+	 * Issue_Date, Type_Of_Offence, Complaint_Id, Image);
+	 * 
+	 * }
+	 */
 }

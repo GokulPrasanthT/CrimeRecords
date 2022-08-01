@@ -2,7 +2,14 @@ package com.chainsys.crimerecords.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Police_Detail")
 public class PoliceDetails {
+	@Id
 	private int Police_Id;
 	private String Police_Rank;
 	private String Police_Name;
@@ -67,4 +74,11 @@ public class PoliceDetails {
 		Station_Name = station_Name;
 	}
 
+	/*
+	 * @Override public String toString() { return
+	 * String.format("%d, %s, %s, %l, %s, %s, %s",
+	 * Police_Id,Police_Rank,Police_Name, Mobile_No,DOB,Email,Station_Name);
+	 * 
+	 * }
+	 */
 }

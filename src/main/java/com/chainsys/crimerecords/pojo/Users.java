@@ -1,11 +1,19 @@
 package com.chainsys.crimerecords.pojo;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name = "Users")
 public class Users {
 
 	private String User_Name;
 	private String User_Password;
+	@Id
+	private int User_id;
 	private Date Date_Of_Birth;
 	private String Gender;
 	private Long Phone_No;
@@ -27,6 +35,14 @@ public class Users {
 
 	public void setUser_Password(String user_Password) {
 		User_Password = user_Password;
+	}
+
+	public int getUser_id() {
+		return User_id;
+	}
+
+	public void setUser_id(int user_id) {
+		User_id = user_id;
 	}
 
 	public Date getDate_Of_Birth() {
@@ -76,5 +92,15 @@ public class Users {
 	public void setUser_Role(String user_Role) {
 		User_Role = user_Role;
 	}
+	
+
+	
+	/*
+	 * @Override public String toString() { return
+	 * String.format("%s, %s, %d, %s, %s, %l, %s, %s, %s", User_Name, User_Password,
+	 * User_id, Date_Of_Birth, Gender, Phone_No, Email, City, User_Role);
+	 * 
+	 * }
+	 */
 
 }
