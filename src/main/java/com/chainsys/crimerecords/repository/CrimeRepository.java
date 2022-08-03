@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.crimerecords.pojo.CrimeDetails;
+import com.chainsys.crimerecords.model.CrimeDetails;
 
 @Repository
 public interface CrimeRepository extends CrudRepository<CrimeDetails, Integer> {

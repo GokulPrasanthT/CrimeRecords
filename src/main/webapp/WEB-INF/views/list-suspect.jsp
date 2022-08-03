@@ -8,32 +8,30 @@
 <title>Police Lists</title>
 </head>
 <body>
-	<h1 align="center">Police List</h1>
-
+	<h1 align="center">Police Lists</h1>
 	<div id="table root">
 		<div align="center">
 			<table border="1">
 				<thead>
 					<tr>
-						<th>Police_Id</th>
-						<th>Police_Rank</th>
-						<th>Police_Name</th>
-						<th>Mobile_No</th>
-						<th>Email</th>
+						<th>Suspect_Id</th>
+						<th>Suspect_Name</th>
+						<th>Suspect_Identity</th>
+						<th>Gender</th>
 						<th>DOB</th>
-						<th>Station_Name</th>
+						<th>Address</th>
+
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="police" items="${viewpoliceDetails}">
+					<c:forEach var="suspect" items="${viewsuspectDetails}">
 						<tr>
-							<td>${police.policeId}</td>
-							<td>${police.policeRank}</td>
-							<td>${police.policeName}</td>
-							<td>${police.mobileNo}</td>
-							<td>${police.email}</td>
-							<td>${police.dateOfbirth}</td>
-							<td>${police.stationName}</td>
+							<td>${suspect.suspectId}</td>
+							<td>${suspect.suspectName}</td>
+							<td>${suspect.suspectIdentity}</td>
+							<td>${suspect.gender}</td>
+							<td>${suspect.dateofbirth}</td>
+							<td>${suspect.address}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

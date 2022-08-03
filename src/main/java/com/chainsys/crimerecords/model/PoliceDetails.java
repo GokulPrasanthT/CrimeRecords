@@ -1,15 +1,18 @@
-package com.chainsys.crimerecords.pojo;
+package com.chainsys.crimerecords.model;
 
 import java.util.Date;
-
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Police_Detail")
 public class PoliceDetails {
+
 	@Id
 	@Column(name = "Police_Id")
 	private int policeId;
@@ -25,6 +28,17 @@ public class PoliceDetails {
 	private Date dateOfbirth;
 	@Column(name = "Station_Name")
 	private String stationName;
+
+	@OneToMany(mappedBy = "police", fetch = FetchType.LAZY)
+	private List<ComplaintDetails> complaint;
+
+	public List<ComplaintDetails> getComplaint() {
+		return complaint;
+	}
+
+	public void setComplaint(List<ComplaintDetails> complaint) {
+		this.complaint = complaint;
+	}
 
 	public int getPoliceId() {
 		return policeId;

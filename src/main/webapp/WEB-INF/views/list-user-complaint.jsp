@@ -6,13 +6,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add User</title>
+<title>User Complaint List</title>
 </head>
 <body>
-	<h1 align="center">User Register</h1>
 	<div id="root">
 		<div id="form" align="center">
-			<form:form action="adduser" method="post" modelAttribute="addUsers">
+			<form:form action="adduser" method="post" modelAttribute="getuser">
 				<div>
 					<label for="userName">User Name</label>
 					<div>
@@ -34,7 +33,7 @@
 				<div>
 					<label for="dateOfBirth">DOB</label>
 					<div>
-						<form:input path="dateOfBirth" class="form-control" type="date" />
+						<form:input path="dateOfBirth" class="form-control" />
 					</div>
 				</div>
 				<div>
@@ -76,6 +75,37 @@
 					<form:button>Add User</form:button>
 				</div>
 			</form:form>
+		</div>
+	</div>
+	</br>
+	<div id="table root">
+		<div align="center">
+			<table border="1">
+				<thead>
+					<tr>
+						<th>Complaint_Id</th>
+						<th>Type_Of_Complaint</th>
+						<th>Registered_Station</th>
+						<th>Complaint_Status</th>
+						<th>Date_Time</th>
+						<th>Police_Id</th>
+						<th>User_id</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="complaint" items="${comlist}">
+						<tr>
+							<td>${complaint.complaintId}</td>
+							<td>${complaint.typeofcomplaint}</td>
+							<td>${complaint.registeredstation}</td>
+							<td>${complaint.complaintstatus}</td>
+							<td>${complaint.datetime}</td>
+							<td>${complaint.policeId}</td>
+							<td>${complaint.userid}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </body>

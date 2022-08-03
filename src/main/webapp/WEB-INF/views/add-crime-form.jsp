@@ -8,9 +8,10 @@
 <meta charset="ISO-8859-1">
 <title>Add CrimeDetails</title>
 </head>
+<h1 align="center">Crime Records</h1>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			<form:form action="addCrime" method="post"
 				modelAttribute="addcrimedetail">
 				<div>

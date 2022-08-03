@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.chainsys.crimerecords.pojo.PoliceDetails;
+
+import com.chainsys.crimerecords.dto.PoliceComplaintDTO;
+import com.chainsys.crimerecords.dto.UserComplaintDTO;
+import com.chainsys.crimerecords.model.PoliceDetails;
 import com.chainsys.crimerecords.services.PoliceService;
 
 
@@ -67,5 +70,14 @@ public class PoliceController {
 		pservice.deleteById(id);
 		return "redirect:/police/policelist";
 	}
+	
+	@GetMapping("/getlistpolicecomplaint")
+   	public String getpoliceComplaint(@RequestParam("id") int id ,Model model)
+   	{
+   		PoliceComplaintDTO policeComplaintdto = pservice.getUserComplaint(id);
+   		model.addAttribute("getpolice", policeComplaintdto.getPolice());
+   		model.addAttribute("comlist", policeComplaintdto.getcomplaintlist());
+   		return "list-police-complaint";
+   	}
 
 }

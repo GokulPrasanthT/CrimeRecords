@@ -1,4 +1,4 @@
-package com.chainsys.crimerecords.pojo;
+package com.chainsys.crimerecords.model;
 
 import java.io.File;
 import java.util.Date;

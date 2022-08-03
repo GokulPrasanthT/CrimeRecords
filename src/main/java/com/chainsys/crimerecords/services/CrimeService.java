@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.crimerecords.pojo.CrimeDetails;
+import com.chainsys.crimerecords.model.CrimeDetails;
 import com.chainsys.crimerecords.repository.CrimeRepository;
 
 @Service
