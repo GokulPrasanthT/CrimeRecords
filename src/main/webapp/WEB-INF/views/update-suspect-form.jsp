@@ -9,51 +9,64 @@
 <title>Update Suspect</title>
 </head>
 <body>
+	<h1 align="center">Update Suspect Form</h1>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			<form:form action="updatesuspect" method="post"
 				modelAttribute="updatsuspectDetails">
-				<div>
-					<label for="suspectId">Suspect_Id</label>
+				<tr>
 					<div>
-						<form:input path="suspectId" />
+						<td><label for="suspectId">Suspect_Id</label></td>
+						<div>
+							<td><form:input path="suspectId" /></td>
+						</div>
+					</div>
+				</tr>
+				<tr>
+					<div>
+						<td><label for="suspectName">Suspect_Name</label></td>
+						<div>
+							<td><form:input path="suspectName" /></td>
+						</div>
+					</div>
+				</tr>
+				<tr>
+					<div>
+						<td><label for="suspectIdentity">Suspect_Identity</label></td>
+						<div>
+							<td><form:input path="suspectIdentity" /></td>
+						</div>
+					</div>
+				</tr>
+				<tr>
+					<div>
+						<td><label for="gender">Gender</label></td>
+						<div>
+							<td><form:input path="gender" /></td>
+						</div>
+					</div>
+				</tr>
+				<tr>
+					<div>
+						<td><label for="dateofbirth">DOB</label></td>
+						<div>
+							<td><form:input path="dateofbirth" type="date" /></td>
+						</div>
+					</div>
+				</tr>
+				<tr>
+					<div>
+						<td><label for="address">Address</label></td>
+					</div>
+					<div>
+						<td><form:input path="address" /></td>
+					</div>
+				</tr>
+				<div>
+					<div>
+						<td colspan="5" align="center"><br><form:button>Update Suspect</form:button>
 					</div>
 				</div>
-				<div>
-					<label for="suspectName">Suspect_Name</label>
-					<div>
-						<form:input path="suspectName" />
-					</div>
-				</div>
-				<div>
-					<label for="suspectIdentity">Suspect_Identity</label>
-					<div>
-						<form:input path="suspectIdentity" />
-					</div>
-				</div>
-				<div>
-					<label for="gender">Gender</label>
-					<div>
-						<form:input path="gender" />
-					</div>
-				</div>
-				<div>
-					<label for="dateofbirth">DOB</label>
-					<div>
-						<form:input path="dateofbirth" />
-					</div>
-				</div>
-				<div>
-				<label for="address">Address</label>
-				</div>
-				<div>
-					<form:input path="address" />
-				</div>
-					<div>
-					<div>
-						<form:button>Update Suspect</form:button>
-					</div>
-					</div>
 			</form:form>
 		</div>
 	</div>

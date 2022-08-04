@@ -22,7 +22,7 @@ public class SuspectController {
 	@Autowired
 	SuspectService suservice;
 
-	@GetMapping
+	@GetMapping("/suspectlist")
 	public String getAllSuspectDetail(Model model) {
 		List<SuspectDetails> suspectlist = suservice.findAll();
 		model.addAttribute("viewsuspectDetails", suspectlist);
@@ -50,7 +50,7 @@ public class SuspectController {
 	}
 
 	@PostMapping("/updatesuspect")
-	public String updatesuspectDetails(@ModelAttribute("updatecomlaint") SuspectDetails thesus) {
+	public String updatesuspectDetails(@ModelAttribute("updatsuspectDetails") SuspectDetails thesus) {
 		suservice.save(thesus);
 		return "redirect:/suspect/suspectlist";
 	}

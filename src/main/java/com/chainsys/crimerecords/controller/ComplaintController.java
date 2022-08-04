@@ -31,7 +31,7 @@ public class ComplaintController {
 	public String showAddForm(Model model) {
 		ComplaintDetails thecom = new ComplaintDetails();
 		model.addAttribute("addcomplaintdetail", thecom);
-		return "add-complaint-form";
+		return "Complaint-form";
 	}
 
 	@PostMapping("/addcomplaints")

@@ -4,17 +4,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+table, tb {
+	width: 50%;
+	padding: 15px;
+	text-align: left;
+}
+
+th, td {
+	border: solid 1px #777;
+	padding: 10px;
+	border-color: #8E44AD;
+}
+
+td {
+	color: #000000
+}
+</style>
 </head>
 <body>
-<meta charset="ISO-8859-1">
-<title>User Lists</title>
-</head>
+	<meta charset="ISO-8859-1">
+	<title>User Lists</title>
 <body>
 	<h1 align="center">Users List</h1>
 
 	<div id="table root">
 		<div align="center">
-			<table border="1" width="75%" cellpadd="3">
+			<table border="1" width="75%" cellpadd="">
 				<thead>
 					<tr>
 						<th>User_Name</th>
@@ -26,6 +42,8 @@
 						<th>Email</th>
 						<th>City</th>
 						<th>User_Role</th>
+						<th>Update</th>
+						<th>Delete</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -40,6 +58,12 @@
 							<td>${user.email}</td>
 							<td>${user.city}</td>
 							<td>${user.userRole}</td>
+							<td><a href="updateuserform?userId=${user.userid }"> <input
+									onclick="change()" type="button" value="Update" id="myButton1"></input>
+
+							</a></td>
+							<td><a href="deleteusers?userId=${user.userid }"><input
+									onclick="change()" type="button" value="Delete" id="myButton2"></input></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -1,6 +1,6 @@
 package com.chainsys.crimerecords.model;
 
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,12 +17,16 @@ public class ComplaintDetails {
 	private int complaintId;
 	@Column(name = "Type_Of_Complaint")
 	private String typeofcomplaint;
+	@Column(name = "Complaint_Describtion")
+	private String complaintdescription;
 	@Column(name = "Registered_Station")
 	private String registeredstation;
 	@Column(name = "Complaint_Status")
 	private String complaintstatus;
-	@Column(name = "Date_Time")
-	private Date datetime;
+	@Column(name = "issue_Date")
+	private Date date;
+	@Column(name = "issue_Time")
+	private String time;
 	@Column(name = "Police_Id")
 	private int policeId;
 	@Column(name = "User_id")
@@ -68,6 +72,14 @@ public class ComplaintDetails {
 		this.typeofcomplaint = typeofcomplaint;
 	}
 
+	public String getComplaintdescription() {
+		return complaintdescription;
+	}
+
+	public void setComplaintdescription(String complaintdescription) {
+		this.complaintdescription = complaintdescription;
+	}
+
 	public String getRegisteredstation() {
 		return registeredstation;
 	}
@@ -84,12 +96,20 @@ public class ComplaintDetails {
 		this.complaintstatus = complaintstatus;
 	}
 
-	public Date getDatetime() {
-		return datetime;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setDatetime(Date datetime) {
-		this.datetime = datetime;
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 	public int getPoliceId() {

@@ -66,14 +66,31 @@ public class UsersController {
 		uservice.deleteById(id);
 		return "redirect:/users/userlist";
 	}
-	
+
 	@GetMapping("/getlistusercomplaint")
-   	public String getDocumentUser(@RequestParam("id") int id ,Model model)
-   	{
-   		UserComplaintDTO userComplaintdto = uservice.getUserComplaint(id);
-   		model.addAttribute("getuser", userComplaintdto.getUsers());
-   		model.addAttribute("comlist", userComplaintdto.getcomplaintlist());
-   		return "list-user-complaint";
-   	}
+	public String getDocumentUser(@RequestParam("id") int id, Model model) {
+		UserComplaintDTO userComplaintdto = uservice.getUserComplaint(id);
+		model.addAttribute("getuser", userComplaintdto.getUsers());
+		model.addAttribute("comlist", userComplaintdto.getcomplaintlist());
+		return "list-user-complaint";
+	}
+
+	@GetMapping("/customerlogin")
+	public String adminaccessform(Model model) {
+		User theus = new User();
+		model.addAttribute("users", theus);
+		return "user-login-form";
+	}
+
+	@PostMapping("/checkcuserlogin")
+	public String checkingAccess(@ModelAttribute("users") User us) {
+		User user = uservice.getUserByNameAndPassword(us.getUserName(), us.getUserPassword());
+		if (user != null) {
+
+			return "redirect:/complaint/addcomplaintdetailform";
+		} else
+			return "invalid-user-error-form";
+
+	}
 
 }

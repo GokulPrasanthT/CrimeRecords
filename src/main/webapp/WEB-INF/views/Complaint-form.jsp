@@ -16,14 +16,6 @@
 			<table>
 				<form:form action="addcomplaints" method="post"
 					modelAttribute="addcomplaintdetail">
-					<tr>
-						<div>
-							<td><label for="complaintId">Complaint ID</label></td>
-							<div>
-								<td><form:input path="complaintId" /></td>
-							</div>
-						</div>
-					</tr>
 
 					<tr>
 						<div>
@@ -42,22 +34,8 @@
 							</div>
 						</div>
 					</tr>
-					<tr>
-						<div>
-							<td><label for="registeredstation">Registered_Station</label></td>
-							<div>
-								<td><form:input path="registeredstation" /></td>
-							</div>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="complaintstatus">complaint_Status</label></td>
-							<div>
-								<td><form:input path="complaintstatus" /></td>
-							</div>
-						</div>
-					</tr>
+					
+					
 					<tr>
 						<div>
 							<td><label for="date">Issue_Date</label></td>
@@ -74,14 +52,7 @@
 							</div>
 						</div>
 					</tr>
-					<tr>
-						<div>
-							<td><label for="policeId">Police_ID</label></td>
-						</div>
-						<div>
-							<td><form:input path="policeId" /></td>
-						</div>
-					</tr>
+					
 					<tr>
 						<div>
 							<td><label for="userid">User_ID</label></td>

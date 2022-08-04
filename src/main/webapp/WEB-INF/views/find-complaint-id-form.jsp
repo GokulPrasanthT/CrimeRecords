@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +25,12 @@
 					</div>
 				</div>
 				<div>
+					<td><label for="complaintdescription">Complaint_Description</label></td>
+					<div>
+						<td><form:input path="complaintdescription" readnly="true" /></td>
+					</div>
+				</div>
+				<div>
 					<label for="registeredstation">Registered_Station</label>
 					<div>
 						<form:input path="registeredstation" readonly="true" />
@@ -35,9 +43,15 @@
 					</div>
 				</div>
 				<div>
-					<label for="datetime">Date_Time</label>
+					<label for="date">Issue_Date</label>
 					<div>
-						<form:input path="datetime" readonly="true" />
+						<form:input path="date" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="time">Issue_Time</label>
+					<div>
+						<form:input path="time" readonly="true" />
 					</div>
 				</div>
 				<div>
@@ -46,9 +60,7 @@
 						<form:input path="policeId" readonly="true" />
 					</div>
 				</div>
-				<div>
-					<form:button>Find Crime ID</form:button>
-				</div>
+				
 			</form:form>
 		</div>
 	</div>

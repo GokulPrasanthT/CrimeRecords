@@ -5,7 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.crimerecords.model.User;
 
-
 public interface UsersRepository extends CrudRepository<User, Integer> {
 	User findById(int userid);
 
@@ -15,5 +14,7 @@ public interface UsersRepository extends CrudRepository<User, Integer> {
 	void deleteById(int u_id);
 
 	List<User> findAll();
+
+	User findByUserNameAndUserPassword(String name, String password);
 
 }

@@ -9,54 +9,101 @@
 <title>Update Complaint Details</title>
 </head>
 <body>
-<h1 align="center">Update Complaint</h1>
+	<h1 align="center">Update Complaint</h1>
 	<div id="root">
 		<div id="form">
 			<form:form action="updatecomplaints" method="post"
 				modelAttribute="updatecomplaintDetails">
-				<div>
-					<label for="complaintId">Complaint ID</label>
+				<tr>
 					<div>
-						<form:input path="complaintId" />
+						<td><label for="complaintId">Complaint ID</label></td>
+						<div>
+							<td><form:input path="complaintId" /></td>
+						</div>
 					</div>
-				</div>
-				<div>
-					<label for="typeofcomplaint">Type_Of_Complaint</label>
+				</tr>
+
+				<tr>
 					<div>
-						<form:input path="typeofcomplaint" />
+						<td><label for="typeofcomplaint">Type_Of_Complaint</label></td>
+						<div>
+
+							<td><form:input path="typeofcomplaint" /></td>
+						</div>
 					</div>
-				</div>
-				<div>
-					<label for="registeredstation">Registered_Station</label>
+				</tr>
+				<tr>
 					<div>
-						<form:input path="registeredstation" />
+						<td><label for="complaintdescription">Complaint_Description</label></td>
+						<div>
+							<td><form:input path="complaintdescription" /></td>
+						</div>
 					</div>
-				</div>
-				<div>
-					<label for="complaintstatus">complaint_Status</label>
+				</tr>
+				<tr>
 					<div>
-						<form:input path="complaintstatus" />
+						<td><label for="registeredstation">Registered_Station</label></td>
+						<div>
+							<td><form:input path="registeredstation" /></td>
+						</div>
 					</div>
-				</div>
-				<div>
-					<label for="datetime">Date_Time</label>
+				</tr>
+				<tr>
 					<div>
-						<form:input path="datetime" />
+						<td><label for="complaintstatus">complaint_Status</label></td>
+						<div>
+							<td><form:input path="complaintstatus" /></td>
+						</div>
 					</div>
-				</div>
-				<div>
-				<label for="policeId">Police_ID</label>
-				</div>
-				<div>
-					<form:input path="policeId" />
-				</div>
+				</tr>
+				<tr>
 					<div>
+						<td><label for="date">Issue_Date</label></td>
+						<div>
+							<td><form:input path="date" type="date" /></td>
+						</div>
+					</div>
+				</tr>
+				<tr>
 					<div>
-						<form:button>Update_Complaint_Details</form:button>
+						<td><label for="time">Issue_Time</label></td>
+						<div>
+							<td><form:input path="time" type="date" /></td>
+						</div>
 					</div>
+				</tr>
+				<tr>
+					<div>
+						<td><label for="policeId">Police_ID</label></td>
 					</div>
-			</form:form>
+					<div>
+						<td><form:input path="policeId" /></td>
+					</div>
+				</tr>
+				<tr>
+					<div>
+						<td><label for="userid">User_ID</label></td>
+					</div>
+					<div>
+						<td><form:input path="userid" /></td>
+					</div>
+				</tr>
+				<br>
+				<tr>
+					<div>
+						<div>
+				</tr>
+				<tr>
+					<div>
+						<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
+				</tr>
 		</div>
+	</div>
+	</div>
+	</form:form>
+	</table>
+	</div>
+
 	</div>
 </body>
 </html>

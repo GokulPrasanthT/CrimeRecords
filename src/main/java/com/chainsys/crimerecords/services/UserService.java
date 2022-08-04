@@ -45,4 +45,8 @@ public class UserService {
 		}
 		return dto;
 	}
+
+	public User getUserByNameAndPassword(String name, String password) {
+		return urepo.findByUserNameAndUserPassword(name, password);
+	}
 }
