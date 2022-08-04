@@ -75,7 +75,7 @@ public class UsersController {
 		return "list-user-complaint";
 	}
 
-	@GetMapping("/customerlogin")
+	@GetMapping("/userlogin")
 	public String adminaccessform(Model model) {
 		User theus = new User();
 		model.addAttribute("users", theus);

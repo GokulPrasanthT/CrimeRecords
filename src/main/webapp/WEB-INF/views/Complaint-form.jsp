@@ -34,8 +34,8 @@
 							</div>
 						</div>
 					</tr>
-					
-					
+
+
 					<tr>
 						<div>
 							<td><label for="date">Issue_Date</label></td>
@@ -52,7 +52,7 @@
 							</div>
 						</div>
 					</tr>
-					
+
 					<tr>
 						<div>
 							<td><label for="userid">User_ID</label></td>
@@ -61,7 +61,14 @@
 							<td><form:input path="userid" /></td>
 						</div>
 					</tr>
-					<br>
+					<tr>
+						<div>
+							<td><label for="complaintId">Complaint ID</label></td>
+							<div>
+								<td><form:input path="complaintId" /></td>
+							</div>
+						</div>
+						<br>
 					<tr>
 						<div>
 							<div>

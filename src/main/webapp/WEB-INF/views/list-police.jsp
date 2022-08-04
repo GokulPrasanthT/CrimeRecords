@@ -4,6 +4,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+table, tb {
+	width: 50%;
+	padding: 15px;
+	text-align: left;
+}
+
+th, td {
+	border: solid 1px #777;
+	padding: 10px;
+	border-color: #8E44AD;
+}
+
+td {
+	color: #000000
+}
+</style>
 <meta charset="ISO-8859-1">
 <title>Police Lists</title>
 </head>
@@ -34,6 +51,13 @@
 							<td>${police.email}</td>
 							<td>${police.dateOfbirth}</td>
 							<td>${police.stationName}</td>
+							<td><a href="updatepoliceform?poId=${police.policeId}">
+									<input onclick="change()" type="button" value="Update"
+									id="myButton1"></input>
+
+							</a></td>
+							<td><a href="deletepolice?poId=${police.policeId}"><input
+									onclick="change()" type="button" value="Delete" id="myButton2"></input></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
