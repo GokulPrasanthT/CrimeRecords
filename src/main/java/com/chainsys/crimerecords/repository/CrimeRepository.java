@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import com.chainsys.crimerecords.model.ComplaintDetails;
 import com.chainsys.crimerecords.model.CrimeDetails;
 
 @Repository
@@ -16,5 +17,8 @@ public interface CrimeRepository extends CrudRepository<CrimeDetails, Integer> {
 	void deleteById(int c_id);
 
 	List<CrimeDetails> findAll();
+	
+	List<CrimeDetails> findBySuspectId(int id);
+	
 
 }

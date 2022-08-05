@@ -6,6 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.chainsys.crimerecords.model.SuspectDetails;
 
 public interface SuspectRepository extends CrudRepository<SuspectDetails, Integer> {
+	
 	SuspectDetails findById(int id);
 
 	SuspectDetails save(SuspectDetails thecom);

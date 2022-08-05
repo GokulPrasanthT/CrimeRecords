@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.crimerecords.dto.SuspectCrimeDTO;
+import com.chainsys.crimerecords.dto.UserComplaintDTO;
 import com.chainsys.crimerecords.model.ComplaintDetails;
 import com.chainsys.crimerecords.model.SuspectDetails;
 import com.chainsys.crimerecords.services.SuspectService;
@@ -66,5 +68,13 @@ public class SuspectController {
 	public String deleteSuspectDetail(@RequestParam("susId") int id) {
 		suservice.deleteById(id);
 		return "redirect:/suspect/suspectlist";
+	}
+	
+	@GetMapping("/getlistsuspectcrime")
+	public String getSuspectAndCrime(@RequestParam("id") int id, Model model) {
+		SuspectCrimeDTO suspectcrimedto = suservice.getSuspectCrime(id);
+		model.addAttribute("getsuspect", suspectcrimedto.getSuspect());
+		model.addAttribute("crimelist", suspectcrimedto.getCrimelist());
+		return "list-suspect-crime";
 	}
 }

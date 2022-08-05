@@ -30,12 +30,12 @@ public class CrimeController {
 	@GetMapping("/addcrimedetailform")
 	public String showAddForm(Model model) {
 		CrimeDetails thecr = new CrimeDetails();
-		model.addAttribute("addcrimedetail", thecr);
+		model.addAttribute("addcrimedetails", thecr);
 		return "add-crime-form";
 	}
 
 	@PostMapping("/addcrimedetail")
-	public String addNewUser(@ModelAttribute("addCrime") CrimeDetails thecr) {
+	public String addNewUser(@ModelAttribute("addcrimedetails") CrimeDetails thecr) {
 		cservice.save(thecr);
 		return "redirect:/crime/crimelist";
 

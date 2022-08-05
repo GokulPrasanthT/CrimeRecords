@@ -1,77 +1,92 @@
 package com.chainsys.crimerecords.model;
 
-import java.io.File;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Crime_Details")
 public class CrimeDetails {
 	@Id
-	private int Suspect_Id;
-	private String Crime_Location;
-	private Date Issue_Date;
-	private String Type_Of_Offence;
-	private int Complaint_Id;
-	private File Image;
+	@Column(name = "Suspect_Id")
+	private int suspectId;
+	@Column(name = "Crime_Location")
+	private String crimelocation;
+	@Column(name = "Issue_Date")
+	private Date date;
+	@Column(name = "Type_Of_Offence")
+	private String offencetype;
+	@Column(name = "Complaint_Id")
+	private int complaintid;
+	@Column(name = "Image")
+	private String image;
 
-	public int getSuspect_Id() {
-		return Suspect_Id;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "Suspect_Id", nullable = false, insertable = false, updatable = false)
+	private SuspectDetails suspect;
+
+	public int getSuspectId() {
+		return suspectId;
 	}
 
-	public void setSuspect_Id(int suspect_Id) {
-		Suspect_Id = suspect_Id;
+	public void setSuspectId(int suspectId) {
+		this.suspectId = suspectId;
 	}
 
-	public String getCrime_Location() {
-		return Crime_Location;
+	public String getCrimelocation() {
+		return crimelocation;
 	}
 
-	public void setCrime_Location(String crime_Location) {
-		Crime_Location = crime_Location;
+	public void setCrimelocation(String crimelocation) {
+		this.crimelocation = crimelocation;
 	}
 
-	public Date getIssue_Date() {
-		return Issue_Date;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setIssue_Date(Date issue_Date) {
-		Issue_Date = issue_Date;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
-	public String getType_Of_Offence() {
-		return Type_Of_Offence;
+	public String getOffencetype() {
+		return offencetype;
 	}
 
-	public void setType_Of_Offence(String type_Of_Offence) {
-		Type_Of_Offence = type_Of_Offence;
+	public void setOffencetype(String offencetype) {
+		this.offencetype = offencetype;
 	}
 
-	public int getComplaint_Id() {
-		return Complaint_Id;
+	public int getComplaintid() {
+		return complaintid;
 	}
 
-	public void setComplaint_Id(int complaint_Id) {
-		Complaint_Id = complaint_Id;
+	public void setComplaintid(int complaintid) {
+		this.complaintid = complaintid;
 	}
 
-	public File getImage() {
-		return Image;
+	public String getImage() {
+		return image;
 	}
 
-	public void setImage(File image) {
-		Image = image;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
-	/*
-	 * @Override public String toString() { return
-	 * String.format("%d, %s, %s, %s, %d, %s", Suspect_Id, Crime_Location,
-	 * Issue_Date, Type_Of_Offence, Complaint_Id, Image);
-	 * 
-	 * }
-	 */
+	public SuspectDetails getSuspect() {
+		return suspect;
+	}
+
+	public void setSuspect(SuspectDetails suspect) {
+		this.suspect = suspect;
+	}
+
+	
+
 }

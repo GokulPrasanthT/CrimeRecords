@@ -12,8 +12,8 @@
 <body>
 	<div id="root">
 		<div id="form" align="center">
-			<form:form action="addCrime" method="post"
-				modelAttribute="addcrimedetail">
+			<form:form action="addcrimedetail" method="post"
+				modelAttribute="addcrimedetails">
 				<div>
 					<label for="Suspect_Id">Suspect ID</label>
 					<div>
@@ -50,10 +50,10 @@
 						<form:input path="Image" />
 					</div>
 				</div>
-						<form:button>Add Police Details</form:button>
-					</div>
-			</form:form>
+				<form:button>Submit</form:button>
 		</div>
+		</form:form>
+	</div>
 	</div>
 </body>
 </html>
