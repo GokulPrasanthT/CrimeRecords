@@ -31,6 +31,14 @@ public class CrimeDetails {
 	@JoinColumn(name = "Suspect_Id", nullable = false, insertable = false, updatable = false)
 	private SuspectDetails suspect;
 
+	public SuspectDetails getSuspect() {
+		return suspect;
+	}
+
+	public void setSuspect(SuspectDetails suspect) {
+		this.suspect = suspect;
+	}
+
 	public int getSuspectId() {
 		return suspectId;
 	}
@@ -78,15 +86,5 @@ public class CrimeDetails {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
-	public SuspectDetails getSuspect() {
-		return suspect;
-	}
-
-	public void setSuspect(SuspectDetails suspect) {
-		this.suspect = suspect;
-	}
-
-	
 
 }

@@ -15,42 +15,43 @@
 			<form:form action="addcrimedetail" method="post"
 				modelAttribute="addcrimedetails">
 				<div>
-					<label for="Suspect_Id">Suspect ID</label>
+					<label for="suspectId">Suspect ID</label>
 					<div>
-						<form:input path="Suspect_Id" />
+						<form:input path="suspectId" />
 					</div>
 				</div>
 				<div>
-					<label for="Crime_Location">Crime Location</label>
+					<label for="crimelocation">Crime Location</label>
 					<div>
-						<form:input path="Crime_Location" />
+						<form:input path="crimelocation" />
 					</div>
 				</div>
 				<div>
-					<label for="Issue_Date">Date Of Issue</label>
+					<label for="date">Date Of Issue</label>
 					<div>
-						<form:input path="Issue_Date" />
+						<form:input path="date" />
 					</div>
 				</div>
 				<div>
-					<label for="Type_Of_Offence"> Type Of Offence</label>
+					<label for="offencetype"> Type Of Offence</label>
 					<div>
-						<form:input path="Type_Of_Offence" />
+						<form:input path="offencetype" />
 					</div>
 				</div>
 				<div>
-					<label for="Complaint_Id">Complaint ID</label>
+					<label for="complaintid">Complaint ID</label>
 					<div>
-						<form:input path="Complaint_Id" />
+						<form:input path="complaintid" />
 					</div>
 				</div>
 				<div>
-					<label for="Image">img</label>
+					<label for="image">img</label>
 					<div>
-						<form:input path="Image" />
+						<form:input path="image" />
 					</div>
 				</div>
-				<form:button>Submit</form:button>
+				<br>
+				<form:button align="center">Submit</form:button>
 		</div>
 		</form:form>
 	</div>

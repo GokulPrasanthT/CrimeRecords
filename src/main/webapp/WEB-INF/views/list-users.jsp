@@ -14,15 +14,22 @@ table, tb {
 th, td {
 	border: solid 1px #777;
 	padding: 10px;
-	border-color: #8E44AD;
+	border-color:  #cc0033;
 }
 
 td {
 	color: #000000
 }
+
+body {
+	background-image: url('https://media.istockphoto.com/photos/closeup-shot-of-a-notebook-and-pen-on-a-table-in-an-office-picture-id1345561027?k=20&m=1345561027&s=612x612&w=0&h=0FbTAWqGMRSyvWBuQpqW__RjbZxUWa4brjdcGxHOUYQ=');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
 </style>
 </head>
-<body>
+
 	<meta charset="ISO-8859-1">
 	<title>User Lists</title>
 <body>

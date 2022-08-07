@@ -11,44 +11,44 @@
 		<div id="form">
 			<form:form action="" method="get" modelAttribute="finduserById">
 				<div>
-					<label for="Suspect_Id">Suspect ID</label>
+					<label for="suspectId">Suspect ID</label>
 					<div>
-						<form:input path="Suspect_Id" readonly="true" />
+						<form:input path="suspectId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Crime_Location">Crime Location</label>
+					<label for="crimelocation">Crime Location</label>
 					<div>
-						<form:input path="Crime_Location" readonly="true" />
+						<form:input path="crimelocation" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Issue_Date">Issue Date</label>
+					<label for="date">Issue Date</label>
 					<div>
-						<form:input path="Issue_Date" readonly="true" />
+						<form:input path="date" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Type_Of_Offence">Type OF Offence</label>
+					<label for="offencetype">Type OF Offence</label>
 					<div>
-						<form:input path="Type_Of_Offence" readonly="true" />
+						<form:input path="offencetype" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Complaint_Id">Complaint ID </label>
+					<label for="complaintid">Complaint ID </label>
 					<div>
-						<form:input path="Complaint_Id" readonly="true" />
+						<form:input path="complaintid" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Image">Image</label>
+					<label for="image">Image</label>
 					<div>
-						<form:input path="Image" readonly="true" />
+						<form:input path="image" readonly="true" />
 					</div>
 				</div>
-					<div>
-						<form:button>Find Crime ID</form:button>
-					</div>
+				<div>
+					<form:button>Find Crime ID</form:button>
+				</div>
 			</form:form>
 		</div>
 	</div>

@@ -71,7 +71,7 @@ public class SuspectController {
 	}
 	
 	@GetMapping("/getlistsuspectcrime")
-	public String getSuspectAndCrime(@RequestParam("id") int id, Model model) {
+	public String getSuspectAndCrime(@RequestParam("susId") int id, Model model) {
 		SuspectCrimeDTO suspectcrimedto = suservice.getSuspectCrime(id);
 		model.addAttribute("getsuspect", suspectcrimedto.getSuspect());
 		model.addAttribute("crimelist", suspectcrimedto.getCrimelist());
