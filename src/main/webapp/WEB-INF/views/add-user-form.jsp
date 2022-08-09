@@ -12,70 +12,111 @@
 	<h1 align="center">User Register</h1>
 	<div id="root">
 		<div id="form" align="center">
-			<form:form action="adduser" method="post" modelAttribute="addUsers">
-				<div>
-					<label for="userName">User Name</label>
-					<div>
-						<form:input path="userName" class="form-control" />
-					</div>
-				</div>
-				<div>
-					<label for="userPassword">User Password</label>
-					<div>
-						<form:input path="userPassword" class="form-control" />
-					</div>
-				</div>
-				<div>
-					<label for="userid">User ID</label>
-					<div>
-						<form:input path="userid" class="form-control" />
-					</div>
-				</div>
-				<div>
-					<label for="dateOfBirth">DOB</label>
-					<div>
-						<form:input path="dateOfBirth" class="form-control" type="date" />
-					</div>
-				</div>
-				<div>
-					<label for="gender">Gender</label>
-					<div>
-						<form:input path="gender" class="form-control" />
-					</div>
-				</div>
-				<div>
-					<label for="phoneno">Phone No</label>
-					<div>
-						<form:input path="phoneno" class="form-control" />
-					</div>
-				</div>
-				<div>
-					<label for="email">Email</label>
-					<div>
-						<form:input path="email" class="form-control" />
-					</div>
-					<div>
-						<label for="city">City</label>
+			<table>
+				<form:form action="adduser" method="post" modelAttribute="addUsers">
+					<tr>
 						<div>
-							<form:input path="city" class="form-control" />
+							<td><label for="userName">User Name</label></td>
+							<div>
+								<td><form:input path="userName" class="form-control"
+										placeholder="Enter UserName" /></td>
+							</div>
+							<form:errors path="userName" cssClass="text-danger"></form:errors>
 						</div>
-						</br>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="userPassword">User Password</label></td>
+							<div>
+								<td><form:input path="userPassword" class="form-control"
+										type="password" placeholder="Enter Password" /></td>
+							</div>
+							<form:errors path="userPassword" cssClass="text-danger"></form:errors>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="userid">User ID</label></td>
+							<div>
+								<td><form:input path="userid" class="form-control"
+										placeholder="Enter User Id" /></td>
+							</div>
+							<form:errors path="userid" cssClass="text-danger"></form:errors>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="dateOfBirth">DOB</label></td>
+							<div>
+								<td><form:input path="dateOfBirth" class="form-control"
+										type="date" /></td>
+							</div>
+							<form:errors path="dateOfBirth" cssClass="text-danger"></form:errors>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="gender">Gender :</label></td>
+							<div>
+								<td><input type="radio" name="gender" value="Male" />Male
+									<input type="radio" name="gender" value="Female" />Female <input
+									type="radio" name="gender" value="Others" />Others</td>
+							</div>
+							<form:errors path="gender" cssClass="text-danger"></form:errors>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="phoneno">Phone No</label></td>
+							<div>
+								<td><form:input path="phoneno" class="form-control"
+										placeholder="Enter PhoneNumber" /></td>
+							</div>
+							<form:errors path="phoneno" cssClass="text-danger"></form:errors>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="email">Email</label></td>
+							<div>
+								<td><form:input path="email" class="form-control"
+										placeholder="Enter Email" /></td>
+							</div>
+							<form:errors path="email" cssClass="text-danger"></form:errors>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="city">City</label></td>
+							<div>
+								<td><form:input path="city" class="form-control"
+										placeholder="Enter City" /></td>
+							</div>
+							<form:errors path="city" cssClass="text-danger"></form:errors>
+						</div>
+					</tr>
+					</br>
+					<tr>
 						<div>
 							<div>
-								<label for="userRole" class="form-control"> Choose a
-									Role: </label> <select id="user">
-									<option value="Admin">ADMIN</option>
-									<option value="User">USER</option>
-								</select>
+								<td><label for="userRole" class="form-control">
+										Choose a Role: </label></td>
 							</div>
+							<div>
+								<td><input type="radio" name="userRole" value="userRole" />Admin
+									<input type="radio" name="userRole" value="userRole" />User</td>
 						</div>
+						<%-- <form:errors path="userRole" cssClass="text-danger"></form:errors>  --%>
+						</div>
+						</div>
+					</tr>
 					</div>
-				</div>
-				</br>
-				<div>
-					<form:button>Add User</form:button>
-				</div>
-			</form:form>
+					</br>
+					<div>
+						<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
+					</div>
+				</form:form>
+			</table>
 		</div>
 	</div>
 </body>

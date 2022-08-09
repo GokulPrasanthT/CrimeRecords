@@ -9,58 +9,75 @@
 <title>Add PoliceDetails</title>
 </head>
 <body>
+	<h1 align="center">Add Police Details</h1>
 	<div id="root">
-		<div id="form">
-			<form:form action="addpolicedetail" method="post"
-				modelAttribute="addpolicedetails">
-				<div>
-					<label for="policeId">Police ID</label>
+		<div id="form" align="center">
+			<table>
+				<form:form action="addpolicedetail" method="post"
+					modelAttribute="addpolicedetails">
+					<tr>
+						<div>
+							<td><label for="policeId">Police ID</label></td>
+							<div>
+								<td><form:input path="policeId" /></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="policeRank">Police Rank</label></td>
+							<div>
+								<td><form:input path="policeRank" /></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="policeName">Police Name</label></td>
+							<div>
+								<td><form:input path="policeName" /></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="mobileNo">Mobile Number</label></td>
+							<div>
+								<td><form:input path="mobileNo" /></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="email">E-Mail</label></td>
+							<div>
+								<td><form:input path="email" /></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="dateOfbirth">Date_Of_Birth</label></td>
+						</div>
+						<div>
+							<td><form:input path="dateOfbirth" /></td>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="stationName">Station Name</label></td>
+							<div>
+								<td><form:input path="stationName" /></td>
+							</div>
+						</div>
+					</tr>
 					<div>
-						<form:input path="policeId" />
+						<div>
+							<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
+						</div>
 					</div>
-				</div>
-				<div>
-					<label for="policeRank">Police Rank</label>
-					<div>
-						<form:input path="policeRank" />
-					</div>
-				</div>
-				<div>
-					<label for="policeName">Police Name</label>
-					<div>
-						<form:input path="policeName" />
-					</div>
-				</div>
-				<div>
-					<label for="mobileNo">Mobile Number</label>
-					<div>
-						<form:input path="mobileNo" />
-					</div>
-				</div>
-				<div>
-					<label for="email">E-Mail</label>
-					<div>
-						<form:input path="email" />
-					</div>
-				</div>
-				<div>
-					<label for="dateOfbirth">Date_Of_Birth</label>
-				</div>
-				<div>
-					<form:input path="dateOfbirth" />
-				</div>
-				<div>
-					<label for="stationName">Station Name</label>
-					<div>
-						<form:input path="stationName" />
-					</div>
-					</div>
-					<div>
-					<div>
-						<form:button>Add Police Details</form:button>
-					</div>
-					</div>
-			</form:form>
+				</form:form>
+			</table>
 		</div>
 	</div>
 </body>

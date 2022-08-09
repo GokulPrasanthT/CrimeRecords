@@ -12,48 +12,61 @@
 <body>
 	<div id="root">
 		<div id="form" align="center">
-			<form:form action="addcrimedetail" method="post"
-				modelAttribute="addcrimedetails">
-				<div>
-					<label for="suspectId">Suspect ID</label>
-					<div>
-						<form:input path="suspectId" />
-					</div>
-				</div>
-				<div>
-					<label for="crimelocation">Crime Location</label>
-					<div>
-						<form:input path="crimelocation" />
-					</div>
-				</div>
-				<div>
-					<label for="date">Date Of Issue</label>
-					<div>
-						<form:input path="date" />
-					</div>
-				</div>
-				<div>
-					<label for="offencetype"> Type Of Offence</label>
-					<div>
-						<form:input path="offencetype" />
-					</div>
-				</div>
-				<div>
-					<label for="complaintid">Complaint ID</label>
-					<div>
-						<form:input path="complaintid" />
-					</div>
-				</div>
-				<div>
-					<label for="image">img</label>
-					<div>
-						<form:input path="image" />
-					</div>
-				</div>
-				<br>
-				<form:button align="center">Submit</form:button>
+			<table>
+				<form:form action="addcrimedetail" method="post"
+					modelAttribute="addcrimedetails">
+					<tr>
+						<div>
+							<td><label for="suspectId">Suspect ID</label></td>
+							<div>
+								<td><form:input path="suspectId" placeholder="Enter Suspect Id"/></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="crimelocation">Crime Location</label></td>
+							<div>
+								<td><form:input path="crimelocation" placeholder="Enter Location"/></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="date">Date Of Issue</label></td>
+							<div>
+								<td><form:input path="date"  type="date"/></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="offencetype"> Type Of Offence</label></td>
+							<div>
+								<td><form:input path="offencetype" placeholder="Enter Offense"/></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="complaintid">Complaint ID</label></td>
+							<div>
+								<td><form:input path="complaintid" placeholder="Enter Complaint Id"/></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="image">img</label></td>
+							<div>
+								<td><form:input path="image" placeholder="Enter Image"/></td>
+							</div>
+						</div>
+					</tr>
+					<br><td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
 		</div>
 		</form:form>
+		</table>
 	</div>
 	</div>
 </body>

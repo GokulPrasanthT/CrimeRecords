@@ -17,7 +17,7 @@ public class UserService {
 	private UsersRepository urepo;
 	@Autowired
 	private ComplaintRepository comrepo;
-
+	
 	public List<User> getUsers() {
 		return urepo.findAll();
 	}

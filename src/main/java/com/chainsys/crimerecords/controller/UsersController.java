@@ -1,9 +1,12 @@
 package com.chainsys.crimerecords.controller;
 
 import java.util.List;
+
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +23,11 @@ public class UsersController {
 	@Autowired
 	UserService uservice;
 
+	@GetMapping("/index")
+	public String homePage() {
+		return "home-page";
+	}
+
 	@GetMapping("/userlist")
 	public String getAllUsers(Model model) {
 		List<User> userlist = uservice.getUsers();
@@ -35,9 +43,13 @@ public class UsersController {
 	}
 
 	@PostMapping("/adduser")
-	public String addNewUser(@ModelAttribute("addUsers") User theuser) {
-		uservice.save(theuser);
-		return "redirect:/users/userlist";
+	public String addNewUser(@Valid @ModelAttribute("addUsers") User theuser, Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-user-form";
+		} else {
+			uservice.save(theuser);
+			return "redirect:/users/userlist";
+		}
 
 	}
 

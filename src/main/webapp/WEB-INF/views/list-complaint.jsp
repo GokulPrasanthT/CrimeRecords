@@ -14,11 +14,19 @@ table, tb {
 th, td {
 	border: solid 1px #777;
 	padding: 10px;
-	border-color: #8E44AD;
+	border-color: #cc0033;
 }
 
 td {
 	color: #000000
+}
+
+body {
+	background-image:
+		url('https://media.istockphoto.com/photos/closeup-shot-of-a-notebook-and-pen-on-a-table-in-an-office-picture-id1345561027?k=20&m=1345561027&s=612x612&w=0&h=0FbTAWqGMRSyvWBuQpqW__RjbZxUWa4brjdcGxHOUYQ=');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
 }
 </style>
 <meta charset="ISO-8859-1">
@@ -41,6 +49,8 @@ td {
 						<th>issue_Time</th>
 						<th>Police_Id</th>
 						<th>User_id</th>
+						<th>Update</th>
+						<th>Delete</th>
 
 					</tr>
 				</thead>
@@ -56,11 +66,14 @@ td {
 							<td>${complaint.time}</td>
 							<td>${complaint.policeId}</td>
 							<td>${complaint.userid}</td>
-							<td><a href="updatecomplaintform?comId=${complaint.complaintId }"> <input
-									onclick="change()" type="button" value="Update" id="myButton1"></input>
+							<td><a
+								href="updatecomplaintform?comId=${complaint.complaintId }">
+									<input onclick="change()" type="button" value="Update"
+									id="myButton1"></input>
 
 							</a></td>
-							<td><a href="deletecomplaint?comId=${complaint.complaintId }"><input
+							<td><a
+								href="deletecomplaint?comId=${complaint.complaintId }"><input
 									onclick="change()" type="button" value="Delete" id="myButton2"></input></a></td>
 						</tr>
 					</c:forEach>

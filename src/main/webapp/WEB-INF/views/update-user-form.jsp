@@ -13,65 +13,64 @@
 		<div id="form">
 			<form:form action="updateusers" method="post"
 				modelAttribute="updateuser">
-				<div>
-					<label for="userName">User Name</label>
+				<tr>
 					<div>
-						<form:input path="userName" />
+						<td><label for="userName">User Name</label></td>
+						<div>
+							<td><form:input path="userName" class="form-control" /></td>
+						</div>
+						<form:errors path="userName" cssClass="text-danger"></form:errors>
 					</div>
-				</div>
-				<div>
-					<label for="userPassword">User Password</label>
+				</tr>
+				<tr>
 					<div>
-						<form:input path="userPassword" />
+						<td><label for="userPassword">User Password</label></td>
+						<div>
+							<td><form:input path="userPassword" class="form-control"
+									type="password" /></td>
+						</div>
+						<form:errors path="userPassword" cssClass="text-danger"></form:errors>
 					</div>
-				</div>
-				<div>
-					<label for="userid">User Id</label>
+				</tr>
+				<tr>
 					<div>
-						<form:input path="userid" />
+						<td><label for="userid">User ID</label></td>
+						<div>
+							<td><form:input path="userid" class="form-control" /></td>
+						</div>
+						<form:errors path="userid" cssClass="text-danger"></form:errors>
 					</div>
-				</div>
-				<div>
-					<label for="dateOfBirth">DOB</label>
+				</tr>
+				<tr>
 					<div>
-						<form:input path="dateOfBirth" />
+						<td><label for="dateOfBirth">DOB</label></td>
+						<div>
+							<td><form:input path="dateOfBirth" class="form-control"
+									type="date" /></td>
+						</div>
+						<form:errors path="dateOfBirth" cssClass="text-danger"></form:errors>
 					</div>
-				</div>
-				<div>
-					<label for="gender">Gender</label>
+				</tr>
+				<tr>
 					<div>
-						<form:input path="gender" />
-					</div>
-				</div>
-				<div>
-					<label for="phoneno">Phone_NO</label>
-					<div>
-						<form:input path="phoneno" />
-					</div>
-				</div>
-				<div>
-					<label for="email">Email</label>
-					<div>
-						<form:input path="email" />
-					</div>
-				</div>
-				<div>
-					<label for="city">City</label>
-					<div>
-						<form:input path="city" />
-					</div>
-					<!-- <div>
+						<td><label for="gender">Gender</label></td>
+						<div>
+							<td><form:input path="gender" class="form-control" /></td>
+						</div>
+						<form:errors path="gender" cssClass="text-danger"></form:errors>
+						<!-- <div>
 							<label for="userRole">Choose a Role:</label> <select id="user">
 								<option value="Admin">ADMIN</option>
 								<option value="User">USER</option>
 							</select>
 						</div> -->
-				</div>
-				<div>
-					<div>
-						<form:button>Update User</form:button>
 					</div>
-				</div>
+					</tr>
+					<div>
+						<div>
+							<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
+						</div>
+					</div>
 			</form:form>
 		</div>
 	</div>

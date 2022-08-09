@@ -8,28 +8,46 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "Complaint_Details")
 public class ComplaintDetails {
 	@Id
 	@Column(name = "Complaint_Id")
+	@Min(value = 1, message = "Enter a valid Id between 1 to 100")
+	@Max(value = 100, message = "Enter a valid Id between 1 to 100")
 	private int complaintId;
 	@Column(name = "Type_Of_Complaint")
+	@NotNull(message = "*Type Of comlaint is Required")
 	private String typeofcomplaint;
 	@Column(name = "Complaint_Describtion")
+	@NotNull(message = "*Should be Required")
 	private String complaintdescription;
 	@Column(name = "Registered_Station")
+	@NotNull(message = "*should be Required")
 	private String registeredstation;
 	@Column(name = "Complaint_Status")
+	@NotNull(message = "*should be Required")
 	private String complaintstatus;
 	@Column(name = "issue_Date")
+	@DateTimeFormat(pattern = "MM/dd/yyyy")
+	@NotNull(message = "*Correct date format is required ")
 	private Date date;
 	@Column(name = "issue_Time")
+	@NotNull(message = "Should be required")
 	private String time;
 	@Column(name = "Police_Id")
+	@Min(value = 1, message = "Enter a valid Id between 1 to 100")
+	@Max(value = 100, message = "Enter a valid Id between 1 to 100")
 	private int policeId;
 	@Column(name = "User_id")
+	@Min(value = 1, message = "Enter a valid Id between 1 to 100")
+	@Max(value = 100, message = "Enter a valid Id between 1 to 100")
 	private int userid;
 
 	@ManyToOne(fetch = FetchType.LAZY)

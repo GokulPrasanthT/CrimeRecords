@@ -22,8 +22,7 @@ td {
 }
 
 body {
-	background-image:
-		url('https://media.istockphoto.com/photos/stack-of-papers-with-blue-tint-picture-id137890584?k=20&m=137890584&s=612x612&w=0&h=CPrCDb6xZB5_jHN1D7CVCX66BKvvC3B5B8EKAbw-W-k=');
+	background-image:url('https://media.istockphoto.com/photos/stack-of-papers-with-blue-tint-picture-id137890584?k=20&m=137890584&s=612x612&w=0&h=CPrCDb6xZB5_jHN1D7CVCX66BKvvC3B5B8EKAbw-W-k=');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
@@ -57,12 +56,11 @@ body {
 							<td>${crime.offencetype}</td>
 							<td>${crime.complaintid}</td>
 							<td>${crime.image}</td>
-							<td><a href="updatecrimeform?crId=${crime.Suspect_Id}">
-									<input onclick="change()" type="button" value="Update"
-									id="myButton1"></input>
+							<td><a href="updatecrimeform?crId=${crime.suspectId}"> <input
+									onclick="change()" type="button" value="Update" id="myButton1"></input>
 
 							</a></td>
-							<td><a href="deletecrime?crId=${crime.Suspect_Id}"><input
+							<td><a href="deletecrime?crId=${crime.suspectId}"><input
 									onclick="change()" type="button" value="Delete" id="myButton2"></input></a></td>
 						</tr>
 					</c:forEach>

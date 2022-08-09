@@ -5,12 +5,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+
+</style>
+</head>
 <meta charset="ISO-8859-1">
 <title>Add Complaint</title>
-
-</head>
 <body style='background-color: beige;'>
-	<h1 align="center">Add Complaint</h1>
+	<h1 align="center">Complaint Register</h1>
 	<div id="root">
 		<div id="form" align="center">
 			<table>
@@ -20,7 +22,8 @@
 						<div>
 							<td><label for="complaintId">Complaint ID</label></td>
 							<div>
-								<td><form:input path="complaintId" /></td>
+								<td><form:input path="complaintId"
+										placeholder="Enter Complaint Id" /></td>
 							</div>
 						</div>
 					</tr>
@@ -30,7 +33,8 @@
 							<td><label for="typeofcomplaint">Type_Of_Complaint</label></td>
 							<div>
 
-								<td><form:input path="typeofcomplaint" /></td>
+								<td><form:input path="typeofcomplaint"
+										placeholder="Enter Complaint Type" /></td>
 							</div>
 						</div>
 					</tr>
@@ -38,7 +42,8 @@
 						<div>
 							<td><label for="complaintdescription">Complaint_Description</label></td>
 							<div>
-								<td><form:input path="complaintdescription" /></td>
+								<td><form:input path="complaintdescription"
+										placeholder="Enter Complaint Description" /></td>
 							</div>
 						</div>
 					</tr>
@@ -46,7 +51,8 @@
 						<div>
 							<td><label for="registeredstation">Registered_Station</label></td>
 							<div>
-								<td><form:input path="registeredstation" /></td>
+								<td><form:input path="registeredstation"
+										placeholder="Enter Registered Station" /></td>
 							</div>
 						</div>
 					</tr>
@@ -54,7 +60,8 @@
 						<div>
 							<td><label for="complaintstatus">complaint_Status</label></td>
 							<div>
-								<td><form:input path="complaintstatus" /></td>
+								<td><form:input path="complaintstatus"
+										placeholder="Enter Status" /></td>
 							</div>
 						</div>
 					</tr>
@@ -70,7 +77,7 @@
 						<div>
 							<td><label for="time">Issue_Time</label></td>
 							<div>
-								<td><form:input path="time" type="date" /></td>
+								<td><form:input path="time" type="time" /></td>
 							</div>
 						</div>
 					</tr>
@@ -79,7 +86,8 @@
 							<td><label for="policeId">Police_ID</label></td>
 						</div>
 						<div>
-							<td><form:input path="policeId" /></td>
+							<td><form:input path="policeId"
+									placeholder="Enter Police Id" /></td>
 						</div>
 					</tr>
 					<tr>
@@ -87,7 +95,7 @@
 							<td><label for="userid">User_ID</label></td>
 						</div>
 						<div>
-							<td><form:input path="userid" /></td>
+							<td><form:input path="userid" placeholder="Enter User Id" /></td>
 						</div>
 					</tr>
 					<br>

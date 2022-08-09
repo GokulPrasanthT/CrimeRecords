@@ -8,31 +8,56 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "Users")
 public class User {
 
 	@Column(name = "User_Name")
+	@NotNull(message = "*Enter valid name ")
 	private String userName;
 	@Column(name = "User_Password")
+	@Size(max = 20, min = 8, message = "*Minimum eight characters ")
+	@NotNull(message = "*Secretword can't be Empty")
+	//@Pattern(regexp = "^(?=.[A-Za-z])(?=.\\d)(?=.[@$!%#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message = "*at least one letter, one number and one special character ")
 	private String userPassword;
 	@Id
 	@Column(name = "User_id")
+	@Min(value = 1, message = "Enter a valid Id between 1 to 100")
+	@Max(value = 100, message = "Enter a valid Id between 1 to 100")
 	private int userid;
 	@Column(name = "date_Of_Birth")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
+	@NotNull(message = "*Give Correct Format Date")
 	private Date dateOfBirth;
 	@Column(name = "gender")
+	@NotNull(message = "Gender is required")
 	private String gender;
 	@Column(name = "Phone_No")
+	@Digits(integer = 10, fraction = 0)
 	private Long phoneno;
 	@Column(name = "Email")
+	@Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
+	@NotEmpty(message = "*Please enter valid email")
 	private String email;
 	@Column(name = "City")
+	@NotNull(message = "*City can't be Empty")
 	private String city;
 	@Column(name = "User_Role")
+	// @NotNull(message = "*Role is required")
 	private String userRole;
-	
+
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private List<ComplaintDetails> complaint;
 
