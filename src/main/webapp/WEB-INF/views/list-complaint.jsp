@@ -18,9 +18,10 @@ th, td {
 }
 
 td {
-	color: #000000
+	color: #000000;
 }
-
+tr{
+color: white;}
 body {
 	background-image:
 		url('https://media.istockphoto.com/photos/closeup-shot-of-a-notebook-and-pen-on-a-table-in-an-office-picture-id1345561027?k=20&m=1345561027&s=612x612&w=0&h=0FbTAWqGMRSyvWBuQpqW__RjbZxUWa4brjdcGxHOUYQ=');
@@ -37,7 +38,7 @@ body {
 
 	<div id="table root">
 		<div align="center">
-			<table border="1">
+			<table border="20" width="10%" cellpadding="1">
 				<thead>
 					<tr>
 						<th>Complaint_Id</th>

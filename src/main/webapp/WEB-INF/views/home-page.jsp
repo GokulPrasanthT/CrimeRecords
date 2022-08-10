@@ -7,8 +7,8 @@
 <title>Home Page</title>
 <style type="text/css">
 @import
-	url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap')
-	;
+	url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+	
 
 * {
 	margin: 0;
@@ -163,9 +163,9 @@ body {
 				<a href="#">Crime Records</a>
 			</div>
 			<ul>
-				<li><a href="/users/userlogin">Login</a></li>
+				<li><a href="/users/userlogin">Sign In</a></li>
 				<li><a href="/users/adduserform">Sign Up</a></li>
-				<li><a href="#">Services</a></li>
+				<li><a href="/police/policelist">Police Records</a></li>
 				<li><a href="#">Contact</a></li>
 				<li><a href="#">Feedback</a></li>
 			</ul>

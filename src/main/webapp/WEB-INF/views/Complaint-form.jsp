@@ -13,6 +13,15 @@ body {
 	background-attachment: fixed;
 	background-size: 100% 100%;
 }
+
+table {
+	background-color: grey;
+}
+
+td {
+	background-color: #E5E4E2;
+
+}
 </style>
 </head>
 <meta charset="ISO-8859-1">
@@ -21,7 +30,7 @@ body {
 	<h1 align="center">Add Complaint</h1>
 	<div id="root">
 		<div id="form" align="center">
-			<table>
+			<table border="30" width="10%" cellpadding="1">
 				<form:form action="addcomplaints" method="post"
 					modelAttribute="addcomplaintdetail">
 

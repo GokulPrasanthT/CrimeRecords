@@ -5,200 +5,124 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<style type="text/css">
 body {
-	background:
-		url("file:///D:/Temp/Gokul/daily_ui_day1_sign_in/images/photo_bg.jpg")
-		no-repeat center center fixed;
-	background-size: cover;
-	font-size: 16px;
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
-	margin: 0;
-	color: #666;
+	background-image: url("https://s3u.tmimgcdn.com/800x0/2267756-1594645219236_8.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
 }
 
-/* Typography */
-h1#title {
-	font-family: 'Roboto Slab', serif;
-	font-weight: 300;
-	font-size: 3.2em;
-	color: white;
-	text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-	margin: 0 auto;
-	padding-top: 180px;
-	max-width: 300px;
-	text-align: center;
-	position: relative;
-	top: 0px;
+h1 {
+	color: #2F4F4F;
 }
 
-h1#title span span {
-	font-weight: 400;
-}
-
-h2 {
-	text-transform: uppercase;
-	color: white;
-	font-weight: 400;
-	letter-spacing: 1px;
-	font-size: 1.4em;
-	line-height: 2.8em;
-}
-
-a {
-	text-decoration: none;
-	color: #666;
-}
-
-a:hover {
-	color: #aeaeae;
-}
-
-/* Layout */
-.container {
-	margin: 0;
-}
-
-.top {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%,
-		rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%,
-		rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%,
-		rgba(0, 0, 0, 0) 100%);
-	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000',
-		endColorstr='#00000000', GradientType=0); /* IE6-9 */
-}
-
-.login-box {
-	background-color: white;
-	max-width: 340px;
-	margin: 0 auto;
-	position: relative;
-	top: 80px;
-	padding-bottom: 30px;
-	border-radius: 5px;
-	box-shadow: 0 5px 50px rgba(0, 0, 0, 0.4);
-	text-align: center;
-}
-
-.login-box .box-header {
-	background-color: #665851;
-	margin-top: 0;
-	border-radius: 5px 5px 0 0;
-}
-
-.login-box label {
-	font-weight: 700;
-	font-size: .8em;
-	color: #888;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	line-height: 2em;
-}
-
-.login-box input {
-	margin-bottom: 20px;
-	padding: 8px;
-	border: 1px solid #ccc;
-	border-radius: 2px;
-	font-size: .9em;
-	color: #888;
-}
-
-.login-box input:focus {
-	outline: none;
-	border-color: #665851;
-	transition: 0.5s;
-	color: #665851;
-}
-
-.login-box button {
-	margin-top: 0px;
-	border: 0;
-	border-radius: 2px;
-	color: white;
-	padding: 10px;
-	text-transform: uppercase;
-	font-weight: 400;
-	font-size: 0.7em;
-	letter-spacing: 1px;
-	background-color: #665851;
+label {
+	color: #2F4F4F;
+	font-size: 1.3em;
+	display: flex;
+	margin: 5px;
+	font-weight: bold;
 	cursor: pointer;
-	outline: none;
+	transition: .5s ease-in-out;
 }
 
-.login-box button:hover {
-	opacity: 0.7;
-	transition: 0.5s;
+#userName {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
 }
 
-.login-box button:hover {
-	opacity: 0.7;
-	transition: 0.5s;
+#userPassword {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
 }
 
-.selected {
-	color: #665851 !important;
-	transition: 0.5s;
+#role {
+	width: 260px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
 }
 
-/* Animation Delay */
-#logo {
-	-webkit-animation-duration: 1s;
-	-webkit-animation-delay: 2s;
+#log {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
+	color: blue;
 }
 
-.login-box {
-	-webkit-animation-duration: 1s;
-	-webkit-animation-delay: 1s;
+.box {
+	width: 400px;
+	height: 240px;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+	background-color: #A9A9A9;
 }
 </style>
 </head>
-
 <body>
-	<div class="container">
-		<div class="top">
-			<h1 id="title" class="hidden">
-				<span id="logo">Daily <span>UI</span></span>
-			</h1>
+	<h1 align="center">User Login</h1>
+	<br>
+	<div id="root" class="box">
+		<div id="form" align="center">
+			<table>
+				<form:form action="checkcuserlogin" method="post"
+					modelAttribute="users">
+					<tr>
+						<div>
+							<td><label for="userName">User Name</label></td>
+							<div>
+								<td><form:input path="userName" class="form-control" /></td>
+							</div>
+						</div>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="userPassword">Password</label></td>
+							<div>
+								<td><form:input type="password" path="userPassword"
+										class="form-control" /></td>
+							</div>
+						</div>
+						<br>
+					</tr>
+					<tr>
+						<div>
+							<td><label for="userRole">Role</label></td>
+							<div>
+                                <td><form:select path="userRole">
+                                <form:errors path="userRole" />
+                                        <form:option value="admin">Admin</form:option>
+                                        <form:option value="user">User</form:option>
+                                    </form:select></td>
+                                    </div>
+                            </div>
+						<br>
+					</tr>
+					<tr>
+						<div>
+							<td colspan="5" align="center"><br> <form:button
+									id="log">Login</form:button></td>
+						</div>
+					</tr>
+				</form:form>
+			</table>
 		</div>
-		<div class="login-box animated fadeInUp">
-			<div class="box-header">
-				<h2>Log In</h2>
-				<table>
-					<form:form action="checkcuserlogin" method="post"
-						modelAttribute="users">
-						<tr>
-							<div>
-								<td><label for="userName">User Name</label></td>
-								<div>
-									<td><form:input path="userName" class="form-control"
-											placeholder="Enter Name" /></td>
-								</div>
-							</div>
-						</tr>
-						<tr>
-							<div>
-								<td><label for="userPassword">User Password</label></td>
-								<div>
-									<td><form:input path="userPassword" class="form-control"
-											placeholder="Enter Password" /></td>
-								</div>
-							</div>
-						</tr>
-
-						<tr>
-							<div>
-								<td colspan="5" align="center"><br> <form:button>Login</form:button></td>
-							</div>
-						</tr>
-					</form:form>
-					</div>
+	</div>
 </body>
 </html>

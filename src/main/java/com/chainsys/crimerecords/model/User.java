@@ -5,19 +5,17 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
@@ -30,12 +28,14 @@ public class User {
 	@Column(name = "User_Password")
 	@Size(max = 20, min = 8, message = "*Minimum eight characters ")
 	@NotNull(message = "*Secretword can't be Empty")
-	//@Pattern(regexp = "^(?=.[A-Za-z])(?=.\\d)(?=.[@$!%#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message = "*at least one letter, one number and one special character ")
+	// @Pattern(regexp =
+	// "^(?=.[A-Za-z])(?=.\\d)(?=.[@$!%#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message =
+	// "*at least one letter, one number and one special character ")
 	private String userPassword;
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "User_id_REF")
+	@SequenceGenerator(name = "User_id_REF", sequenceName = "User_id_REF", allocationSize = 1)
 	@Column(name = "User_id")
-	@Min(value = 1, message = "Enter a valid Id between 1 to 100")
-	@Max(value = 100, message = "Enter a valid Id between 1 to 100")
 	private int userid;
 	@Column(name = "date_Of_Birth")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")

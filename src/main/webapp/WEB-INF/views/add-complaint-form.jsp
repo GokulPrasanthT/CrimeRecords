@@ -15,7 +15,7 @@
 	<h1 align="center">Complaint Register</h1>
 	<div id="root">
 		<div id="form" align="center">
-			<table>
+			<table border="20" width="10%" cellpadding="1">
 				<form:form action="addcomplaints" method="post"
 					modelAttribute="addcomplaintdetail">
 					<tr>
@@ -52,7 +52,7 @@
 							<td><label for="registeredstation">Registered_Station</label></td>
 							<div>
 								<td><form:input path="registeredstation"
-										placeholder="Enter Registered Station" /></td>
+										placeholder="Enter Registered Station" readonly="true"/></td>
 							</div>
 						</div>
 					</tr>
@@ -61,7 +61,7 @@
 							<td><label for="complaintstatus">complaint_Status</label></td>
 							<div>
 								<td><form:input path="complaintstatus"
-										placeholder="Enter Status" /></td>
+										placeholder="Enter Status" readonly="true"/></td>
 							</div>
 						</div>
 					</tr>
@@ -87,7 +87,7 @@
 						</div>
 						<div>
 							<td><form:input path="policeId"
-									placeholder="Enter Police Id" /></td>
+									placeholder="Enter Police Id" readonly="true"/></td>
 						</div>
 					</tr>
 					<tr>

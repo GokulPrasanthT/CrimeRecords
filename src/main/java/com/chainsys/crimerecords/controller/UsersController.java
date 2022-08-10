@@ -98,7 +98,6 @@ public class UsersController {
 	public String checkingAccess(@ModelAttribute("users") User us) {
 		User user = uservice.getUserByNameAndPassword(us.getUserName(), us.getUserPassword());
 		if (user != null) {
-
 			return "redirect:/complaint/addcomplaintdetailform";
 		} else
 			return "invalid-user-error-form";

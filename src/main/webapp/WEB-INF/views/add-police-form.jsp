@@ -5,6 +5,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body {
+	background-image:
+		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+table {
+	background-color: grey;
+}
+
+td {
+	background-color: #E5E4E2;
+}
+</style>
 <meta charset="ISO-8859-1">
 <title>Add PoliceDetails</title>
 </head>
@@ -12,7 +29,7 @@
 	<h1 align="center">Add Police Details</h1>
 	<div id="root">
 		<div id="form" align="center">
-			<table>
+			<table border="20" width="10%" cellpadding="1">
 				<form:form action="addpolicedetail" method="post"
 					modelAttribute="addpolicedetails">
 					<tr>
