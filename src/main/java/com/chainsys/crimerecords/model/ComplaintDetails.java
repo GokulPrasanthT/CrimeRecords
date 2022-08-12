@@ -4,31 +4,42 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-
-import org.springframework.format.annotation.DateTimeFormat;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "Complaint_Details")
 public class ComplaintDetails {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "Complaint_Id_REF")
+	@SequenceGenerator(name = "Complaint_Id_REF", sequenceName = "Complaint_Id_REF", allocationSize = 1)
 	@Column(name = "Complaint_Id")
 	private int complaintId;
 	@Column(name = "Type_Of_Complaint")
+	@Size(max = 200, min = 3, message = "*Complaint length should be 3 to 200")
+	@NotBlank(message = "*Complaint can't be Empty")
 	private String typeofcomplaint;
 	@Column(name = "Complaint_Describtion")
+	@Size(max = 500, min = 3, message = "*Description length should be 3 to 500")
+	@NotBlank(message = "*Description can't be Empty")
 	private String complaintdescription;
 	@Column(name = "Registered_Station")
+	@Size(max = 200, min = 3, message = "*Complaint length should be 3 to 200")
+	@NotBlank(message = "*Station can't be Empty")
 	private String registeredstation;
 	@Column(name = "Complaint_Status")
+	@NotBlank(message = "*Status Required")
 	private String complaintstatus;
 	@Column(name = "issue_Date")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
 	private Date date;
 	@Column(name = "issue_Time")
 	private String time;

@@ -9,18 +9,19 @@
 <title>Login</title>
 <style type="text/css">
 body {
-	background-image: url("https://s3u.tmimgcdn.com/800x0/2267756-1594645219236_8.jpg");
+	background-image:
+		url("https://s3u.tmimgcdn.com/800x0/2267756-1594645219236_8.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
 }
 
 h1 {
-	color: #2F4F4F;
+	color: #4F311C;
 }
 
 label {
-	color: #2F4F4F;
+	color: White;
 	font-size: 1.3em;
 	display: flex;
 	margin: 5px;
@@ -71,8 +72,9 @@ label {
 	margin: auto;
 	padding: 10px;
 	text-align: center;
-	background-color: #A9A9A9;
+	background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
 }
+
 </style>
 </head>
 <body>
@@ -80,7 +82,7 @@ label {
 	<br>
 	<div id="root" class="box">
 		<div id="form" align="center">
-			<table>
+			<table width="100% ellpadding="10>
 				<form:form action="checkcuserlogin" method="post"
 					modelAttribute="users">
 					<tr>
@@ -105,13 +107,14 @@ label {
 						<div>
 							<td><label for="userRole">Role</label></td>
 							<div>
-                                <td><form:select path="userRole">
-                                <form:errors path="userRole" />
-                                        <form:option value="admin">Admin</form:option>
-                                        <form:option value="user">User</form:option>
-                                    </form:select></td>
-                                    </div>
-                            </div>
+								<td><form:select path="userRole">
+										<form:errors path="userRole" />
+										<form:option value="admin">Admin</form:option>
+										<form:option value="user">User</form:option>
+									</form:select></td>
+							</div>
+						</div>
+
 						<br>
 					</tr>
 					<tr>

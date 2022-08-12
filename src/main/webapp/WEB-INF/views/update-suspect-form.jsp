@@ -3,8 +3,25 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<style>
+body {
+	background-image:
+		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+table {
+	background-color: grey;
+}
+
+td {
+	background-color: #E5E4E2;
+}
+</style>
 <meta charset="ISO-8859-1">
 <title>Update Suspect</title>
 </head>
@@ -64,7 +81,7 @@
 				</tr>
 				<div>
 					<div>
-						<td colspan="5" align="center"><br><form:button>Update Suspect</form:button>
+						<td colspan="5" align="center"><br> <form:button>Update Suspect</form:button>
 					</div>
 				</div>
 			</form:form>

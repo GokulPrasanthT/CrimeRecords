@@ -2,15 +2,17 @@ package com.chainsys.crimerecords.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.chainsys.crimerecords.model.ComplaintDetails;
 import com.chainsys.crimerecords.services.ComplaintService;
 
@@ -28,17 +30,24 @@ public class ComplaintController {
 	}
 
 	@GetMapping("/addcomplaintdetailform")
-	public String showAddForm(Model model) {
+	public String showAddForm( Model model) {
 		ComplaintDetails thecom = new ComplaintDetails();
 		model.addAttribute("addcomplaintdetail", thecom);
 		return "Complaint-form";
 	}
 
 	@PostMapping("/addcomplaints")
-	public String addNewComplaint(@ModelAttribute("addComplaint") ComplaintDetails thecom) {
-		comservice.save(thecom);
-		return "redirect:/complaint/complaintlist";
-
+	public String addNewComplaint(@Valid @ModelAttribute("addcomplaintdetail") ComplaintDetails thecom, Errors errors) {
+		List<ObjectError> errorlist = errors.getAllErrors();
+		for (ObjectError objectError : errorlist) {
+			System.out.println("Error:" + objectError.getDefaultMessage());
+		}
+		if (errors.hasErrors()) {
+			return "Complaint-form";
+		} else {
+			comservice.save(thecom);
+			return "user-done";
+		}
 	}
 
 	@GetMapping("/updatecomplaintform")
@@ -49,9 +58,14 @@ public class ComplaintController {
 	}
 
 	@PostMapping("/updatecomplaints")
-	public String updateComplaintDetails(@ModelAttribute("updatecomlaint") ComplaintDetails thecom) {
-		comservice.save(thecom);
-		return "redirect:/complaint/complaintlist";
+	public String updateComplaintDetails(@Valid @ModelAttribute("updatecomlaint") ComplaintDetails thecom,
+			Errors errors) {
+		if (errors.hasErrors()) {
+			return "update-complaint-form";
+		} else {
+			comservice.save(thecom);
+			return "redirect:/complaint/complaintlist";
+		}
 	}
 
 	@GetMapping("/findcomplaintid")

@@ -17,7 +17,7 @@ public class UserService {
 	private UsersRepository urepo;
 	@Autowired
 	private ComplaintRepository comrepo;
-	
+
 	public List<User> getUsers() {
 		return urepo.findAll();
 	}
@@ -46,7 +46,7 @@ public class UserService {
 		return dto;
 	}
 
-	public User getUserByNameAndPassword(String name, String password) {
-		return urepo.findByUserNameAndUserPassword(name, password);
+	public User getUserByNameAndPasswordAndUserRole(String name, String password, String role) {
+		return urepo.findByUserNameAndUserPasswordAndUserRole(name, password, role);
 	}
 }

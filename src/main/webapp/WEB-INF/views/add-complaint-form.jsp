@@ -3,14 +3,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-
-</style>
-</head>
 <meta charset="ISO-8859-1">
 <title>Add Complaint</title>
+</head>
 <body style='background-color: beige;'>
 	<h1 align="center">Complaint Register</h1>
 	<div id="root">
@@ -25,6 +22,7 @@
 								<td><form:input path="complaintId"
 										placeholder="Enter Complaint Id" /></td>
 							</div>
+							<form:errors path="complaintId" cssClass="text-danger"></form:errors>
 						</div>
 					</tr>
 
@@ -52,7 +50,7 @@
 							<td><label for="registeredstation">Registered_Station</label></td>
 							<div>
 								<td><form:input path="registeredstation"
-										placeholder="Enter Registered Station" readonly="true"/></td>
+										placeholder="Enter Registered Station" readonly="true" /></td>
 							</div>
 						</div>
 					</tr>
@@ -61,7 +59,7 @@
 							<td><label for="complaintstatus">complaint_Status</label></td>
 							<div>
 								<td><form:input path="complaintstatus"
-										placeholder="Enter Status" readonly="true"/></td>
+										placeholder="Enter Status" readonly="true" /></td>
 							</div>
 						</div>
 					</tr>
@@ -87,7 +85,7 @@
 						</div>
 						<div>
 							<td><form:input path="policeId"
-									placeholder="Enter Police Id" readonly="true"/></td>
+									placeholder="Enter Police Id" readonly="true" /></td>
 						</div>
 					</tr>
 					<tr>
@@ -101,14 +99,8 @@
 					<br>
 					<tr>
 						<div>
-							<div>
-					</tr>
-					<tr>
-						<div>
 							<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
 					</tr>
-					</div>
-					</div>
 					</div>
 				</form:form>
 			</table>

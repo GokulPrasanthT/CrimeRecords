@@ -48,7 +48,7 @@ public class UsersController {
 			return "add-user-form";
 		} else {
 			uservice.save(theuser);
-			return "redirect:/users/userlist";
+			return "redirect:/users/userlogin";
 		}
 
 	}
@@ -96,12 +96,18 @@ public class UsersController {
 
 	@PostMapping("/checkcuserlogin")
 	public String checkingAccess(@ModelAttribute("users") User us) {
-		User user = uservice.getUserByNameAndPassword(us.getUserName(), us.getUserPassword());
-		if (user != null) {
-			return "redirect:/complaint/addcomplaintdetailform";
-		} else
+		User user = uservice.getUserByNameAndPasswordAndUserRole(us.getUserName(), us.getUserPassword(),
+				us.getUserRole());
+		if (user == null) {
+			if (!"admin".equals(us.getUserRole())) {
+
+				return "redirect:/complaint/addcomplaintdetailform";
+			} else {
+				return "user-login-form";
+			}
+		} else {
 			return "invalid-user-error-form";
+		}
 
 	}
-
 }

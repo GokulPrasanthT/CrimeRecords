@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Supect Crime</title>
@@ -16,6 +16,7 @@
 			<form:form action="addsuspects" method="post"
 				modelAttribute="getsuspect">
 				<tr>
+
 					<div>
 						<td><label for="suspectId">Suspect_Id</label></td>
 						<div>

@@ -28,9 +28,6 @@ public class User {
 	@Column(name = "User_Password")
 	@Size(max = 20, min = 8, message = "*Minimum eight characters ")
 	@NotNull(message = "*Secretword can't be Empty")
-	// @Pattern(regexp =
-	// "^(?=.[A-Za-z])(?=.\\d)(?=.[@$!%#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message =
-	// "*at least one letter, one number and one special character ")
 	private String userPassword;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "User_id_REF")

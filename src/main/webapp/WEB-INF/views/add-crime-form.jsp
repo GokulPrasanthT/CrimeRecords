@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <style>
 body {
@@ -86,7 +86,6 @@ td {
 					</tr>
 					<br>
 					<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
-					</div>
 				</form:form>
 			</table>
 		</div>
