@@ -2,7 +2,6 @@ package com.chainsys.crimerecords.model;
 
 import java.sql.Date;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

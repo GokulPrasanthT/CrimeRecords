@@ -28,10 +28,11 @@
 </head>
 <body>
 	<h1 align="center">Complaint Registered successfully</h1>
-<center>
-	<a href="/users/userlist">
-		<button class="btn">User List</button>
-</center>
+	<center>
+		<a href="/users/userlist">
+			<button class="btn">User List</button> <a href="/users/index">
+				<button class="btn">Back</button>
+	</center>
 	</a>
 </body>
 </html>

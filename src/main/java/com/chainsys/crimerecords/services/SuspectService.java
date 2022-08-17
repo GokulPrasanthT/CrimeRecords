@@ -2,16 +2,11 @@ package com.chainsys.crimerecords.services;
 
 import java.util.Iterator;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.chainsys.crimerecords.dto.SuspectCrimeDTO;
-import com.chainsys.crimerecords.dto.UserComplaintDTO;
-import com.chainsys.crimerecords.model.ComplaintDetails;
 import com.chainsys.crimerecords.model.CrimeDetails;
 import com.chainsys.crimerecords.model.SuspectDetails;
-import com.chainsys.crimerecords.model.User;
 import com.chainsys.crimerecords.repository.CrimeRepository;
 import com.chainsys.crimerecords.repository.SuspectRepository;
 

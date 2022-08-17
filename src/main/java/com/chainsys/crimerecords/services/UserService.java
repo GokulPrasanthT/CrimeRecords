@@ -30,8 +30,8 @@ public class UserService {
 		return urepo.save(us);
 	}
 
-	public void deleteById(int u_id) {
-		urepo.deleteById(u_id);
+	public void deleteById(int uid) {
+		urepo.deleteById(uid);
 	}
 
 	public UserComplaintDTO getUserComplaint(int id) {
@@ -41,12 +41,12 @@ public class UserService {
 		List<ComplaintDetails> complaint = comrepo.findByUserid(id);
 		Iterator<ComplaintDetails> itr = complaint.iterator();
 		while (itr.hasNext()) {
-			dto.addComplaints((ComplaintDetails) itr.next());
+			dto.addComplaints(itr.next());
 		}
 		return dto;
 	}
 
-	public User getUserByNameAndPasswordAndUserRole(String name, String password, String role) {
+	public User getUserNameAndUserPasswordAndUserRole(String name, String password, String role) {
 		return urepo.findByUserNameAndUserPasswordAndUserRole(name, password, role);
 	}
 }

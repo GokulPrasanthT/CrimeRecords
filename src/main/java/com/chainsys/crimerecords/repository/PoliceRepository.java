@@ -2,7 +2,6 @@ package com.chainsys.crimerecords.repository;
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
-
 import com.chainsys.crimerecords.model.PoliceDetails;
 
 public interface PoliceRepository extends CrudRepository<PoliceDetails, Integer> {

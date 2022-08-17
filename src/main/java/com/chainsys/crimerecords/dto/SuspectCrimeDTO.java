@@ -3,7 +3,6 @@ package com.chainsys.crimerecords.dto;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import com.chainsys.crimerecords.model.CrimeDetails;
 import com.chainsys.crimerecords.model.SuspectDetails;
 

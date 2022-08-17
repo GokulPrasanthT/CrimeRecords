@@ -25,9 +25,9 @@
 					</div>
 				</div>
 				<div>
-					<td><label for="complaintdescription">Complaint_Description</label></td>
+					<label for="complaintdescription">Complaint_Description</label>
 					<div>
-						<td><form:input path="complaintdescription" readnly="true" /></td>
+						<form:input path="complaintdescription" readnly="true" />
 					</div>
 				</div>
 				<div>

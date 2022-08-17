@@ -1,7 +1,6 @@
 package com.chainsys.crimerecords.controller;
 
 import java.util.List;
-
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,14 +29,16 @@ public class ComplaintController {
 	}
 
 	@GetMapping("/addcomplaintdetailform")
-	public String showAddForm( Model model) {
+	public String showAddForm(@RequestParam("userid") int id, Model model) {
 		ComplaintDetails thecom = new ComplaintDetails();
 		model.addAttribute("addcomplaintdetail", thecom);
+		thecom.setUserid(id);
 		return "Complaint-form";
 	}
 
 	@PostMapping("/addcomplaints")
-	public String addNewComplaint(@Valid @ModelAttribute("addcomplaintdetail") ComplaintDetails thecom, Errors errors) {
+	public String addNewComplaint(@Valid @ModelAttribute("addcomplaintdetail") ComplaintDetails thecom, Errors errors,
+			Model model) {
 		List<ObjectError> errorlist = errors.getAllErrors();
 		for (ObjectError objectError : errorlist) {
 			System.out.println("Error:" + objectError.getDefaultMessage());

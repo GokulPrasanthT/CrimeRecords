@@ -1,7 +1,6 @@
 package com.chainsys.crimerecords.controller;
 
 import java.util.List;
-
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +31,7 @@ public class UsersController {
 	public String getAllUsers(Model model) {
 		List<User> userlist = uservice.getUsers();
 		model.addAttribute("viewuser", userlist);
-		return "list-users";
+		return "list-user";
 	}
 
 	@GetMapping("/adduserform")
@@ -50,7 +49,6 @@ public class UsersController {
 			uservice.save(theuser);
 			return "redirect:/users/userlogin";
 		}
-
 	}
 
 	@GetMapping("/updateuserform")
@@ -74,7 +72,7 @@ public class UsersController {
 	}
 
 	@GetMapping("/deleteusers")
-	public String deleteUser(@RequestParam("userid") int id) {
+	public String deleteUser(@RequestParam("userId") int id) {
 		uservice.deleteById(id);
 		return "redirect:/users/userlist";
 	}
@@ -88,22 +86,27 @@ public class UsersController {
 	}
 
 	@GetMapping("/userlogin")
-	public String adminaccessform(Model model) {
+	public String useraccessform(Model model) {
 		User theus = new User();
 		model.addAttribute("users", theus);
 		return "user-login-form";
 	}
 
+	@GetMapping("/admin")
+	public String adminForm(Model model) {
+		return "admin-index";
+	}
+
 	@PostMapping("/checkcuserlogin")
 	public String checkingAccess(@ModelAttribute("users") User us) {
-		User user = uservice.getUserByNameAndPasswordAndUserRole(us.getUserName(), us.getUserPassword(),
+		User user = uservice.getUserNameAndUserPasswordAndUserRole(us.getUserName(), us.getUserPassword(),
 				us.getUserRole());
-		if (user == null) {
-			if (!"admin".equals(us.getUserRole())) {
-
-				return "redirect:/complaint/addcomplaintdetailform";
+		if (user != null) {
+			if ("Admin".equals(us.getUserRole())) {
+				return "redirect:/users/admin";
 			} else {
-				return "user-login-form";
+				int id = user.getUserid();
+				return "redirect:/complaint/addcomplaintdetailform?userid=" + id;
 			}
 		} else {
 			return "invalid-user-error-form";

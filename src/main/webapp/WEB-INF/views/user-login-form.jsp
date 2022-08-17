@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
@@ -64,8 +64,8 @@ label {
 }
 
 .box {
-	width: 400px;
-	height: 240px;
+	width: 500px;
+	height: 400px;
 	overflow: hidden;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
@@ -78,53 +78,42 @@ label {
 </style>
 </head>
 <body>
-	<h1 align="center">User Login</h1>
+	<h1>User Login</h1>
 	<br>
-	<div id="root" class="box">
-		<div id="form" align="center">
-			<table width="100% ellpadding="10>
-				<form:form action="checkcuserlogin" method="post"
-					modelAttribute="users">
-					<tr>
-						<div>
-							<td><label for="userName">User Name</label></td>
-							<div>
-								<td><form:input path="userName" class="form-control" /></td>
-							</div>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="userPassword">Password</label></td>
-							<div>
-								<td><form:input type="password" path="userPassword"
-										class="form-control" /></td>
-							</div>
-						</div>
-						<br>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="userRole">Role</label></td>
-							<div>
-								<td><form:select path="userRole">
-										<form:errors path="userRole" />
-										<form:option value="admin">Admin</form:option>
-										<form:option value="user">User</form:option>
-									</form:select></td>
-							</div>
-						</div>
+	<div id="root">
+		<div id="form" class="box">
+			<form:form action="checkcuserlogin" method="post"
+				modelAttribute="users">
 
-						<br>
-					</tr>
-					<tr>
-						<div>
-							<td colspan="5" align="center"><br> <form:button
-									id="log">Login</form:button></td>
-						</div>
-					</tr>
-				</form:form>
-			</table>
+				<div>
+					<label for="userName">User Name</label>
+					<div>
+						<form:input path="userName" class="form-control" />
+					</div>
+				</div>
+				<div>
+					<label for="userPassword">Password</label>
+					<div>
+						<form:input type="password" path="userPassword"
+							class="form-control" />
+					</div>
+				</div>
+				<br>
+				<div>
+					<label for="userRole">Role</label>
+					<div>
+						<form:select path="userRole">
+							<form:option value="Admin">Admin</form:option>
+							<form:option value="User">User</form:option>
+						</form:select>
+					</div>
+				</div>
+				<br>
+				<div>
+					<br>
+					<form:button id="log">Login</form:button>
+				</div>
+			</form:form>
 		</div>
 	</div>
 </body>

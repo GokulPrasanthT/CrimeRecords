@@ -5,124 +5,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
+<style type="text/css">
+h1 {
+	color: 	#008080;
+	float: center;
+	text-align: center;
+}
+
+tr {
+	color: red;
+}
+
+label {
+	color: black;
+	font-size: 1.2em;
+	display: flex;
+	margin: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+#log {
+	width: 150px;
+	height: 30px;
+	border: black;
+	border-radius: 3px;
+	padding-left: 8px;
+	color: black;
+	background-color: maroon;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	float: center;
+}
+
+.box {
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+	float: center;
+	font-weight: 400;
+	width: 400px;
+}
+
+#log {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
 body {
 	background-image:
-		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
+		url('https://us.123rf.com/450wm/fokusiert/fokusiert2003/fokusiert200300022/143956074-explaining-instead-of-complaining-hand-turns-dice-and-changes-the-word-complain-to-explain-.jpg?ver=6');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
-}
-
-table {
-	background-color: grey;
-}
-
-td {
-	background-color: #E5E4E2;
 }
 </style>
 <meta charset="ISO-8859-1">
 <title>Add Complaint</title>
 </head>
-<body style='background-color: beige;'>
-	<h1 align="center">Add Complaint</h1>
+<body>
+	<h1>Add Complaint</h1>
 	<div id="root">
-		<div id="form" align="center">
-			<table border="30" width="10%" cellpadding="1">
-				<form:form action="addcomplaints" method="post"
-					modelAttribute="addcomplaintdetail">
-					<tr>
-						<div>
-							<td><label for="typeofcomplaint">Type_Of_Complaint</label></td>
-							<div>
-
-								<td><form:input path="typeofcomplaint" /></td>
-							</div>
-							<form:errors path="typeofcomplaint" cssClass="text-danger"></form:errors>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="complaintdescription">Complaint_Description</label></td>
-							<div>
-								<td><form:input path="complaintdescription" /></td>
-							</div>
-							<form:errors path="complaintdescription" cssClass="text-danger"></form:errors>
-						</div>
-					</tr>
-
-
-					<tr>
-						<div>
-							<td><label for="date">Issue_Date</label></td>
-							<div>
-								<td><form:input path="date" type="date" /></td>
-							</div>
-							<form:errors path="date" cssClass="text-danger"></form:errors>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="time">Issue_Time</label></td>
-							<div>
-								<td><form:input path="time" type="time" /></td>
-							</div>
-							<form:errors path="time" cssClass="text-danger"></form:errors>
-						</div>
-					</tr>
-
-					<tr>
-						<div>
-							<td><label for="userid">User_ID</label></td>
-						</div>
-						<div>
-							<td><form:input path="userid" /></td>
-						</div>
-						<form:errors path="userid" cssClass="text-danger"></form:errors>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="registeredstation">Registered_Station</label></td>
-							<div>
-								<td><form:input path="registeredstation"
-										placeholder="Enter Registered Station" /></td>
-							</div>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="policeId">Police ID</label></td>
-							<div>
-								<td><form:input path="policeId" value="0" /></td>
-							</div>
-							<form:errors path="policeId" cssClass="text-danger"></form:errors>
-						</div>
-					</tr>
-					<tr>
-						<td><label for="complaintId">Complaint ID</label></td>
-						<div>
-							<td><form:input path="complaintId"
-									placeholder="Enter Complaint Id" /></td>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="complaintstatus">complaint_Status</label></td>
-							<div>
-								<td><form:input path="complaintstatus"
-										placeholder="Enter Status" value="pending" /></td>
-							</div>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
-					</tr>
+		<div id="form" class="box">
+			<form:form action="addcomplaints" method="post"
+				modelAttribute="addcomplaintdetail">
+				<div>
+					<label for="typeofcomplaint">Type Of Complaint</label>
+					<div>
+						<form:input path="typeofcomplaint"
+							placeholder="Enter Type of Complaint" />
 					</div>
+					<form:errors path="typeofcomplaint" cssClass="text-danger"></form:errors>
+				</div>
+				<div>
+					<label for="complaintdescription">Complaint Description</label>
+					<div>
+						<form:input path="complaintdescription"
+							placeholder="Enter Complaint Describtion" />
+					</div>
+					<form:errors path="complaintdescription" cssClass="text-danger"></form:errors>
+				</div>
+				<div>
+					<label for="date">Issue Date</label>
+					<div>
+						<form:input path="date" type="date" />
+					</div>
+					<form:errors path="date" cssClass="text-danger"></form:errors>
+				</div>
+				<div>
+					<label for="time">Issue Time</label>
+					<div>
+						<form:input path="time" type="time" />
+					</div>
+					<form:errors path="time" cssClass="text-danger"></form:errors>
+				</div>
+				<div>
+					<label for="userid">User ID</label>
+				</div>
+				<div>
+					<form:input path="userid" placeholder="Enter User Id"  readonly="true"/>
+				</div>
+				<form:errors path="userid" cssClass="text-danger"></form:errors>
+				<div>
+					<label for="registeredstation">Registered Station</label>
+					<div>
+						<form:input path="registeredstation"
+							placeholder="Enter Registered Station" />
+					</div>
+				</div>
+				<div>
+					<label for="policeId">Police ID</label>
+					<div>
+						<form:input path="policeId" value="0" />
+					</div>
+					<form:errors path="policeId" cssClass="text-danger"></form:errors>
+				</div>
+				<label for="complaintId">Complaint ID</label>
+				<div>
+					<form:input path="complaintId" placeholder="Enter Complaint Id" />
+				</div>
+				<div>
+					<label for="complaintstatus">Complaint Status</label>
+					<div>
+						<form:input path="complaintstatus" placeholder="Enter Status"
+							value="pending" />
+					</div>
+				</div>
+				<div>
+					<form:button id="log">Submit</form:button>
 
-				</form:form>
-			</table>
+				</div>
+			</form:form>
 		</div>
 	</div>
 </body>

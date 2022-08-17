@@ -52,7 +52,6 @@ public class User {
 	@NotNull(message = "*City can't be Empty")
 	private String city;
 	@Column(name = "User_Role")
-	// @NotNull(message = "*Role is required")
 	private String userRole;
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)

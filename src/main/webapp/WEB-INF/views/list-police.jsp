@@ -22,8 +22,7 @@ td {
 }
 
 body {
-	background-image:
-		url('https://media.istockphoto.com/photos/closeup-shot-of-a-notebook-and-pen-on-a-table-in-an-office-picture-id1345561027?k=20&m=1345561027&s=612x612&w=0&h=0FbTAWqGMRSyvWBuQpqW__RjbZxUWa4brjdcGxHOUYQ=');
+	background-image: url('');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
@@ -40,13 +39,13 @@ body {
 			<table border="1">
 				<thead>
 					<tr>
-						<th>Police_Id</th>
-						<th>Police_Rank</th>
-						<th>Police_Name</th>
-						<th>Mobile_No</th>
+						<th>Police Id</th>
+						<th>Police Rank</th>
+						<th>Police Name</th>
+						<th>Mobile No</th>
 						<th>Email</th>
 						<th>DOB</th>
-						<th>Station_Name</th>
+						<th>Station Name</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -62,7 +61,6 @@ body {
 							<td><a href="updatepoliceform?poId=${police.policeId}">
 									<input onclick="change()" type="button" value="Update"
 									id="myButton1"></input>
-
 							</a></td>
 							<td><a href="deletepolice?poId=${police.policeId}"><input
 									onclick="change()" type="button" value="Delete" id="myButton2"></input></a></td>

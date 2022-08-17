@@ -5,96 +5,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
+<style type="text/css">
+h1 {
+	color: rgb(210, 210, 210);
+	float: center;
+	text-align: center;
+}
+
+tr {
+	color: red;
+}
+
+label {
+	color: white;
+	font-size: 1.3em;
+	display: flex;
+	margin: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+#log {
+	width: 150px;
+	height: 30px;
+	border: black;
+	border-radius: 3px;
+	padding-left: 8px;
+	color: white;
+	background-color: maroon;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	float: center;
+}
+
+.box {
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+	float: center;
+	font-weight: 600;
+	width: 600px;
+}
+
+#log {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
 body {
 	background-image:
 		url('https://videohive.img.customer.envatousercontent.com/files/71feac47-0da6-42a2-9b51-944b5395f783/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=c18acd2d55aee71ad3719c261903cca8');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
-}
-
-.form-inline {
-	display: flex;
-	flex-flow: row wrap;
-	align-items: center;
-}
-
-/* Add some margins for each label */
-.form-inline label {
-	margin: 5px 10px 5px 0;
-}
-
-/* Style the input fields */
-.form-inline input {
-	vertical-align: middle;
-	margin: 5px 10px 5px 0;
-	padding: 10px;
-	background-color: #fff;
-	border: 1px solid #ddd;
-}
-
-/* Style the submit button */
-.form-inline button {
-	padding: 10px 20px;
-	background-color: dodgerblue;
-	border: 1px solid #ddd;
-	color: white;
-}
-
-.form-inline button:hover {
-	background-color: royalblue;
-}
-
-/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
-@media ( max-width : 800px) {
-	.form-inline input {
-		margin: 10px 0;
-	}
-	.form-inline {
-		flex-direction: column;
-		align-items: stretch;
-	}
+	background-color: #080710;
 }
 </style>
 <meta charset="ISO-8859-1">
-<title>Add User</title>
+<title>Add Users</title>
 </head>
 <body>
-	<h1 align="center">User Register</h1>
+	<h1>User Register Form</h1>
 	<div id="root">
-		<div id="form" align="center">
+		<div id="form" class="box">
 			<form:form action="adduser" method="post" modelAttribute="addUsers">
+
 				<div>
-					<label for="userName"> User Name</label>
+					<label for="userName"> User Name:</label>
 					<div>
 						<form:input path="userName" class="form-control"
-							placeholder="Enter UserName"
-							title="Name can't be empty And First Name must be in String"
-							required="true" style="width: 200px;height=25px;" />
+							placeholder="Enter UserName" title="Name can't be empty"
+							required="true" style="width: 300px;height: 25px;" />
 					</div>
 					<form:errors path="userName" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="userPassword">User Password</label>
+					<label for="userPassword"> User Password:</label>
 					<div>
 						<form:input path="userPassword" class="form-control"
 							type="password" title="Password Must be in this pasword"
-							required="true" placeholder="Enter Password"
-							style="width: 200px;height=25px;" />
+							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required="true"
+							placeholder="Enter Password" style="width: 300px;height=25px;" />
 					</div>
 					<form:errors path="userPassword" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="dateOfBirth">DOB</label>
+					<label for="dateOfBirth"> Date of Birth:</label>
 					<div>
 						<form:input path="dateOfBirth" class="form-control" type="date"
-							style="width: 200px;height=25px;" />
+							style="width: 300px;height=25px;" />
 					</div>
 					<form:errors path="dateOfBirth" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="gender">Gender :</label>
+					<label for="gender" id="label"> Gender:</label>
 					<div>
 						<form:radiobutton path="gender" value="Male" />
 						Male:
@@ -106,54 +117,50 @@ body {
 					<form:errors path="gender" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="phoneno">Phone No</label>
-
+					<label for="phoneno"> Phone No:</label>
 					<div>
 						<form:input path="phoneno" class="form-control"
 							title="PhoneNumber can't be empty" required="true"
-							placeholder="Enter PhoneNumber" style="width: 200px;height=25px;" />
+							placeholder="Enter PhoneNumber" style="width: 300px;height=25px;" />
 					</div>
 					<form:errors path="phoneno" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="email">Email</label>
+					<label for="email"> Email:</label>
 					<div>
 						<form:input path="email" class="form-control"
 							title="Mail Id is not in correct format"
 							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required="true"
-							placeholder="Enter Email" style="width: 200px;height=25px;" />
+							placeholder="Enter Email" style="width: 300px;height=25px;" />
 					</div>
 					<form:errors path="email" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="city"> City </label>
+					<label for="city"> City:</label>
 					<div>
 						<form:input path="city" class="form-control"
 							title="City can't be empty" required="true"
-							placeholder="Enter City" style="width: 200px;height=25px;" />
+							placeholder="Enter City" style="width: 300px;height=25px;" />
 					</div>
 					<form:errors path="city" cssClass="text-danger"></form:errors>
 				</div>
-				</br>
 				<div>
 					<div>
 						<label for="userRole" class="form-control"> Role: </label>
 					</div>
 					<div>
 						<form:radiobutton path="userRole" value="Admin" />
-						Admin
+						Admin:
 						<form:radiobutton path="userRole" value="User" />
-						User
+						User:
 					</div>
-					<%-- <form:errors path="userRole" cssClass="text-danger"></form:errors>  --%>
 				</div>
+				<br>
+				<div>
+					<form:button id="log"> Submit </form:button>
+				</div>
+			</form:form>
 		</div>
-	</div>
-	</br>
-	<div>
-		<td colspan="5" align="center"><br> <form:button> Submit </form:button></td>
-	</div>
-	</form:form>
 	</div>
 </body>
 </html>
