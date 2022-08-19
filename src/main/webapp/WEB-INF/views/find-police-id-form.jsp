@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>FindBy UserID</title>
@@ -9,51 +11,49 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="get" modelAttribute="viewuser">
+			<form:form action="" method="get" modelAttribute="findpoliceById">
 				<div>
-					<label for="Police_Id">User Name</label>
+					<label for="policeId">Police Id</label>
 					<div>
-						<form:input path="Police_Id" readonly="true" />
+						<form:input path="policeId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Police_Rank">User Password</label>
+					<label for="policeRank">Police Rank</label>
 					<div>
-						<form:input path="Police_Rank" readonly="true" />
+						<form:input path="policeRank" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Police_Name">User ID</label>
+					<label for="policeName">Police Name</label>
 					<div>
-						<form:input path="Police_Name" readonly="true" />
+						<form:input path="policeName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Mobile_No">DOB</label>
+					<label for="mobileNo">Mobile No</label>
 					<div>
-						<form:input path="Mobile_No" readonly="true" />
+						<form:input path="mobileNo" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Email">Gender</label>
+					<label for="email">Email</label>
 					<div>
-						<form:input path="Email" readonly="true" />
+						<form:input path="email" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="DOB">Phone No</label>
+					<label for="dateOfbirth">Date Of Birth</label>
 					<div>
-						<form:input path="DOB" readonly="true" />
+						<form:input path="dateOfbirth" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="Station_Name">Email</label>
+					<label for="stationName">Station Name</label>
 					<div>
-						<form:input path="Station_Name" readonly="true" />
+						<form:input path="stationName" readonly="true" />
 					</div>
-					<div>
-						<form:button>Find Police ID</form:button>
-					</div>
+				</div>
 			</form:form>
 		</div>
 	</div>

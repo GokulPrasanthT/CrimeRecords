@@ -5,54 +5,28 @@
 <html lang="en">
 <head>
 <style>
-table, tb {
-	width: 50%;
-	padding: 15px;
-	text-align: left;
-}
-
-th, td {
-	border: solid 1px #777;
-	padding: 10px;
-	border-color: #cc0033;
-}
-
-td {
-	color: #000000;
-}
-
-tr {
-	color: white;
-}
-
-body {
-	background-image:
-		url('https://media.istockphoto.com/photos/closeup-shot-of-a-notebook-and-pen-on-a-table-in-an-office-picture-id1345561027?k=20&m=1345561027&s=612x612&w=0&h=0FbTAWqGMRSyvWBuQpqW__RjbZxUWa4brjdcGxHOUYQ=');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/userList.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Complaint Lists</title>
 </head>
 <body>
-	<h1 align="center">Complaint List</h1>
+	<h1>C o m p l a i n t__L i s t</h1>
 
 	<div id="table root">
-		<div align="center">
-			<table border="20" width="10%" cellpadding="1" >
+		<div>
+			<table border="1" class="center">
+				<caption></caption>
 				<thead>
 					<tr>
-						<th>Complaint_Id</th>
-						<th>Type_Of_Complaint</th>
-						<th>Registered_Station</th>
-						<th>Complaint_Describtion</th>
-						<th>Complaint_Status</th>
-						<th>issue_Date</th>
-						<th>issue_Time</th>
-						<th>Police_Id</th>
-						<th>User_id</th>
+						<th>Complaint Id</th>
+						<th>Type Of Complaint</th>
+						<th>Complaint Describtion</th>
+						<th>Registered Station</th>
+						<th>Complaint Status</th>
+						<th>issue Date</th>
+						<th>issue Time</th>
+						<th>Police Id</th>
+						<th>User Id</th>
 						<th>Update</th>
 						<th>Delete</th>
 

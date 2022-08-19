@@ -6,6 +6,11 @@
 <html lang="en">
 <head>
 <style>
+h1 {
+	float: center;
+	text-align: center;
+}
+
 .btn {
 	background-color: #ddd;
 	border: none;
@@ -22,17 +27,25 @@
 	background-color: #3e8e41;
 	color: white;
 }
+
+.cont {
+	float: center;
+	text-align: center;
+}
 </style>
 <meta charset="ISO-8859-1">
 <title>Registered Sucessfully</title>
 </head>
 <body>
-	<h1 align="center">Complaint Registered successfully</h1>
-	<center>
-		<a href="/users/userlist">
-			<button class="btn">User List</button> <a href="/users/index">
-				<button class="btn">Back</button>
-	</center>
-	</a>
+	<h1>Complaint Registered Successfully</h1>
+	<div class="cont">
+		<a href="/users/finduserid?userId=${userId}">
+			<button class="btn">User Profile</button>
+		</a> <a href="/users/index">
+			<button class="btn">Log Out</button>
+		</a> <a href="/complaint/findcomplaintid?comId=${comId}"><button
+				class="btn">Check Status</button></a>
+	</div>
+
 </body>
 </html>

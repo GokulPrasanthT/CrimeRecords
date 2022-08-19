@@ -6,6 +6,60 @@
 <html lang="en">
 <head>
 <style>
+h1 {
+	color: #800000;
+	float: center;
+	text-align: center;
+}
+
+tr {
+	color: red;
+}
+
+label {
+	color: #403333;
+	font-size: 1.3em;
+	display: flex;
+	margin: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+#log {
+	width: 150px;
+	height: 30px;
+	border: black;
+	border-radius: 3px;
+	padding-left: 8px;
+	color: white;
+	background-color: maroon;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	float: center;
+}
+
+.box {
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+	float: center;
+	font-weight: 600;
+	width: 600px;
+	backdrop-filter: blur(10px);
+}
+
+#log {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
 body {
 	background-image:
 		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
@@ -26,75 +80,62 @@ td {
 <title>Add PoliceDetails</title>
 </head>
 <body>
-	<h1 align="center">Add Police Details</h1>
+	<h1>Register Police Form</h1>
 	<div id="root">
-		<div id="form" align="center">
-			<table border="20" width="10%" cellpadding="1">
-				<form:form action="addpolicedetail" method="post"
-					modelAttribute="addpolicedetails">
-					<tr>
-						<div>
-							<td><label for="policeId">Police ID</label></td>
-							<div>
-								<td><form:input path="policeId" /></td>
-							</div>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="policeRank">Police Rank</label></td>
-							<div>
-								<td><form:input path="policeRank" /></td>
-							</div>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="policeName">Police Name</label></td>
-							<div>
-								<td><form:input path="policeName" /></td>
-							</div>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="mobileNo">Mobile Number</label></td>
-							<div>
-								<td><form:input path="mobileNo" /></td>
-							</div>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="email">E-Mail</label></td>
-							<div>
-								<td><form:input path="email" /></td>
-							</div>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="dateOfbirth">Date_Of_Birth</label></td>
-						</div>
-						<div>
-							<td><form:input path="dateOfbirth" /></td>
-						</div>
-					</tr>
-					<tr>
-						<div>
-							<td><label for="stationName">Station Name</label></td>
-							<div>
-								<td><form:input path="stationName" /></td>
-							</div>
-						</div>
-					</tr>
+		<div id="form" class="box">
+			<form:form action="addpolicedetail" method="post"
+				modelAttribute="addpolicedetails">
+
+				<div>
+					<label for="policeRank">Police Rank</label>
 					<div>
-						<div>
-							<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
-						</div>
+						<form:input path="policeRank" placeholder="Enter Rank" />
 					</div>
-				</form:form>
-			</table>
+				</div>
+
+				<div>
+					<label for="policeName">Police Name</label>
+					<div>
+						<form:input path="policeName" placeholder="Enter Name" />
+					</div>
+				</div>
+
+				<div>
+					<label for="mobileNo">Mobile Number</label>
+					<div>
+						<form:input path="mobileNo" placeholder="Enter Mobile Number" />
+					</div>
+				</div>
+
+				<div>
+					<label for="email">E-Mail</label>
+					<div>
+						<form:input path="email" placeholder="Enter Email" />
+					</div>
+				</div>
+
+				<div>
+					<label for="dateOfbirth">Date Of Birth</label>
+				</div>
+				<div>
+					<form:input path="dateOfbirth" type="date"
+						style="width: 170px;height: 22px;" />
+				</div>
+
+				<div>
+					<label for="stationName">Station Name</label>
+					<div>
+						<form:input path="stationName" placeholder="Enter Station Name" />
+					</div>
+				</div>
+
+				<div>
+					<div>
+						<br>
+						<form:button id="log">Submit</form:button>
+					</div>
+				</div>
+			</form:form>
 		</div>
 	</div>
 </body>

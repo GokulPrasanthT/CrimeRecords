@@ -1,8 +1,10 @@
 package com.chainsys.crimerecords.repository;
 
+import java.nio.IntBuffer;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import com.chainsys.crimerecords.model.SuspectDetails;
+
 
 public interface SuspectRepository extends CrudRepository<SuspectDetails, Integer> {
 	

@@ -39,6 +39,8 @@ public class ComplaintController {
 	@PostMapping("/addcomplaints")
 	public String addNewComplaint(@Valid @ModelAttribute("addcomplaintdetail") ComplaintDetails thecom, Errors errors,
 			Model model) {
+		int id = thecom.getUserid();
+		model.addAttribute("userId", id);
 		List<ObjectError> errorlist = errors.getAllErrors();
 		for (ObjectError objectError : errorlist) {
 			System.out.println("Error:" + objectError.getDefaultMessage());
@@ -47,6 +49,8 @@ public class ComplaintController {
 			return "Complaint-form";
 		} else {
 			comservice.save(thecom);
+			int cid = thecom.getComplaintId();
+			model.addAttribute("comId", cid);
 			return "user-done";
 		}
 	}

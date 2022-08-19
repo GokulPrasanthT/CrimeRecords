@@ -5,38 +5,17 @@
 <html lang="en">
 <head>
 <style>
-table, tb {
-	width: 50%;
-	padding: 15px;
-	text-align: left;
-}
-
-th, td {
-	border: solid 1px #777;
-	padding: 10px;
-	border-color: #cc0033;
-}
-
-td {
-	color: #000000
-}
-
-body {
-	background-image:url('https://media.istockphoto.com/photos/stack-of-papers-with-blue-tint-picture-id137890584?k=20&m=137890584&s=612x612&w=0&h=CPrCDb6xZB5_jHN1D7CVCX66BKvvC3B5B8EKAbw-W-k=');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/crimeList.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Crime Lists</title>
 </head>
 <body>
-	<h1 align="center">Crime List</h1>
+	<h1>C r i m e__L i s t</h1>
 
 	<div id="table root">
 		<div align="center">
 			<table border="1">
+				<caption></caption>
 				<thead>
 					<tr>
 						<th>Suspect_Id</th>
@@ -45,6 +24,8 @@ body {
 						<th>Type_Of_Offence</th>
 						<th>Complaint_Id</th>
 						<th>Image</th>
+						<th>Update</th>
+						<th>Delete</th>
 					</tr>
 				</thead>
 				<tbody>

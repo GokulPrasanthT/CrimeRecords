@@ -1,14 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1">     
 <title>FindBy UserID</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
+		    <div>
 			<form:form action="" method="get" modelAttribute="findsuspectById">
 				<div>
 					<label for="suspectId">Suspect_Id</label>
@@ -48,8 +51,9 @@
 				</div>
 				<div>
 					<form:button>Find Suspect ID</form:button>
+					</div>
+					</form:form>
 				</div>
-			</form:form>
 		</div>
 	</div>
 </body>

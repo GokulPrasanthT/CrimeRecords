@@ -1,12 +1,15 @@
 package com.chainsys.crimerecords.model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +17,8 @@ import javax.persistence.Table;
 public class PoliceDetails {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "Police_Id_REF")
+	@SequenceGenerator(name = "Police_Id_REF", sequenceName = "Police_Id_REF", allocationSize = 1)
 	@Column(name = "Police_Id")
 	private int policeId;
 	@Column(name = "Police_Rank")

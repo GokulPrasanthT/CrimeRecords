@@ -49,7 +49,7 @@ public class SuspectController {
 	}
 
 	@PostMapping("/updatesuspect")
-	public String updatesuspectDetails(@ModelAttribute("updatsuspectDetails") SuspectDetails thesus) {
+	public String modifySuspectDetails(@ModelAttribute("updatsuspectDetails") SuspectDetails thesus) {
 		suservice.save(thesus);
 		return "redirect:/suspect/suspectlist";
 	}

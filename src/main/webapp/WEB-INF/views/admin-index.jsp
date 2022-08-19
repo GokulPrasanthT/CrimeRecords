@@ -148,7 +148,7 @@ nav .menu {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-	background-color: #DA70D6;
+	background-color: white;
 	color: black;
 }
 
@@ -180,7 +180,8 @@ nav .menu {
 }
 
 body {
-	background-image: url('');
+	background-image:
+		url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCacRsz76ALy6SQMRUcwIXNJDCvOs9_I_j-0xRmCkEwQituaZN2_qAyce6YvRWS1iQFZ0&usqp=CAU');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
@@ -203,7 +204,7 @@ body {
 }
 
 .navbar a:hover, .dropdowns:hover .dropbtns {
-	background-color: #DA70D6;
+	background-color: white;
 	color: black;
 }
 
@@ -251,7 +252,7 @@ body {
 }
 
 .navbar a:hover, .dropdownss:hover .dropbtnss {
-	background-color: #DA70D6;
+	background-color: white;
 	color: black;
 }
 
@@ -281,6 +282,54 @@ body {
 .dropdownss:hover .dropdown-contentss {
 	display: block;
 }
+
+.dropd {
+	float: center;
+	overflow: hidden;
+}
+
+.dropd .dbtnss {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover, .dropd:hover .dbtnss {
+	background-color: white;
+	color: black;
+}
+
+.dropdown-cont {
+	display: none;
+	position: absolute;
+	background: #00000;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-cont a {
+	float: none;
+	color: #fff;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: right;
+}
+
+.dropdown-cont a:hover {
+	background-color: #DA70D6;
+	color: black;
+}
+
+.dropd:hover .dropdown-cont {
+	display: block;
+}
 </style>
 <meta charset="ISO-8859-1">
 <title>Admin Page</title>
@@ -290,6 +339,7 @@ body {
 		<div class="menu">
 			<div class="logo">
 				<a href="#">Admin</a>
+
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">
@@ -320,7 +370,19 @@ body {
 				</button>
 				<div class="dropdown-contentss">
 					<a href="/suspect/findsuspectid">FindBy Suspect Id</a> <a
-						href="/suspect/suspectlist">Suspect List</a>
+						href="/crime/crimelist">Crime List</a>
+				</div>
+			</div>
+
+
+			<div class="dropd">
+				<button class="dbtnss">
+					<em class="fa fa-caret-down"></em>Complaint
+				</button>
+				<div class="dropdown-cont">
+					<a href="/complaint/findcomplaintid">FindBy complaint Id</a> <a
+						href="/complaint/complaintlist">Complaint List</a> <a
+						href="/users/usercomlaint">User Complaint Details</a>
 				</div>
 			</div>
 

@@ -6,10 +6,39 @@
 <html lang="en">
 <head>
 <style>
+table, tb {
+	width: 50%;
+	padding: 15px;
+	text-align: center;
+}
+
+table {
+	backdrop-filter: blur(10px);
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th, td {
+	border: solid 1px #7FFF00;
+	padding: 10px;
+	border-color: #7FFFD4;
+}
+
+th {
+	color: #FFFF00;
+}
+
+td {
+	color: white;
+}
+
 body {
 	font-family: Arial, sans-serif;
 	background:
-		url(http://www.shukatsu-note.com/wp-content/uploads/2014/12/computer-564136_1280.jpg)
+		url('https://thumbs.dreamstime.com/b/tile-floor-brick-wall-background-lights-night-hd-image-large-resolution-can-be-used-as-desktop-wallpaper-real-zise-184215885.jpg')
 		no-repeat;
 	background-size: cover;
 	height: 100vh;
@@ -19,207 +48,50 @@ h1 {
 	text-align: center;
 	font-family: Tahoma, Arial, sans-serif;
 	color: #06D85F;
-	margin: 80px 0;
+	float: center;
 }
 
 .box {
 	width: 40%;
 	margin: 0 auto;
-	background: rgba(255, 255, 255, 0.2);
-	padding: 35px;
+	background: rgb(44 15 15/ 20%);
+	padding: 25px;
 	border: 2px solid #fff;
 	border-radius: 20px/50px;
 	background-clip: padding-box;
 	text-align: center;
+	backdrop-filter: blur(10px);
 }
 
-.button {
-	font-size: 1em;
-	padding: 10px;
-	color: #fff;
-	border: 2px solid #06D85F;
-	border-radius: 20px/50px;
-	text-decoration: none;
-	cursor: pointer;
-	transition: all 0.3s ease-out;
+label {
+	display: block;
+	margin-right: 15px;
+	font-size: 18px;
+	font-weight: 500;
+	color: 	#DCDCDC;
 }
 
-.button:hover {
-	background: #06D85F;
-}
-
-.overlay {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.7);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
-
-.overlay:target {
-	visibility: visible;
-	opacity: 1;
-}
-
-.popup {
-	margin: 70px auto;
-	padding: 20px;
-	background: #fff;
-	border-radius: 5px;
-	width: 30%;
-	position: relative;
-	transition: all 5s ease-in-out;
-}
-
-.popup h2 {
-	margin-top: 0;
-	color: #333;
-	font-family: Tahoma, Arial, sans-serif;
-}
-
-.popup .close {
-	position: absolute;
-	top: 20px;
-	right: 30px;
-	transition: all 200ms;
-	font-size: 30px;
-	font-weight: bold;
-	text-decoration: none;
-	color: #333;
-}
-
-.popup .close:hover {
-	color: #06D85F;
-}
-
-.popup .content {
-	max-height: 30%;
-	overflow: auto;
-}
-
-@media screen and (max-width: 700px) {
-	.box {
-		width: 70%;
-	}
-	.popup {
-		width: 70%;
-	}
-}
-
-body {
-	font-family: Arial, sans-serif;
-	background:
-		url(http://www.shukatsu-note.com/wp-content/uploads/2014/12/computer-564136_1280.jpg)
-		no-repeat;
-	background-size: cover;
-	height: 100vh;
-}
-
-h1 {
-	text-align: center;
-	font-family: Tahoma, Arial, sans-serif;
-	color: #06D85F;
-	margin: 80px 0;
-}
-
-.box {
-	width: 40%;
-	margin: 0 auto;
-	background: rgba(255, 255, 255, 0.2);
-	padding: 35px;
-	border: 2px solid #fff;
-	border-radius: 20px/50px;
-	background-clip: padding-box;
-	text-align: center;
-}
-
-.button {
-	font-size: 1em;
-	padding: 10px;
-	color: #fff;
-	border: 2px solid #06D85F;
-	border-radius: 20px/50px;
-	text-decoration: none;
-	cursor: pointer;
-	transition: all 0.3s ease-out;
-}
-
-.button:hover {
-	background: #06D85F;
-}
-
-.overlay {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.7);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
-
-.overlay:target {
-	visibility: visible;
-	opacity: 1;
-}
-
-.popup {
-	margin: 70px auto;
-	padding: 20px;
-	background: #fff;
-	border-radius: 5px;
-	width: 30%;
-	position: relative;
-	transition: all 5s ease-in-out;
-}
-
-.popup h2 {
-	margin-top: 0;
-	color: #333;
-	font-family: Tahoma, Arial, sans-serif;
-}
-
-.popup .close {
-	position: absolute;
-	top: 20px;
-	right: 30px;
-	transition: all 200ms;
-	font-size: 30px;
-	font-weight: bold;
-	text-decoration: none;
-	color: #333;
-}
-
-.popup .close:hover {
-	color: #06D85F;
-}
-
-.popup .content {
-	max-height: 30%;
-	overflow: auto;
-}
-
-@media screen and (max-width: 700px) {
-	.box {
-		width: 70%;
-	}
-	.popup {
-		width: 70%;
-	}
+input {
+	display: white;
+	height: 30px;
+	width: 80%;
+	background-color: rgba(255, 255, 255, 0.07);
+	border-radius: 40px;
+	padding: 0 10px;
+	margin-top: 8px;
+	font-size: 14px;
+	font-weight: 300;
+	border-bottom-color: currentcolor;
+	color: white;
 }
 </style>
 <meta charset="ISO-8859-1">
 <title>User Complaint List</title>
 </head>
 <body>
+	<h1>User Complaint List</h1>
 	<div id="root">
-		<div id="form" align="center">
+		<div id="form" class="box">
 			<form:form action="adduser" method="post" modelAttribute="getuser">
 				<div>
 					<label for="userName">User Name</label>
@@ -267,39 +139,27 @@ h1 {
 						<div>
 							<form:input path="city" class="form-control" />
 						</div>
-						</br>
-						<div>
-							<div>
-								<label for="userRole" class="form-control"> Choose a
-									Role: </label> <select id="user">
-									<option value="Admin">ADMIN</option>
-									<option value="User">USER</option>
-								</select>
-							</div>
-						</div>
+						<br>
 					</div>
-				</div>
-				<br>
-				<div>
-					<form:button>Add User</form:button><a class="button" href="">let me click</a>
 				</div>
 			</form:form>
 		</div>
 	</div>
-	
+
 	<br>
-	
+
 	<div id="table root">
-		<div align="center">
-		
-			<table border="1">
+		<div>
+			<table border="1" class="center">
+				<caption></caption>
 				<thead>
 					<tr>
 						<th>Complaint_Id</th>
 						<th>Type_Of_Complaint</th>
 						<th>Registered_Station</th>
 						<th>Complaint_Status</th>
-						<th>Date_Time</th>
+						<th>Date</th>
+						<th>Time</th>
 						<th>Police_Id</th>
 						<th>User_id</th>
 					</tr>
@@ -311,7 +171,8 @@ h1 {
 							<td>${complaint.typeofcomplaint}</td>
 							<td>${complaint.registeredstation}</td>
 							<td>${complaint.complaintstatus}</td>
-							<td>${complaint.datetime}</td>
+							<td>${complaint.date}</td>
+							<td>${complaint.time}</td>
 							<td>${complaint.policeId}</td>
 							<td>${complaint.userid}</td>
 						</tr>

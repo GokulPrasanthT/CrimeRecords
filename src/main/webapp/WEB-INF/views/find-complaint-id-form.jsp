@@ -11,7 +11,7 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="get" modelAttribute="finduserById">
+			<form:form action="" method="get" modelAttribute="findcomplaintById">
 				<div>
 					<label for="complaintId">Complaint ID</label>
 					<div>

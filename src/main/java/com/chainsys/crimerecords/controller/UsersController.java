@@ -27,11 +27,21 @@ public class UsersController {
 		return "home-page";
 	}
 
+	@GetMapping("/admin")
+	public String adminForm(Model model) {
+		return "admin-index";
+	}
+
+	@GetMapping("/about")
+	public String aboutform(Model model) {
+		return "aboutus";
+	}
+
 	@GetMapping("/userlist")
 	public String getAllUsers(Model model) {
 		List<User> userlist = uservice.getUsers();
 		model.addAttribute("viewuser", userlist);
-		return "list-user";
+		return "list-users";
 	}
 
 	@GetMapping("/adduserform")
@@ -76,9 +86,14 @@ public class UsersController {
 		uservice.deleteById(id);
 		return "redirect:/users/userlist";
 	}
+	
+	@GetMapping("/usercomlaint")
+	public String getDto(){
+		return "user-complaint";
+	}
 
 	@GetMapping("/getlistusercomplaint")
-	public String getDocumentUser(@RequestParam("id") int id, Model model) {
+	public String getDocumentUser(@RequestParam("userid") int id, Model model) {
 		UserComplaintDTO userComplaintdto = uservice.getUserComplaint(id);
 		model.addAttribute("getuser", userComplaintdto.getUsers());
 		model.addAttribute("comlist", userComplaintdto.getcomplaintlist());
@@ -92,13 +107,8 @@ public class UsersController {
 		return "user-login-form";
 	}
 
-	@GetMapping("/admin")
-	public String adminForm(Model model) {
-		return "admin-index";
-	}
-
 	@PostMapping("/checkcuserlogin")
-	public String checkingAccess(@ModelAttribute("users") User us) {
+	public String checkingAccess(@ModelAttribute("users") User us, Model model) {
 		User user = uservice.getUserNameAndUserPasswordAndUserRole(us.getUserName(), us.getUserPassword(),
 				us.getUserRole());
 		if (user != null) {
@@ -107,6 +117,7 @@ public class UsersController {
 			} else {
 				int id = user.getUserid();
 				return "redirect:/complaint/addcomplaintdetailform?userid=" + id;
+
 			}
 		} else {
 			return "invalid-user-error-form";

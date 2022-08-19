@@ -5,38 +5,17 @@
 <html lang="en">
 <head>
 <style>
-table, tb {
-	width: 50%;
-	padding: 15px;
-	text-align: left;
-}
-
-th, td {
-	border: solid 1px #777;
-	padding: 10px;
-	border-color: #cc0033;
-}
-
-td {
-	color: #000000
-}
-
-body {
-	background-image: url('');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/policeList.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Police Lists</title>
 </head>
 <body>
-	<h1 align="center">Police List</h1>
+	<h1>P o l i c e__L i s t</h1>
 
 	<div id="table root">
-		<div align="center">
-			<table border="1">
+		<div>
+			<table border="1" class="center">
+				<caption></caption>
 				<thead>
 					<tr>
 						<th>Police Id</th>
@@ -46,6 +25,8 @@ body {
 						<th>Email</th>
 						<th>DOB</th>
 						<th>Station Name</th>
+						<th>Update</th>
+						<th>Delete</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -58,6 +39,7 @@ body {
 							<td>${police.email}</td>
 							<td>${police.dateOfbirth}</td>
 							<td>${police.stationName}</td>
+
 							<td><a href="updatepoliceform?poId=${police.policeId}">
 									<input onclick="change()" type="button" value="Update"
 									id="myButton1"></input>

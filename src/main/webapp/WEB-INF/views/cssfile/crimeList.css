@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+table, tb {
+	width: 75%;
+	padding: 10px;
+	text-align: left;
+}
+
+th, td {
+	border: solid 1px #777;
+	padding: 10px;
+	border-color: #cc0033;
+}
+
+h1 {
+	float: center;
+	text-align: center;
+	color: #A9A9A9;
+}
+
+td {
+	color: white;
+}
+
+th {
+	color: #FFFF00;
+}
+
+body {
+	background-image:
+		url('https://media.istockphoto.com/photos/product-display-dark-screen-3d-rendering-picture-id1406141384?k=20&m=1406141384&s=612x612&w=0&h=RcBvgDli4PVWmVRkhSaZaJYKoVLEhoZv3xC_UzUcbjw= ');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}

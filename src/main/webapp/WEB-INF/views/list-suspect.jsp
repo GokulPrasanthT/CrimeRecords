@@ -2,43 +2,19 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
-<meta charset="ISO-8859-1">
-<title>Police Records</title>
+<html lang="en">
 <head>
 <style>
-table, tb {
-	width: 50%;
-	padding: 15px;
-	text-align: left;
-}
-
-th, td {
-	border: solid 1px #FFFF00;
-	padding: 10px;
-	border-color: #FFA07A;
-}
-
-th, td {
-	color: white;
-}
-
-body {
-	background-image:
-		url('https://media.istockphoto.com/photos/wood-table-top-on-blurred-of-counter-cafe-shop-with-light-for-or-picture-id924418708?k=20&m=924418708&s=612x612&w=0&h=dtmYnoc2NN3uBisSHP4m35cY4KVFtNJJvQfqrU1n4-s=');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/suspectList.css"%></style>
+<meta charset="ISO-8859-1">
+<title>Suspect Records</title>
 </head>
 <body>
-	<h1 align="center">Suspect Records</h1>
+	<h1>S u s p e c t__R e c o r d s</h1>
 	<div id="table root">
-		<div align="center">
-			<table border="1">
+		<div>
+			<table border="1" class="center">
+				<caption></caption>
 				<thead>
 					<tr>
 						<th>Suspect_Id</th>
@@ -49,7 +25,6 @@ body {
 						<th>Address</th>
 						<th>Update</th>
 						<th>Delete</th>
-
 					</tr>
 				</thead>
 				<tbody>
@@ -64,7 +39,6 @@ body {
 							<td><a href="updatesuspectform?susId=${suspect.suspectId}">
 									<input onclick="change()" type="button" value="Update"
 									id="myButton1"></input>
-
 							</a></td>
 							<td><a href="deletesuspectid?susId=${suspect.suspectId}"><input
 									onclick="change()" type="button" value="Delete" id="myButton2"></input></a></td>

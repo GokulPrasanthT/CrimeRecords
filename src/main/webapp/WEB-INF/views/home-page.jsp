@@ -87,9 +87,10 @@ nav .menu {
 }
 
 .center .title {
-	color: #fff;
+	color: 	#FF4500;
 	font-size: 55px;
 	font-weight: 600;
+	border: black;
 }
 
 .center .sub_title {
@@ -150,7 +151,7 @@ body {
 			<ul>
 				<li><a href="/users/userlogin">Sign In</a></li>
 				<li><a href="/users/adduserform">Sign Up</a></li>
-				<li><a href="/police/policelist">Police Records</a></li>
+				<li><a href="/users/about">About Us</a></li>
 				<li><a href="/police/addpolicedetailform">Police Login</a></li>
 
 			</ul>

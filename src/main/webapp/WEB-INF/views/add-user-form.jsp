@@ -6,67 +6,6 @@
 <html lang="en">
 <head>
 <style type="text/css">
-h1 {
-	color: rgb(210, 210, 210);
-	float: center;
-	text-align: center;
-}
-
-tr {
-	color: red;
-}
-
-label {
-	color: white;
-	font-size: 1.3em;
-	display: flex;
-	margin: 5px;
-	font-weight: bold;
-	cursor: pointer;
-	transition: .5s ease-in-out;
-}
-
-#log {
-	width: 150px;
-	height: 30px;
-	border: black;
-	border-radius: 3px;
-	padding-left: 8px;
-	color: white;
-	background-color: maroon;
-	display: inline-block;
-	margin: 4px 2px;
-	cursor: pointer;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	float: center;
-}
-
-.box {
-	overflow: hidden;
-	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
-	margin: auto;
-	padding: 10px;
-	text-align: center;
-	float: center;
-	font-weight: 600;
-	width: 600px;
-}
-
-#log {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
-}
-
-body {
-	background-image:
-		url('https://videohive.img.customer.envatousercontent.com/files/71feac47-0da6-42a2-9b51-944b5395f783/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=c18acd2d55aee71ad3719c261903cca8');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-	background-color: #080710;
-}
 </style>
 <meta charset="ISO-8859-1">
 <title>Add Users</title>
@@ -75,14 +14,16 @@ body {
 	<h1>User Register Form</h1>
 	<div id="root">
 		<div id="form" class="box">
-			<form:form action="adduser" method="post" modelAttribute="addUsers">
+			<form:form action="adduser" method="post" modelAttribute="addUsers"
+				name="form">
 
 				<div>
 					<label for="userName"> User Name:</label>
 					<div>
 						<form:input path="userName" class="form-control"
-							placeholder="Enter UserName" title="Name can't be empty"
-							required="true" style="width: 300px;height: 25px;" />
+							placeholder="Enter UserName" required="true"
+							pattern="^[a-zA-z\s]+$" onblur="userNameCheck();"
+							style="width: 300px;height: 25px;" />
 					</div>
 					<form:errors path="userName" cssClass="text-danger"></form:errors>
 				</div>
@@ -90,9 +31,10 @@ body {
 					<label for="userPassword"> User Password:</label>
 					<div>
 						<form:input path="userPassword" class="form-control"
-							type="password" title="Password Must be in this pasword"
-							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required="true"
-							placeholder="Enter Password" style="width: 300px;height=25px;" />
+							type="password" required="true" placeholder="Enter Password"
+							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
+							name="password" onblur="passwordCheck();"
+							style="width: 300px;height=25px;" />
 					</div>
 					<form:errors path="userPassword" cssClass="text-danger"></form:errors>
 				</div>
@@ -119,9 +61,10 @@ body {
 				<div>
 					<label for="phoneno"> Phone No:</label>
 					<div>
-						<form:input path="phoneno" class="form-control"
-							title="PhoneNumber can't be empty" required="true"
-							placeholder="Enter PhoneNumber" style="width: 300px;height=25px;" />
+						<form:input path="phoneno" class="form-control" required="true"
+							placeholder="Enter PhoneNumber" pattern='[0-9]{10}'
+							name="phoneNo" onblur="numberCheck();"
+							style="width: 300px;height=25px;" />
 					</div>
 					<form:errors path="phoneno" cssClass="text-danger"></form:errors>
 				</div>
@@ -129,9 +72,9 @@ body {
 					<label for="email"> Email:</label>
 					<div>
 						<form:input path="email" class="form-control"
-							title="Mail Id is not in correct format"
 							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required="true"
-							placeholder="Enter Email" style="width: 300px;height=25px;" />
+							placeholder="Enter Email" name="email" onblur="emailCheck();"
+							style="width: 300px;height=25px;" />
 					</div>
 					<form:errors path="email" cssClass="text-danger"></form:errors>
 				</div>
@@ -162,5 +105,57 @@ body {
 			</form:form>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		var userNameCheck = function() {
+			var nameRegex = new RegExp("^[a-zA-z\s]+$");
+			if (!document.form.userName.value.match(nameRegex)) {
+				if (alert("Name can't be empty or must contain only alphabets")) {
+					document.form.userName.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+
+		}
+		var emailCheck = function() {
+			var nameRegex = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+			if (!document.form.email.value.match(nameRegex)) {
+				if (alert("Email not in the correct format")) {
+					document.form.email.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+
+		}
+
+		var passwordCheck = function() {
+			var nameRegex = new RegExp(
+					"^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$");
+			if (!document.form.userPassword.value.match(nameRegex)) {
+				if (alert("Password must begin with letter and contain atleast one number and must have atleast 8 characters")) {
+					document.form.userPassword.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+
+		}
+		var phoneNoCheck = function() {
+			var nameRegex = new RegExp("[0-9]{10}");
+			if (!document.form.phoneno.value.match(nameRegex)) {
+				if (alert("Phone number must have 10 digits")) {
+					document.form.phoneno.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+		}
+	</script>
 </body>
 </html>

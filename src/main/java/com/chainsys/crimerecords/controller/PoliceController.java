@@ -58,7 +58,7 @@ public class PoliceController {
 	@GetMapping("/findpoliceid")
 	public String findUserById(@RequestParam("userId") int id, Model model) {
 		PoliceDetails thepo = pservice.findById(id);
-		model.addAttribute("finduserById", thepo);
+		model.addAttribute("findpoliceById", thepo);
 		return "find-police-id-form";
 	}
 

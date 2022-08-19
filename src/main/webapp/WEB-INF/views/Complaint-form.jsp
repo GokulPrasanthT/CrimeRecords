@@ -7,7 +7,7 @@
 <head>
 <style type="text/css">
 h1 {
-	color: 	#008080;
+	color: #008080;
 	float: center;
 	text-align: center;
 }
@@ -110,11 +110,12 @@ body {
 					<label for="userid">User ID</label>
 				</div>
 				<div>
-					<form:input path="userid" placeholder="Enter User Id"  readonly="true"/>
+					<form:input path="userid" placeholder="Enter User Id"
+						readonly="true" />
 				</div>
 				<form:errors path="userid" cssClass="text-danger"></form:errors>
 				<div>
-					<label for="registeredstation">Registered Station</label>
+					<label for="registeredstation">Register Station</label>
 					<div>
 						<form:input path="registeredstation"
 							placeholder="Enter Registered Station" />
@@ -123,19 +124,18 @@ body {
 				<div>
 					<label for="policeId">Police ID</label>
 					<div>
-						<form:input path="policeId" value="0" />
+						<form:input path="policeId" value="0" readonly="true" />
 					</div>
 					<form:errors path="policeId" cssClass="text-danger"></form:errors>
 				</div>
 				<label for="complaintId">Complaint ID</label>
 				<div>
-					<form:input path="complaintId" placeholder="Enter Complaint Id" />
+					<form:input path="complaintId" hidden="hidden" />
 				</div>
 				<div>
 					<label for="complaintstatus">Complaint Status</label>
 					<div>
-						<form:input path="complaintstatus" placeholder="Enter Status"
-							value="pending" />
+						<form:input path="complaintstatus" value="...Pending..." readonly="true" />
 					</div>
 				</div>
 				<div>
