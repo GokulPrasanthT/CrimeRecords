@@ -6,117 +6,88 @@
 <html lang="en">
 <head>
 <style>
-body {
-	background-image:
-		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-
-table {
-	background-color: grey;
-}
-
-td {
-	background-color: #E5E4E2;
-
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/updateComplaint.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Update Complaint Details</title>
 </head>
 <body>
-	<h1 align="center">Update Complaint</h1>
+	<h1>Edit Complaint</h1>
 	<div id="root">
-		<div id="form">
+		<div id="form" class="box">
 			<form:form action="updatecomplaints" method="post"
 				modelAttribute="updatecomplaintDetails">
-				<tr>
-					<div>
-						<td><label for="complaintId">Complaint ID</label></td>
-						<div>
-							<td><form:input path="complaintId" /></td>
-						</div>
-					</div>
-				</tr>
 
-				<tr>
+				<div>
+					<label for="complaintId">Complaint ID</label>
 					<div>
-						<td><label for="typeofcomplaint">Type_Of_Complaint</label></td>
-						<div>
+						<form:input path="complaintId" />
+					</div>
+				</div>
+				<div>
+					<label for="typeofcomplaint">Type_Of_Complaint</label>
+					<div>
 
-							<td><form:input path="typeofcomplaint" /></td>
-						</div>
+						<form:input path="typeofcomplaint" />
 					</div>
-				</tr>
-				<tr>
+				</div>
+
+				<div>
+					<label for="complaintdescription">Complaint_Description</label>
 					<div>
-						<td><label for="complaintdescription">Complaint_Description</label></td>
-						<div>
-							<td><form:input path="complaintdescription" /></td>
-						</div>
+						<form:input path="complaintdescription" />
 					</div>
-				</tr>
-				<tr>
+				</div>
+
+				<div>
+					<label for="registeredstation">Registered_Station</label>
 					<div>
-						<td><label for="registeredstation">Registered_Station</label></td>
-						<div>
-							<td><form:input path="registeredstation" /></td>
-						</div>
+						<form:input path="registeredstation" />
 					</div>
-				</tr>
-				<tr>
+				</div>
+
+				<div>
+					<label for="complaintstatus">complaint_Status</label>
 					<div>
-						<td><label for="complaintstatus">complaint_Status</label></td>
-						<div>
-							<td><form:input path="complaintstatus" /></td>
-						</div>
+						<form:input path="complaintstatus" />
 					</div>
-				</tr>
-				<tr>
+				</div>
+
+				<div>
+					<label for="date">Issue_Date</label>
 					<div>
-						<td><label for="date">Issue_Date</label></td>
-						<div>
-							<td><form:input path="date" type="date" /></td>
-						</div>
+						<form:input path="date" type="date" />
 					</div>
-				</tr>
-				<tr>
+				</div>
+
+				<div>
+					<label for="time">Issue_Time</label>
 					<div>
-						<td><label for="time">Issue_Time</label></td>
-						<div>
-							<td><form:input path="time" type="date" /></td>
-						</div>
+						<form:input path="time" type="date" />
 					</div>
-				</tr>
-				<tr>
-					<div>
-						<td><label for="policeId">Police_ID</label></td>
-					</div>
-					<div>
-						<td><form:input path="policeId" /></td>
-					</div>
-				</tr>
-				<tr>
-					<div>
-						<td><label for="userid">User_ID</label></td>
-					</div>
-					<div>
-						<td><form:input path="userid" /></td>
-					</div>
-				</tr>
+				</div>
+
+				<div>
+					<label for="policeId">Police_ID</label>
+				</div>
+				<div>
+					<form:input path="policeId" />
+				</div>
+
+				<div>
+					<label for="userid">User_ID</label>
+				</div>
+				<div>
+					<form:input path="userid" />
+				</div>
+
 				<br>
-				<tr>
-					<div>
-						<div>
-				</tr>
-				<tr>
-					<div>
-						<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
-				</tr>
+				<div>
+					<br>
+					<form:button id="log">Submit</form:button>
+
+				</div>
+			</form:form>
 		</div>
-	</form:form>
-	</table>
+	</div>
 </body>
 </html>

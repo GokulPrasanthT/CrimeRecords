@@ -63,13 +63,16 @@ public class PoliceController {
 	}
 
 	@GetMapping("/deletepolice")
-	public String deletePoliceDetails  (@RequestParam("poId") int id) {
+	public String deletePoliceDetails  (@RequestParam("policeId") int id) {
 		pservice.deleteById(id);
 		return "redirect:/police/policelist";
 	}
-	
+	@GetMapping("policecomplaint")
+	public String getPoiceComplaintDto() {
+		return "police-complaint";
+	}
 	@GetMapping("/getlistpolicecomplaint")
-   	public String getpoliceComplaint(@RequestParam("id") int id ,Model model)
+   	public String getpoliceComplaint(@RequestParam("policeId") int id ,Model model)
    	{
    		PoliceComplaintDTO policeComplaintdto = pservice.getUserComplaint(id);
    		model.addAttribute("getpolice", policeComplaintdto.getPolice());

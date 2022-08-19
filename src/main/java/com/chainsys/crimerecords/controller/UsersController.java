@@ -87,7 +87,7 @@ public class UsersController {
 		return "redirect:/users/userlist";
 	}
 	
-	@GetMapping("/usercomlaint")
+	@GetMapping("/usercomplaint")
 	public String getDto(){
 		return "user-complaint";
 	}

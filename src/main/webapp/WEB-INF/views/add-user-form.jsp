@@ -5,8 +5,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style type="text/css">
-</style>
+<style>
+<%@include file="/WEB-INF/views/cssfile/addUser.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Add Users</title>
 </head>

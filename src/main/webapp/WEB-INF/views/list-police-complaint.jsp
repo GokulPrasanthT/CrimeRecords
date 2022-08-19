@@ -63,10 +63,14 @@
 			</form:form>
 		</div>
 	</div>
-	</br>
+	
+	
+<br>
+
 	<div id="table root">
 		<div align="center">
 			<table border="1">
+			<caption></caption>
 				<thead>
 					<tr>
 						<th>Complaint_Id</th>
