@@ -11,6 +11,7 @@
 <title>Update Users</title>
 </head>
 <body>
+<h1>Update User Form</h1>
 	<div id="root">
 		<div id="form" class="box">
 				<form:form action="updateusers" method="post"
@@ -63,6 +64,7 @@
 							</select>
 						</div> 
 						</div>
+						<br>
 					<div>
 						<div>
 							 <form:button id="log">Submit</form:button>

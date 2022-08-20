@@ -36,11 +36,11 @@
 							<td>${suspect.gender}</td>
 							<td>${suspect.dateofbirth}</td>
 							<td>${suspect.address}</td>
-							<td><a href="updatesuspectform?susId=${suspect.suspectId}">
+							<td><a href="updatesuspectform?suspectId=${suspect.suspectId}">
 									<input onclick="change()" type="button" value="Update"
 									id="myButton1"></input>
 							</a></td>
-							<td><a href="deletesuspectid?susId=${suspect.suspectId}"><input
+							<td><a href="deletesuspectid?suspectId=${suspect.suspectId}"><input
 									onclick="change()" type="button" value="Delete" id="myButton2"></input></a></td>
 						</tr>
 					</c:forEach>

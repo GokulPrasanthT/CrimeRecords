@@ -10,7 +10,7 @@ public class UserComplaintDTO {
 
 	@Autowired
 	private User users;
-	private List<ComplaintDetails> comlist = new ArrayList<ComplaintDetails>();
+	private List<ComplaintDetails> comlist = new ArrayList<>();
 
 	public User getUsers() {
 		return users;
