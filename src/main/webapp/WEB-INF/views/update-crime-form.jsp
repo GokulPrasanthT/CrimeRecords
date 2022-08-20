@@ -6,28 +6,13 @@
 <html lang="en">
 <head>
 <style>
-body {
-	background-image:
-		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-
-table {
-	background-color: grey;
-}
-
-td {
-	background-color: #E5E4E2;
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/updateCrime.css"%></style>
 <meta charset="ISO-8859-1">
-<title>Update CrimeDetails</title>
+<title>Update Crime Details</title>
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" class="box">
 			<form:form action="updatecrime" method="post"
 				modelAttribute="updatecrimeDetail">
 				<div>
@@ -66,9 +51,11 @@ td {
 						<form:input path="image" />
 					</div>
 				</div>
-				<form:button>Submit</form:button>
-		</div>
+				<div>
+				<form:button id="log">Submit</form:button></div>
+	
 		</form:form>
+	</div>
 	</div>
 </body>
 </html>

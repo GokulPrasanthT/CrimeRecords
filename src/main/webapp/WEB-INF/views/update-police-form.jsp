@@ -3,32 +3,16 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <style>
-body {
-	background-image:
-		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-
-table {
-	background-color: grey;
-}
-
-td {
-	background-color: #E5E4E2;
-
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/updatePolice.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Update PoliceDetails</title>
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" class="box">
 			<form:form action="updatepolicedetails" method="post"
 				modelAttribute="updatepolice">
 				<div>
@@ -74,7 +58,7 @@ td {
 					</div>
 					</div>
 					<div>
-						<form:button>Update PoliceDetails</form:button>
+						<form:button id="log">Update PoliceDetails</form:button>
 					</div>
 			</form:form>
 		</div>
