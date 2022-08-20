@@ -23,7 +23,7 @@
 						                     
 						<div>
 							                          <input type="text" id="suspectId"
-								name="suspectId" required="true" />                        
+								name="suspectId" required  placeholder="Enter Suspect Id" />                        
 						</div>
 						                 
 					</div>

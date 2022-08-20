@@ -6,87 +6,64 @@
 <html lang="en">
 <head>
 <style>
-body {
-	background-image:
-		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-
-table {
-	background-color: grey;
-}
-
-td {
-	background-color: #E5E4E2;
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/addSuspect.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Add Suspect</title>
 </head>
 <body>
-	<h1 align="center">Add Suspect Details</h1>
+	<h1>Add Suspect Details</h1>
 	<div id="root">
-		<table border="20" width="10%" cellpadding="1">
-			<div id="form" align="center">
+			<div id="form" class="box">
 				<form:form action="addsuspects" method="post"
 					modelAttribute="addsuspectdetail">
-					<tr>
 						<div>
-							<td><label for="suspectId">Suspect_Id</label></td>
+							<label for="suspectId">Suspect_Id</label>
 							<div>
-								<td><form:input path="suspectId" /></td>
+								<form:input path="suspectId" />
 							</div>
 						</div>
-					</tr>
-					<tr>
+					
 						<div>
-							<td><label for="suspectName">Suspect_Name</label></td>
+							<label for="suspectName">Suspect_Name</label>
 							<div>
-								<td><form:input path="suspectName" /></td>
+								<form:input path="suspectName" />
 							</div>
 						</div>
-					</tr>
-					<tr>
+					
+					
 						<div>
-							<td><label for="suspectIdentity">Suspect_Identity</label></td>
+						<label for="suspectIdentity">Suspect_Identity</label>
 							<div>
-								<td><form:input path="suspectIdentity" /></td>
+								<form:input path="suspectIdentity" />
 							</div>
 						</div>
-					</tr>
-					<tr>
+					
 						<div>
-							<td><label for="gender">Gender</label></td>
+							<label for="gender">Gender</label>
 							<div>
-								<td><form:input path="gender" /></td>
+								<form:input path="gender" />
 							</div>
 						</div>
-					</tr>
-					<tr>
+					
 						<div>
-							<td><label for="dateofbirth">DOB</label></td>
+							<label for="dateofbirth">DOB</label>
 							<div>
-								<td><form:input path="dateofbirth" type="date" /></td>
+								<form:input path="dateofbirth" type="date" />
 							</div>
 						</div>
-					</tr>
-					<tr>
+					
 						<div>
-							<td><label for="address">Address</label></td>
+							<label for="address">Address</label>
 						</div>
 						<div>
-							<td><form:input path="address" /></td>
+							<form:input path="address" />
 						</div>
-					</tr>
 					<div>
 						<div>
-							<td colspan="5" align="center"><br> <form:button>Update Suspect</form:button>
+							 <form:button id="log">Update Suspect</form:button>
 						</div>
 					</div>
 				</form:form>
-		</table>
 	</div>
 	</div>
 </body>

@@ -26,7 +26,7 @@
 							UserId</label>                        
 						<div>
 							                           
-							<input type="text" id="userid" name="userid" required="true" />
+							<input type="text" id="userid" name="userid" required  placeholder="Enter User Id"/>
 							                       
 						</div>
 						                   

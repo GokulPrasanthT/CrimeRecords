@@ -26,7 +26,7 @@
 						                     
 						<div>
 							                          <input type="text" id="policeId"
-								name="policeId" required="true" />                        
+								name="policeId" required placeholder="Enter Police Id"/>                        
 						</div>
 						                 
 					</div>

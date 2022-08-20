@@ -46,10 +46,9 @@ label {
 	cursor: pointer;
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
-}
-
-#log {
 	margin-top: 43px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
 
 .box {
@@ -64,11 +63,6 @@ label {
 	width: 500px;
 	margin-top: 110px;
 	backdrop-filter: blur(10px);
-}
-
-#log {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
 }
 
 input[type=text] {

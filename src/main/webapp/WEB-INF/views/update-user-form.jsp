@@ -6,91 +6,69 @@
 <html lang="en">
 <head>
 <style>
-body {
-	background-image:
-		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-
-table {
-	background-color: grey;
-}
-
-td {
-	background-color: #E5E4E2;
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/updateSuspect.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Update Users</title>
 </head>
 <body>
 	<div id="root">
-		<div id="form">
-			<table>
+		<div id="form" class="box">
 				<form:form action="updateusers" method="post"
 					modelAttribute="updateuser">
-					<tr>
+					
 						<div>
-							<td><label for="userName">User Name</label></td>
+							<label for="userName">User Name</label>
 							<div>
-								<td><form:input path="userName" class="form-control" /></td>
+							<form:input path="userName" class="form-control" />
 							</div>
 							<form:errors path="userName" cssClass="text-danger"></form:errors>
 						</div>
-					</tr>
-					<tr>
+					
 						<div>
-							<td><label for="userPassword">User Password</label></td>
+							<label for="userPassword">User Password</label>
 							<div>
-								<td><form:input path="userPassword" class="form-control"
-										type="password" /></td>
+								<form:input path="userPassword" class="form-control"
+										type="password" />
 							</div>
 							<form:errors path="userPassword" cssClass="text-danger"></form:errors>
 						</div>
-					</tr>
-					<tr>
+					
 						<div>
-							<td><label for="userid">User ID</label></td>
+							<label for="userid">User ID</label>
 							<div>
-								<td><form:input path="userid" class="form-control" /></td>
+								<form:input path="userid" class="form-control" />
 							</div>
 							<form:errors path="userid" cssClass="text-danger"></form:errors>
 						</div>
-					</tr>
-					<tr>
+					
 						<div>
-							<td><label for="dateOfBirth">DOB</label></td>
+							<label for="dateOfBirth">DOB</label>
 							<div>
-								<td><form:input path="dateOfBirth" class="form-control"
-										type="date" /></td>
+								<form:input path="dateOfBirth" class="form-control"
+										type="date" />
 							</div>
 							<form:errors path="dateOfBirth" cssClass="text-danger"></form:errors>
 						</div>
-					</tr>
-					<tr>
+					
 						<div>
-							<td><label for="gender">Gender</label></td>
+							<label for="gender">Gender</label>
 							<div>
-								<td><form:input path="gender" class="form-control" /></td>
+								<form:input path="gender" class="form-control" />
 							</div>
 							<form:errors path="gender" cssClass="text-danger"></form:errors>
-							<!-- <div>
+							 <div>
 							<label for="userRole">Choose a Role:</label> <select id="user">
 								<option value="Admin">ADMIN</option>
 								<option value="User">USER</option>
 							</select>
-						</div> -->
+						</div> 
 						</div>
-					</tr>
 					<div>
 						<div>
-							<td colspan="5" align="center"><br> <form:button>Submit</form:button></td>
+							 <form:button id="log">Submit</form:button>
 						</div>
 					</div>
 				</form:form>
-			</table>
 		</div>
 	</div>
 </body>

@@ -13,8 +13,8 @@
 	<h1>C r i m e__L i s t</h1>
 
 	<div id="table root">
-		<div align="center">
-			<table border="1">
+		<div>
+			<table border="1" class="center">
 				<caption></caption>
 				<thead>
 					<tr>
