@@ -5,12 +5,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style><%@include file="/WEB-INF/views/cssfile/findComplaint-Id.css"%></style>
 <meta charset="ISO-8859-1">
 <title>FindBy UserID</title>
 </head>
 <body>
+<h1>S t a t u s</h1>
 	<div id="root">
-		<div id="form">
+		<div id="form" class="box">
 			<form:form action="" method="get" modelAttribute="findcomplaintById">
 				<div>
 					<label for="complaintId">Complaint ID</label>

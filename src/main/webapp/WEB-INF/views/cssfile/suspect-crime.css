@@ -1,0 +1,85 @@
+@charset "ISO-8859-1";
+
+@charset "ISO-8859-1";
+
+body {
+	background-image:
+		url("https://media.istockphoto.com/photos/round-podium-or-pedestal-with-blue-background-picture-id1226478932?b=1&k=20&m=1226478932&s=170667a&w=0&h=hXsvxQilNanpKx7QC_tIsFUOKPl8fdIDfJ_QSKXesGE=");
+	background-repeat: no-repeat;
+	background-size: 100% 189%;
+}
+
+h1 {
+	color: #ff0080;
+	text-align: center;
+	height: 43px;
+	width: 289px;
+	margin-left: 500px;
+	border-radius: 10px;
+}
+
+tr {
+	color: red;
+}
+
+label {
+	color: black;
+	font-size: 1.3em;
+	display: flex;
+	margin: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+	margin-top: 10px;
+	text-align: center;
+	margin-left: 230px;
+}
+
+#log {
+	width: 78px;
+	height: 38px;
+	border: black;
+	border-radius: 3px;
+	padding-left: 8px;
+	color: white;
+	background-color: maroon;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+#log {
+	margin-top: 43px;
+}
+
+.box {
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #ef0e2f;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+	float: center;
+	font-weight: 900;
+	width: 500px;
+	margin-top: 110px;
+	backdrop-filter: blur(10px);
+}
+
+#log {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+input[type=text] {
+	height: 29px;
+	margin-top: 27px;
+}
+
+input[type=submit] {
+	margin-top: 22px;
+	height: 37px;
+	width: 54px
+}

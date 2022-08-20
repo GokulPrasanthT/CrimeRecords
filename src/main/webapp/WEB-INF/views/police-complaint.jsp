@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 <style>
-<%@include file="/WEB-INF/views/cssfile/policeComplaint.css"%></style>
+<%@include file="/WEB-INF/views/cssfile/police-complaint.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Police Complaint</title>
 </head>

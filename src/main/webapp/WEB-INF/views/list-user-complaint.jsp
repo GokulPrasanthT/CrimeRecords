@@ -68,7 +68,7 @@ label {
 	margin-right: 15px;
 	font-size: 18px;
 	font-weight: 500;
-	color: 	#DCDCDC;
+	color: #DCDCDC;
 }
 
 input {
@@ -96,48 +96,50 @@ input {
 				<div>
 					<label for="userName">User Name</label>
 					<div>
-						<form:input path="userName" class="form-control" />
+						<form:input path="userName" class="form-control" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="userPassword">User Password</label>
 					<div>
-						<form:input path="userPassword" class="form-control" />
+						<form:input path="userPassword" class="form-control"
+							readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="userid">User ID</label>
 					<div>
-						<form:input path="userid" class="form-control" />
+						<form:input path="userid" class="form-control" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="dateOfBirth">DOB</label>
 					<div>
-						<form:input path="dateOfBirth" class="form-control" />
+						<form:input path="dateOfBirth" class="form-control"
+							readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="gender">Gender</label>
 					<div>
-						<form:input path="gender" class="form-control" />
+						<form:input path="gender" class="form-control" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="phoneno">Phone No</label>
 					<div>
-						<form:input path="phoneno" class="form-control" />
+						<form:input path="phoneno" class="form-control" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="email">Email</label>
 					<div>
-						<form:input path="email" class="form-control" />
+						<form:input path="email" class="form-control" readonly="true" />
 					</div>
 					<div>
 						<label for="city">City</label>
 						<div>
-							<form:input path="city" class="form-control" />
+							<form:input path="city" class="form-control" readonly="true" />
 						</div>
 						<br>
 					</div>

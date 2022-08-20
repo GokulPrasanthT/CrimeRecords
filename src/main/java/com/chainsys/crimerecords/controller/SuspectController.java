@@ -42,7 +42,7 @@ public class SuspectController {
 	}
 
 	@GetMapping("/updatesuspectform")
-	public String showUpdateForm(@RequestParam("susId") int susid, Model model) {
+	public String showUpdateForm(@RequestParam("suspectId") int susid, Model model) {
 		SuspectDetails thesus = suservice.findById(susid);
 		model.addAttribute("updatsuspectDetails", thesus);
 		return "update-suspect-form";
@@ -55,20 +55,25 @@ public class SuspectController {
 	}
 
 	@GetMapping("/findsuspectid")
-	public String findSuspectById(@RequestParam("susId") int id, Model model) {
+	public String findSuspectById(@RequestParam("suspectId") int id, Model model) {
 		SuspectDetails thesus = suservice.findById(id);
 		model.addAttribute("findsuspectById", thesus);
 		return "find-suspect-id-form";
 	}
 
 	@GetMapping("/deletesuspectid")
-	public String deleteSuspectDetail(@RequestParam("susId") int id) {
+	public String deleteSuspectDetail(@RequestParam("suspectId") int id) {
 		suservice.deleteById(id);
 		return "redirect:/suspect/suspectlist";
 	}
 	
+	@GetMapping("/suspectcrime")
+	public String getSuspectCrimeDto() {
+		return"suspect-crime";
+	}
+	
 	@GetMapping("/getlistsuspectcrime")
-	public String getSuspectAndCrime(@RequestParam("susId") int id, Model model) {
+	public String getSuspectAndCrime(@RequestParam("suspectId") int id, Model model) {
 		SuspectCrimeDTO suspectcrimedto = suservice.getSuspectCrime(id);
 		model.addAttribute("getsuspect", suspectcrimedto.getSuspect());
 		model.addAttribute("crimelist", suspectcrimedto.getCrimelist());

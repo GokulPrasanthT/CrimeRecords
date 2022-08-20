@@ -6,33 +6,7 @@
 <html lang="en">
 <head>
 <style>
-h1 {
-	float: center;
-	text-align: center;
-}
-
-.btn {
-	background-color: #ddd;
-	border: none;
-	color: black;
-	padding: 16px 32px;
-	text-align: center;
-	font-size: 16px;
-	margin: 4px 2px;
-	transition: 0.3s;
-	align-item: center;
-}
-
-.btn:hover {
-	background-color: #3e8e41;
-	color: white;
-}
-
-.cont {
-	float: center;
-	text-align: center;
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/userDone.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Registered Sucessfully</title>
 </head>

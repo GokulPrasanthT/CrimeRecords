@@ -54,6 +54,11 @@ public class ComplaintController {
 			return "user-done";
 		}
 	}
+	@GetMapping("/addcomplaintdone")
+	public String showAddForm(Model model) {
+		
+		return "user-done";
+	}
 
 	@GetMapping("/updatecomplaintform")
 	public String showUpdateForm(@RequestParam("comId") int comid, Model model) {

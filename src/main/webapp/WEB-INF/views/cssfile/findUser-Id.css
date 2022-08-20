@@ -1,7 +1,12 @@
 @charset "ISO-8859-1";
 
 h1 {
-	color: rgb(210, 210, 210);
+	color: #008080;
+	float: center;
+	text-align: center;
+}
+
+h1 {
 	float: center;
 	text-align: center;
 }
@@ -11,8 +16,8 @@ tr {
 }
 
 label {
-	color: white;
-	font-size: 1.3em;
+	color: black;
+	font-size: 1.2em;
 	display: flex;
 	margin: 5px;
 	font-weight: bold;
@@ -26,7 +31,7 @@ label {
 	border: black;
 	border-radius: 3px;
 	padding-left: 8px;
-	color: white;
+	color: black;
 	background-color: maroon;
 	display: inline-block;
 	margin: 4px 2px;
@@ -43,8 +48,8 @@ label {
 	padding: 10px;
 	text-align: center;
 	float: center;
-	font-weight: 600;
-	width: 600px;
+	font-weight: 400;
+	width: 400px;
 	backdrop-filter: blur(10px);
 }
 
@@ -55,7 +60,7 @@ label {
 
 body {
 	background-image:
-		url('https://videohive.img.customer.envatousercontent.com/files/71feac47-0da6-42a2-9b51-944b5395f783/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=c18acd2d55aee71ad3719c261903cca8');
+		url('https://media.istockphoto.com/photos/red-exclamation-mark-on-wooden-floor-and-concrete-wall-3d-warning-picture-id1128969284?k=20&m=1128969284&s=612x612&w=0&h=7_SIGimhXnrrv2Mh_TlSG8oN_DIGeHxOIc0-z1SxLxA=');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
@@ -94,7 +99,7 @@ body {
 	width: 10px;
 	height: 2px;
 	bottom: 8px;
-	background: currentColor
+	background: currentColor;
 }
 
 .button3 {
@@ -104,9 +109,10 @@ body {
 	font-size: 20px;
 	color: crimson;
 	margin-top: 10px;
-	background-color: black;
+	background-color: #f3eeee;;
 	margin-left: 2px;
 	border-radius: 10px;
 	height: 37px;
 	width: 25px;
+	border-color: transparent;
 }

@@ -346,8 +346,9 @@ body {
 					<em class="fa fa-caret-down"></em>Suspect
 				</button>
 				<div class="dropdown-content">
-					<a href="/suspect/findsuspectid">FindBy Suspect Id</a> <a
+					<a href="/suspect/suspectcrime"> Suspect Crime Records</a> <a
 						href="/suspect/suspectlist">Suspect List</a>
+						
 				</div>
 			</div>
 
@@ -380,9 +381,9 @@ body {
 					<em class="fa fa-caret-down"></em>Complaint
 				</button>
 				<div class="dropdown-cont">
-					<a href="/police/policecomplaint"> police complaint Details</a>
+					<a href="/police/policecomplaint"> police complaint Records</a>
 					<a href="/complaint/complaintlist">Complaint List</a> <a
-						href="/users/usercomplaint">User Complaint Details</a>
+						href="/users/usercomplaint">User Complaint Records</a>
 				</div>
 			</div>
 

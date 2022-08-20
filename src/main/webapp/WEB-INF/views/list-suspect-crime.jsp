@@ -2,83 +2,72 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style><%@include file="/WEB-INF/views/cssfile/listsuspectCrime.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Supect Crime</title>
 </head>
 <body>
-	<h1 align="center">Add Suspect Details</h1>
+	<h1>Suspect Crime Details</h1>
 	<div id="root">
-		<div id="form" align="center">
+		<div id="form" class="box">
 			<form:form action="addsuspects" method="post"
 				modelAttribute="getsuspect">
-				<tr>
+				
 
 					<div>
-						<td><label for="suspectId">Suspect_Id</label></td>
+						<label for="suspectId">Suspect_Id</label>
 						<div>
-							<td><form:input path="suspectId" /></td>
+							<form:input path="suspectId" readonly="true"/>
 						</div>
 					</div>
-				</tr>
-				<tr>
 					<div>
-						<td><label for="suspectName">Suspect_Name</label></td>
+						<label for="suspectName">Suspect_Name</label>
 						<div>
-							<td><form:input path="suspectName" /></td>
+							<form:input path="suspectName" readonly="true"/>
 						</div>
 					</div>
-				</tr>
-				<tr>
+				
 					<div>
-						<td><label for="suspectIdentity">Suspect_Identity</label></td>
+						<label for="suspectIdentity">Suspect_Identity</label>
 						<div>
-							<td><form:input path="suspectIdentity" /></td>
+							<form:input path="suspectIdentity" readonly="true"/>
 						</div>
 					</div>
-				</tr>
-				<tr>
+				
 					<div>
-						<td><label for="gender">Gender</label></td>
+						<label for="gender">Gender</label>
 						<div>
-							<td><form:input path="gender" /></td>
+							<form:input path="gender" readonly="true"/>
 						</div>
 					</div>
-				</tr>
-				<tr>
+				
 					<div>
-						<td><label for="dateofbirth">DOB</label></td>
+						<label for="dateofbirth">DOB</label>
 						<div>
-							<td><form:input path="dateofbirth" type="date" /></td>
+							<form:input path="dateofbirth" type="date" readonly="true"/>
 						</div>
 					</div>
-				</tr>
-				<tr>
+				
 					<div>
-						<td><label for="address">Address</label></td>
-					</div>
+						<label for="address">Address</label>
 					<div>
-						<td><form:input path="address" /></td>
+						<form:input path="address" readonly="true"/>
 					</div>
-				</tr>
-				<div>
-					<div>
-						<td colspan="5" align="center"><br> <form:button>Update Suspect</form:button>
 					</div>
-				</div>
 			</form:form>
 		</div>
 	</div>
-
 	<br>
-	<h1 align="center">Crime List</h1>
+	
+	<h1>Crime List</h1>
 
 	<div id="table root">
-		<div align="center">
-			<table border="1">
+		<div>
+			<table border="1" class="center">
+			<caption></caption>
 				<thead>
 					<tr>
 						<th>Suspect_Id</th>
@@ -92,18 +81,17 @@
 				<tbody>
 					<c:forEach var="crime" items="${crimelist}">
 						<tr>
-							<td>${crime.Suspect_Id}</td>
-							<td>${crime.Crime_Location}</td>
-							<td>${crime.Issue_Date}</td>
-							<td>${crime.Type_Of_Offence}</td>
-							<td>${crime.Complaint_Id}</td>
-							<td>${crime.Image}</td>
+							<td>${crime.suspectId}</td>
+							<td>${crime.crimelocation}</td>
+							<td>${crime.date}</td>
+							<td>${crime.offencetype}</td>
+							<td>${crime.complaintid}</td>
+							<td>${crime.image}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
 	</div>
-
 </body>
 </html>
