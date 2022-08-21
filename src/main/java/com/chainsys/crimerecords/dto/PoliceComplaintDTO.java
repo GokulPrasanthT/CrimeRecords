@@ -11,7 +11,7 @@ public class PoliceComplaintDTO {
 	@Autowired
 
 	private PoliceDetails police;
-	private List<ComplaintDetails> comlist = new ArrayList<ComplaintDetails>();
+	private List<ComplaintDetails> comlist = new ArrayList<>();
 
 	public PoliceDetails getPolice() {
 		return police;

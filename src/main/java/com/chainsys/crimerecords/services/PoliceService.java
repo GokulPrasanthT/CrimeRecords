@@ -31,8 +31,8 @@ public class PoliceService {
 		return prepo.save(pd);
 	}
 
-	public void deleteById(int p_id) {
-		prepo.deleteById(p_id);
+	public void deleteById(int poid) {
+		prepo.deleteById(poid);
 	}
 
 	public PoliceComplaintDTO getUserComplaint(int id) {
@@ -42,7 +42,7 @@ public class PoliceService {
 		List<ComplaintDetails> complaint = comrepo.findByPoliceId(id);
 		Iterator<ComplaintDetails> itr = complaint.iterator();
 		while (itr.hasNext()) {
-			dto.addComplaints((ComplaintDetails) itr.next());
+			dto.addComplaints(itr.next());
 		}
 		return dto;
 	}

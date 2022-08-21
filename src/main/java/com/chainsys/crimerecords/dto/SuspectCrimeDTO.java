@@ -10,7 +10,7 @@ public class SuspectCrimeDTO {
 	
 	@Autowired
 	private SuspectDetails suspect;
-	private List<CrimeDetails> crimelist = new ArrayList<CrimeDetails>();
+	private List<CrimeDetails> crimelist = new ArrayList<>();
 
 	public SuspectDetails getSuspect() {
 		return suspect;

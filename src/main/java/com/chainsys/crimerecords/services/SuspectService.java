@@ -31,18 +31,18 @@ public class SuspectService {
 		return srepo.save(sd);
 	}
 
-	public void deleteById(int s_id) {
-		srepo.deleteById(s_id);
+	public void deleteById(int sid) {
+		srepo.deleteById(sid);
 	}
 	
 	public SuspectCrimeDTO getSuspectCrime(int id) {
 		SuspectDetails us = findById(id);
 		SuspectCrimeDTO dto = new SuspectCrimeDTO();
-		dto.setSuspect(us);;
+		dto.setSuspect(us);
 		List<CrimeDetails> crimes = crepo.findBySuspectId(id);
 		Iterator<CrimeDetails> itr = crimes.iterator();
 		while (itr.hasNext()) {
-			dto.addCrimes((CrimeDetails) itr.next());
+			dto.addCrimes(itr.next());
 		}
 		return dto;
 	}
