@@ -36,7 +36,7 @@ public class PoliceController {
 	}
 
 	@PostMapping("/addpolicedetail")
-	public String addNewUser(@ModelAttribute("addPolice") PoliceDetails thepolice) {
+	public String getAddNewUser(@ModelAttribute("addPolice") PoliceDetails thepolice) {
 		pservice.save(thepolice);
 		return "redirect:/police/policelist";
 
@@ -50,7 +50,7 @@ public class PoliceController {
 	}
 
 	@PostMapping("/updatepolicedetails")
-	public String getupdatePolice(@ModelAttribute("updatepolice") PoliceDetails thepolice) {
+	public String getUpdatePolice(@ModelAttribute("updatepolice") PoliceDetails thepolice) {
 		pservice.save(thepolice);
 		return "redirect:/police/policelist";
 	}
@@ -63,7 +63,7 @@ public class PoliceController {
 	}
 
 	@GetMapping("/deletepolice")
-	public String deletePoliceDetails  (@RequestParam("policeId") int id) {
+	public String deletePoliceDetails (@RequestParam("policeId") int id) {
 		pservice.deleteById(id);
 		return "redirect:/police/policelist";
 	}
