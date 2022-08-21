@@ -12,7 +12,7 @@ public interface CrimeRepository extends CrudRepository<CrimeDetails, Integer> {
 	CrimeDetails save(CrimeDetails thecrime);
 
 	// use for adding a new Complaint
-	void deleteById(int c_id);
+	void deleteById(int cid);
 
 	List<CrimeDetails> findAll();
 	

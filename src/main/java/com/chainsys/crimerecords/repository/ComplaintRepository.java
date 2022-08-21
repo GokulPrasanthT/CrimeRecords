@@ -7,12 +7,12 @@ import com.chainsys.crimerecords.model.ComplaintDetails;
 
 @Repository
 public interface ComplaintRepository extends CrudRepository<ComplaintDetails, Integer>  {
-	ComplaintDetails findById(int co_id);
+	ComplaintDetails findById(int coid);
 
 	ComplaintDetails save(ComplaintDetails thecom);
 
 	// use for adding a new Complaint
-	void deleteById(int com_id);
+	void deleteById(int comid);
 
 	List<ComplaintDetails> findAll();
 	

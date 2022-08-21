@@ -20,7 +20,7 @@ public class CrimeService {
     public CrimeDetails save(CrimeDetails cd) {
 		return crepo.save(cd);
 	}
-    public void deleteById(int c_id) {
-		crepo.deleteById(c_id);
+    public void deleteById(int cid) {
+		crepo.deleteById(cid);
 	}
 }

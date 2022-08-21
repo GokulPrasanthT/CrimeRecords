@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,10 +40,6 @@ public class ComplaintController {
 			Model model) {
 		int id = thecom.getUserid();
 		model.addAttribute("userId", id);
-		List<ObjectError> errorlist = errors.getAllErrors();
-		for (ObjectError objectError : errorlist) {
-			System.out.println("Error:" + objectError.getDefaultMessage());
-		}
 		if (errors.hasErrors()) {
 			return "Complaint-form";
 		} else {
@@ -54,9 +49,10 @@ public class ComplaintController {
 			return "user-done";
 		}
 	}
+
 	@GetMapping("/addcomplaintdone")
 	public String showAddForm(Model model) {
-		
+
 		return "user-done";
 	}
 

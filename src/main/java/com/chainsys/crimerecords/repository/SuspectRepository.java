@@ -12,7 +12,7 @@ public interface SuspectRepository extends CrudRepository<SuspectDetails, Intege
 	SuspectDetails save(SuspectDetails thecom);
 
 	// use for adding a new Complaint
-	void deleteById(int com_id);
+	void deleteById(int comid);
 
 	List<SuspectDetails> findAll();
 

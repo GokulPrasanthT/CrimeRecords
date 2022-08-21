@@ -62,7 +62,6 @@
 						<form:input path="policeId" readonly="true" />
 					</div>
 				</div>
-				
 			</form:form>
 		</div>
 	</div>

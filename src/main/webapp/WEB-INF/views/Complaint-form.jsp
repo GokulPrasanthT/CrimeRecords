@@ -9,6 +9,22 @@
 <meta charset="ISO-8859-1">
 <title>Add Complaint</title>
 <link href='https://css.gg/arrow-left-r.css' rel='stylesheet'>
+
+
+<script type="text/javascript">
+		var typeofcomplaintCheck = function() {
+			var nameRegex = new RegExp("^[a-zA-z\s]+$");
+			if (!document.form.typeofcomplaint.value.match(nameRegex)) {
+				if (alert("Name can't be empty or must contain only alphabets")) {
+					document.form.typeofcomplaint.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+		}
+		
+	</script>
 </head>
 <body>
 	<h1>Add Complaint</h1>
@@ -20,7 +36,7 @@
 					<label for="typeofcomplaint">Type Of Complaint</label>
 					<div>
 						<form:input path="typeofcomplaint"
-							placeholder="Enter Type of Complaint" />
+							placeholder="Enter Type of Complaint" class="form-control" required="true" pattern="^[a-zA-z\s]+$" onblur="typeofcomplaintCheck();"/>
 					</div>
 					<form:errors path="typeofcomplaint" cssClass="text-danger"></form:errors>
 				</div>

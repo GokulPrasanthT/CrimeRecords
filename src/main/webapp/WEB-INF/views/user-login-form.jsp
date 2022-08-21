@@ -53,7 +53,6 @@
 						<form:input path="userName" class="form-control"
 							placeholder="Enter UserName" pattern="^[a-zA-z\s]+$"
 							name="userName" onblur="userNameCheck();" />
-
 					</div>
 				</div>
 				<div>
