@@ -29,22 +29,22 @@ public class ComplaintController {
 
 	@GetMapping("/addcomplaintdetailform")
 	public String showAddForm(@RequestParam("userid") int id, Model model) {
-		ComplaintDetails thecom = new ComplaintDetails();
-		model.addAttribute("addcomplaintdetail", thecom);
-		thecom.setUserid(id);
+		ComplaintDetails thecomplaint = new ComplaintDetails();
+		model.addAttribute("addcomplaintdetail", thecomplaint);
+		thecomplaint.setUserid(id);
 		return "Complaint-form";
 	}
 
 	@PostMapping("/addcomplaints")
-	public String addNewComplaint(@Valid @ModelAttribute("addcomplaintdetail") ComplaintDetails thecom, Errors errors,
+	public String addNewComplaint(@Valid @ModelAttribute("addcomplaintdetail") ComplaintDetails thecomplaint, Errors errors,
 			Model model) {
-		int id = thecom.getUserid();
+		int id = thecomplaint.getUserid();
 		model.addAttribute("userId", id);
 		if (errors.hasErrors()) {
 			return "Complaint-form";
 		} else {
-			comservice.save(thecom);
-			int cid = thecom.getComplaintId();
+			comservice.save(thecomplaint);
+			int cid = thecomplaint.getComplaintId();
 			model.addAttribute("comId", cid);
 			return "user-done";
 		}
@@ -58,26 +58,26 @@ public class ComplaintController {
 
 	@GetMapping("/updatecomplaintform")
 	public String showUpdateForm(@RequestParam("comId") int comid, Model model) {
-		ComplaintDetails thecom = comservice.findById(comid);
-		model.addAttribute("updatecomplaintDetails", thecom);
+		ComplaintDetails thecomplaint = comservice.findById(comid);
+		model.addAttribute("updatecomplaintDetails", thecomplaint);
 		return "update-complaint-form";
 	}
 
 	@PostMapping("/updatecomplaints")
-	public String updateComplaintDetails(@Valid @ModelAttribute("updatecomlaint") ComplaintDetails thecom,
+	public String updateComplaintDetails(@Valid @ModelAttribute("updatecomlaint") ComplaintDetails thecomplaint,
 			Errors errors) {
 		if (errors.hasErrors()) {
 			return "update-complaint-form";
 		} else {
-			comservice.save(thecom);
+			comservice.save(thecomplaint);
 			return "redirect:/complaint/complaintlist";
 		}
 	}
 
 	@GetMapping("/findcomplaintid")
 	public String findComplaintById(@RequestParam("comId") int id, Model model) {
-		ComplaintDetails thecom = comservice.findById(id);
-		model.addAttribute("findcomplaintById", thecom);
+		ComplaintDetails thecomplaint = comservice.findById(id);
+		model.addAttribute("findcomplaintById", thecomplaint);
 		return "find-complaint-id-form";
 	}
 

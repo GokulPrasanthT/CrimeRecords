@@ -30,35 +30,35 @@ public class PoliceController {
 
 	@GetMapping("/addpolicedetailform")
 	public String showAddForm(Model model) {
-		PoliceDetails thepo = new PoliceDetails();
-		model.addAttribute("addpolicedetails", thepo);
+		PoliceDetails thepolice = new PoliceDetails();
+		model.addAttribute("addpolicedetails", thepolice);
 		return "add-police-form";
 	}
 
 	@PostMapping("/addpolicedetail")
-	public String addNewUser(@ModelAttribute("addPolice") PoliceDetails thepo) {
-		pservice.save(thepo);
+	public String addNewUser(@ModelAttribute("addPolice") PoliceDetails thepolice) {
+		pservice.save(thepolice);
 		return "redirect:/police/policelist";
 
 	}
 
 	@GetMapping("/updatepoliceform")
 	public String showUpdateForm(@RequestParam("poId") int poid, Model model) {
-		PoliceDetails thepo = pservice.findById(poid);
-		model.addAttribute("updatepolice", thepo);
+		PoliceDetails thepolice = pservice.findById(poid);
+		model.addAttribute("updatepolice", thepolice);
 		return "update-police-form";
 	}
 
 	@PostMapping("/updatepolicedetails")
-	public String updatepoliceDetails(@ModelAttribute("updatepolice") PoliceDetails thepo) {
-		pservice.save(thepo);
+	public String getupdatePolice(@ModelAttribute("updatepolice") PoliceDetails thepolice) {
+		pservice.save(thepolice);
 		return "redirect:/police/policelist";
 	}
 
 	@GetMapping("/findpoliceid")
 	public String findUserById(@RequestParam("userId") int id, Model model) {
-		PoliceDetails thepo = pservice.findById(id);
-		model.addAttribute("findpoliceById", thepo);
+		PoliceDetails thepolice = pservice.findById(id);
+		model.addAttribute("findpoliceById", thepolice);
 		return "find-police-id-form";
 	}
 

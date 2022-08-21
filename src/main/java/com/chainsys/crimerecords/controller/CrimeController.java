@@ -27,35 +27,35 @@ public class CrimeController {
 
 	@GetMapping("/addcrimedetailform")
 	public String showAddForm(Model model) {
-		CrimeDetails thecr = new CrimeDetails();
-		model.addAttribute("addcrimedetails", thecr);
+		CrimeDetails thecrime = new CrimeDetails();
+		model.addAttribute("addcrimedetails", thecrime);
 		return "add-crime-form";
 	}
 
 	@PostMapping("/addcrimedetail")
-	public String addNewUser(@ModelAttribute("addcrimedetails") CrimeDetails thecr) {
-		cservice.save(thecr);
+	public String getNewUser(@ModelAttribute("addcrimedetails") CrimeDetails thecrime) {
+		cservice.save(thecrime);
 		return "redirect:/crime/crimelist";
 
 	}
 
 	@GetMapping("/updatecrimeform")
 	public String showUpdateForm(@RequestParam("crId") int crid, Model model) {
-		CrimeDetails thecr = cservice.findById(crid);
-		model.addAttribute("updatecrimeDetail", thecr);
+		CrimeDetails thecrime = cservice.findById(crid);
+		model.addAttribute("updatecrimeDetail", thecrime);
 		return "update-crime-form";
 	}
 
 	@PostMapping("/updatecrimedetails")
-	public String updateCrimeDetails(@ModelAttribute("updatecrime") CrimeDetails thecr) {
-		cservice.save(thecr);
+	public String getupdateCrime(@ModelAttribute("updatecrime") CrimeDetails thecrime) {
+		cservice.save(thecrime);
 		return "redirect:/crime/crimelist";
 	}
 
 	@GetMapping("/findcrimeid")
 	public String findUserById(@RequestParam("userId") int id, Model model) {
-		CrimeDetails thecr = cservice.findById(id);
-		model.addAttribute("finduserById", thecr);
+		CrimeDetails thecrime = cservice.findById(id);
+		model.addAttribute("finduserById", thecrime);
 		return "find-crime-id-form";
 	}
 
