@@ -75,8 +75,8 @@
 					</div>
 				</div>
 				<br>
+				<div class="re">${result}</div>
 				<div>
-					<br>
 					<form:button id="log">Login</form:button>
 				</div>
 			</form:form>

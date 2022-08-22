@@ -11,6 +11,8 @@
 <title>Update PoliceDetails</title>
 </head>
 <body>
+
+	<h1>Update Police Form</h1>
 	<div id="root">
 		<div id="form" class="box">
 			<form:form action="updatepolicedetails" method="post"

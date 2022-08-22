@@ -2,13 +2,14 @@
 
 body {
 	background-image:
-		url("https://media.istockphoto.com/photos/round-podium-or-pedestal-with-blue-background-picture-id1226478932?b=1&k=20&m=1226478932&s=170667a&w=0&h=hXsvxQilNanpKx7QC_tIsFUOKPl8fdIDfJ_QSKXesGE=");
+		url('https://media.istockphoto.com/photos/handcuff-rests-on-crime-headline-in-pile-of-newspaper-cuttings-picture-id148035800?k=20&m=148035800&s=612x612&w=0&h=wfKlq9iczkhCWE0l6MnFRGItMlGKnMo6ObdjOv93jMA=');
 	background-repeat: no-repeat;
-	background-size: 100% 189%;
+	background-attachment: fixed;
+	background-size: 100% 100%;
 }
 
 h1 {
-	color: #ff0080;
+	color: red;
 	text-align: center;
 	height: 43px;
 	width: 289px;
@@ -30,7 +31,7 @@ label {
 	transition: .5s ease-in-out;
 	margin-top: 10px;
 	text-align: center;
-	margin-left: 230px;
+	margin-left: 180px;
 }
 
 #log {
@@ -54,14 +55,14 @@ label {
 .box {
 	overflow: hidden;
 	border-radius: 10px;
-	box-shadow: 5px 20px 50px #ef0e2f;
+	box-shadow: 5px 20px 30px;
 	margin: auto;
 	padding: 10px;
 	text-align: center;
 	float: center;
 	font-weight: 900;
 	width: 500px;
-	margin-top: 110px;
+	margin-top: auto;
 	backdrop-filter: blur(10px);
 }
 

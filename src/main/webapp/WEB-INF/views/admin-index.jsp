@@ -22,9 +22,9 @@
 					<em class="fa fa-caret-down"></em>Suspect
 				</button>
 				<div class="dropdown-content">
+				<a	href="/suspect/addsuspectform">Add New Suspect</a>
 					<a href="/suspect/suspectcrime"> Suspect Crime Records</a> <a
 						href="/suspect/suspectlist">Suspect List</a>
-						
 				</div>
 			</div>
 
@@ -35,8 +35,7 @@
 				</button>
 				<div class="dropdown-contents">
 					<a href="/police/addpolicedetailform">Add Police</a> <a
-						href="/police/policelist">police List</a> <a
-						href="/police/findpoliceid?=userId">Police Findby ID</a>
+						href="/police/policelist">police List</a> 
 				</div>
 			</div>
 
@@ -46,8 +45,10 @@
 					<em class="fa fa-caret-down"></em>Crime
 				</button>
 				<div class="dropdown-contentss">
-					<a href="/suspect/findsuspectid">FindBy Suspect Id</a> <a
+					 <a
 						href="/crime/crimelist">Crime List</a>
+						<a
+						href="/crime/addcrimedetailform">Add New Crime Details</a>
 				</div>
 			</div>
 
@@ -66,12 +67,15 @@
 			<ul>
 				<li><a href="/users/userlist">Users List</a></li>
 			</ul>
+			<ul>
+				<li><a href="/users/userlogin">Logout</a></li>
+			</ul>
 		</div>
 	</nav>
 	<div class="img"></div>
 	<div class="center">
 		<div class="title">WELCOME TO ADMIN PAGE</div>
-		<div class="sub_title">Crime Management System</div>
+		<div class="sub_title">Crime Records Management System</div>
 		<div class="btns"></div>
 	</div>
 </body>

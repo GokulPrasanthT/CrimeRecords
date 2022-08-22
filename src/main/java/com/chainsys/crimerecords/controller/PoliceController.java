@@ -20,6 +20,8 @@ public class PoliceController {
 
 	@Autowired
 	PoliceService pservice;
+	
+	private static final String POLICELIST = "redirect:/police/policelist";
 
 	@GetMapping("/policelist")
 	public String getAllPoliceDetails(Model model) {
@@ -38,7 +40,7 @@ public class PoliceController {
 	@PostMapping("/addpolicedetail")
 	public String getAddNewUser(@ModelAttribute("addPolice") PoliceDetails thepolice) {
 		pservice.save(thepolice);
-		return "redirect:/police/policelist";
+		return POLICELIST;
 
 	}
 
@@ -52,7 +54,7 @@ public class PoliceController {
 	@PostMapping("/updatepolicedetails")
 	public String getUpdatePolice(@ModelAttribute("updatepolice") PoliceDetails thepolice) {
 		pservice.save(thepolice);
-		return "redirect:/police/policelist";
+		return POLICELIST;
 	}
 
 	@GetMapping("/findpoliceid")
@@ -65,7 +67,7 @@ public class PoliceController {
 	@GetMapping("/deletepolice")
 	public String deletePoliceDetails (@RequestParam("policeId") int id) {
 		pservice.deleteById(id);
-		return "redirect:/police/policelist";
+		return POLICELIST;
 	}
 	@GetMapping("policecomplaint")
 	public String getPoiceComplaintDto() {

@@ -9,7 +9,6 @@
 <%@include file="/WEB-INF/views/cssfile/addUser.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Add Users</title>
-
 	<script type="text/javascript">
 		var userNameCheck = function() {
 			var nameRegex = new RegExp("^[a-zA-z\s]+$");

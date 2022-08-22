@@ -1,7 +1,6 @@
 package com.chainsys.crimerecords.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +20,8 @@ public class SuspectController {
 	@Autowired
 	SuspectService suservice;
 
+	private static final String LIST = "redirect:/suspect/suspectlist";
+
 	@GetMapping("/suspectlist")
 	public String getAllSuspectDetail(Model model) {
 		List<SuspectDetails> suspectlist = suservice.findAll();
@@ -38,7 +39,7 @@ public class SuspectController {
 	@PostMapping("/addsuspects")
 	public String addNewSuspect(@ModelAttribute("addsuspect") SuspectDetails thesus) {
 		suservice.save(thesus);
-		return "redirect:/suspect/suspectlist";
+		return LIST;
 	}
 
 	@GetMapping("/updatesuspectform")
@@ -51,7 +52,7 @@ public class SuspectController {
 	@PostMapping("/updatesuspect")
 	public String modifySuspectDetails(@ModelAttribute("updatsuspectDetails") SuspectDetails thesus) {
 		suservice.save(thesus);
-		return "redirect:/suspect/suspectlist";
+		return LIST;
 	}
 
 	@GetMapping("/findsuspectid")
@@ -64,14 +65,14 @@ public class SuspectController {
 	@GetMapping("/deletesuspectid")
 	public String deleteSuspectDetail(@RequestParam("suspectId") int id) {
 		suservice.deleteById(id);
-		return "redirect:/suspect/suspectlist";
+		return LIST;
 	}
-	
+
 	@GetMapping("/suspectcrime")
 	public String getSuspectCrimeDto() {
-		return"suspect-crime";
+		return "suspect-crime";
 	}
-	
+
 	@GetMapping("/getlistsuspectcrime")
 	public String getSuspectAndCrime(@RequestParam("suspectId") int id, Model model) {
 		SuspectCrimeDTO suspectcrimedto = suservice.getSuspectCrime(id);

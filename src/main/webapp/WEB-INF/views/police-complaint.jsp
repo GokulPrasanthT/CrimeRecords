@@ -12,29 +12,20 @@
 </head>
 <body>
 	<h1>View Police_Complaint</h1>
-	   
 	<div>
-		       
 		<div id="form">
-			           
 			<div class="box">
-				               
 				<form action="getlistpolicecomplaint">
-					               
 					<div>
-						                        <label for="policeId">Enter UserId</label>
-						                     
+						  <label for="policeId">Enter UserId</label>
 						<div>
-							                          <input type="text" id="policeId"
+							  <input type="text" id="policeId"
 								name="policeId" required placeholder="Enter Police Id"/>                        
 						</div>
-						                 
 					</div>
 					       <input id="log" type="submit" value="get" />  
 				</form>
-				           
 			</div>
-			 
 		</div>
 	</div>
 </body>

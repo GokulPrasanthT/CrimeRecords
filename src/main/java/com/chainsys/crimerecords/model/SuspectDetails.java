@@ -5,14 +5,19 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Suspect_Detail")
 public class SuspectDetails {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "Suspect_Id_REF")
+	@SequenceGenerator(name = "Suspect_Id_REF", sequenceName = "Suspect_Id_REF", allocationSize = 1)
 	@Column(name = "Suspect_Id")
 	private int suspectId;
 	@Column(name = "Suspect_Name")
@@ -84,6 +89,4 @@ public class SuspectDetails {
 	public void setCrime(List<CrimeDetails> crime) {
 		this.crime = crime;
 	}
-
-	
 }

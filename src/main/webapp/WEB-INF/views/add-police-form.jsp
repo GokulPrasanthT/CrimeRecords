@@ -6,78 +6,60 @@
 <html lang="en">
 <head>
 <style>
-h1 {
-	color: #800000;
-	float: center;
-	text-align: center;
-}
-
-tr {
-	color: red;
-}
-
-label {
-	color: #403333;
-	font-size: 1.3em;
-	display: flex;
-	margin: 5px;
-	font-weight: bold;
-	cursor: pointer;
-	transition: .5s ease-in-out;
-}
-
-#log {
-	width: 150px;
-	height: 30px;
-	border: black;
-	border-radius: 3px;
-	padding-left: 8px;
-	color: white;
-	background-color: maroon;
-	display: inline-block;
-	margin: 4px 2px;
-	cursor: pointer;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	float: center;
-}
-
-.box {
-	overflow: hidden;
-	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
-	margin: auto;
-	padding: 10px;
-	text-align: center;
-	float: center;
-	font-weight: 600;
-	width: 600px;
-	backdrop-filter: blur(10px);
-}
-
-#log {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
-}
-
-body {
-	background-image:
-		url('https://thumbs.dreamstime.com/b/close-up-complain-stamp-document-red-seal-stamped-complaint-form-fountain-pen-macro-shot-99013049.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-
-table {
-	background-color: grey;
-}
-
-td {
-	background-color: #E5E4E2;
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/addPolice.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Add PoliceDetails</title>
+
+<script type="text/javascript">
+		var policeNameCheck = function() {
+			var nameRegex = new RegExp("^[a-zA-z\s]+$");
+			if (!document.form.policeName.value.match(nameRegex)) {
+				if (alert("Name can't be empty or must contain only alphabets")) {
+					document.form.policeName.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+		}
+		
+		var emailCheck = function() {
+			var nameRegex = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+			if (!document.form.email.value.match(nameRegex)) {
+				if (alert("Email not in the correct format")) {
+					document.form.email.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+		}
+
+		var mobileNoCheck = function() {
+			var nameRegex = new RegExp("[0-9]{10}");
+			if (!document.form.mobileNo.value.match(nameRegex)) {
+				if (alert("Mobile number must have 10 digits")) {
+					document.form.mobileNo.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+		}
+		
+		var stationNameCheck = function() {
+			var nameRegex = new RegExp("^[a-zA-z\s]+$");
+			if (!document.form.stationName.value.match(nameRegex)) {
+				if (alert("StationName can't be empty or must contain only alphabets")) {
+					document.form.stationName.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+		}
+
+	</script>
 </head>
 <body>
 	<h1>Register Police Form</h1>
@@ -91,42 +73,54 @@ td {
 					<div>
 						<form:input path="policeRank" placeholder="Enter Rank" />
 					</div>
+					<form:errors path="policeRank" cssClass="text-danger"></form:errors>
 				</div>
 
 				<div>
 					<label for="policeName">Police Name</label>
 					<div>
-						<form:input path="policeName" placeholder="Enter Name" />
+						<form:input path="policeName" placeholder="Enter Name" required="true"
+							pattern="^[a-zA-z\s]+$" onblur="policeNameCheck();"/>
 					</div>
+					<form:errors path="policeName" cssClass="text-danger"></form:errors>
 				</div>
 
 				<div>
 					<label for="mobileNo">Mobile Number</label>
 					<div>
-						<form:input path="mobileNo" placeholder="Enter Mobile Number" />
+						<form:input path="mobileNo" placeholder="Enter Mobile Number" required="true"
+						 pattern='[0-9]{10}'
+							name="phoneNo" onblur="mobileNoCheck();"/>
 					</div>
+					<form:errors path="mobileNo" cssClass="text-danger"></form:errors>
 				</div>
 
 				<div>
 					<label for="email">E-Mail</label>
 					<div>
-						<form:input path="email" placeholder="Enter Email" />
+						<form:input path="email" placeholder="Enter Email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required="true"
+							placeholder="Enter Email" name="email" onblur="emailCheck();"/>
 					</div>
+					<form:errors path="email" cssClass="text-danger"></form:errors>
 				</div>
 
 				<div>
 					<label for="dateOfbirth">Date Of Birth</label>
-				</div>
+				
 				<div>
 					<form:input path="dateOfbirth" type="date"
 						style="width: 170px;height: 22px;" />
+				</div>
+				<form:errors path="dateOfbirth" cssClass="text-danger"></form:errors>
 				</div>
 
 				<div>
 					<label for="stationName">Station Name</label>
 					<div>
-						<form:input path="stationName" placeholder="Enter Station Name" />
+						<form:input path="stationName" placeholder="Enter Station Name" required="true"
+							pattern="^[a-zA-z\s]+$" onblur="stationNameCheck();"/>
 					</div>
+					<form:errors path="stationName" cssClass="text-danger"></form:errors>
 				</div>
 
 				<div>

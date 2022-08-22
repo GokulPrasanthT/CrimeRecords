@@ -17,6 +17,8 @@ import com.chainsys.crimerecords.services.CrimeService;
 public class CrimeController {
 	@Autowired
 	CrimeService cservice;
+	
+	private static final String CRIMELIST = "redirect:/crime/crimelist";
 
 	@GetMapping("/crimelist")
 	public String getAllCrimeDetails(Model model) {
@@ -35,8 +37,7 @@ public class CrimeController {
 	@PostMapping("/addcrimedetail")
 	public String getNewUser(@ModelAttribute("addcrimedetails") CrimeDetails thecrime) {
 		cservice.save(thecrime);
-		return "redirect:/crime/crimelist";
-
+		return CRIMELIST;
 	}
 
 	@GetMapping("/updatecrimeform")
@@ -47,9 +48,9 @@ public class CrimeController {
 	}
 
 	@PostMapping("/updatecrimedetails")
-	public String getupdateCrime(@ModelAttribute("updatecrime") CrimeDetails thecrime) {
+	public String getUpdateCrime(@ModelAttribute("updatecrime") CrimeDetails thecrime) {
 		cservice.save(thecrime);
-		return "redirect:/crime/crimelist";
+		return CRIMELIST;
 	}
 
 	@GetMapping("/findcrimeid")
@@ -62,7 +63,7 @@ public class CrimeController {
 	@GetMapping("/deletecrime")
 	public String deleteCrimeDetails(@RequestParam("crId") int id) {
 		cservice.deleteById(id);
-		return "redirect:/crime/crimelist";
+		return CRIMELIST;
 	}
 
 }

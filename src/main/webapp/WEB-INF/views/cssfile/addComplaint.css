@@ -26,13 +26,15 @@ label {
 	border: black;
 	border-radius: 3px;
 	padding-left: 8px;
-	color: black;
+	color: white;
 	background-color: maroon;
 	display: inline-block;
 	margin: 4px 2px;
 	cursor: pointer;
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
 
 .box {
@@ -44,54 +46,18 @@ label {
 	text-align: center;
 	float: center;
 	font-weight: 400;
-	width: 400px;
-}
-
-#log {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
+	width: 500px;
+	backdrop-filter: blur(10px)
 }
 
 body {
 	background-image:
-		url('https://us.123rf.com/450wm/fokusiert/fokusiert2003/fokusiert200300022/143956074-explaining-instead-of-complaining-hand-turns-dice-and-changes-the-word-complain-to-explain-.jpg?ver=6');
+		url('https://media.istockphoto.com/photos/gavel-picture-id174197278?k=20&m=174197278&s=612x612&w=0&h=kGgA6W3aYoA6OoevS69NFh1WwQZqWLsJw3zqNfAZdJ8=');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
 }
 
-.gg-arrow-left-r {
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    width: 22px;
-    height: 22px;
-    border: 2px solid;
-    transform: scale(var(--ggs,1));
-    border-radius: 4px
-}
-.gg-arrow-left-r::after,
-.gg-arrow-left-r::before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
-    left: 4px
-}
-.gg-arrow-left-r::after {
-    width: 6px;
-    height: 6px;
-    border-bottom: 2px solid;
-    border-left: 2px solid;
-    transform: rotate(45deg);
-    bottom: 6px
-}
-.gg-arrow-left-r::before {
-    width: 10px;
-    height: 2px;
-    bottom: 8px;
-    background: currentColor;
-}
 .button3 {
 	position: absolute;
 	top: 8px;

@@ -143,5 +143,4 @@ public class ComplaintDetails {
 	public void setUserid(int userid) {
 		this.userid = userid;
 	}
-
 }

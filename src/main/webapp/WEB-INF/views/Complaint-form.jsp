@@ -36,7 +36,7 @@
 					<label for="typeofcomplaint">Type Of Complaint</label>
 					<div>
 						<form:input path="typeofcomplaint"
-							placeholder="Enter Type of Complaint" class="form-control" required="true" pattern="^[a-zA-z\s]+$" onblur="typeofcomplaintCheck();"/>
+							placeholder="Enter Type of Complaint" class="form-control" required="true" pattern="^[a-zA-z\s]+$" onblur="typeofcomplaintCheck();" style="width:300;height:25;"/>
 					</div>
 					<form:errors path="typeofcomplaint" cssClass="text-danger"></form:errors>
 				</div>
@@ -44,56 +44,53 @@
 					<label for="complaintdescription">Complaint Description</label>
 					<div>
 						<form:input path="complaintdescription"
-							placeholder="Enter Complaint Describtion" />
+							placeholder="Enter Complaint Describtion" style="width:300;height:25;"/>
 					</div>
 					<form:errors path="complaintdescription" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
 					<label for="date">Issue Date</label>
 					<div>
-						<form:input path="date" type="date" />
+						<form:input path="date" type="date" style="width:300;height:25;"/>
 					</div>
 					<form:errors path="date" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
 					<label for="time">Issue Time</label>
 					<div>
-						<form:input path="time" type="time" />
+						<form:input path="time" type="time" style="width:300;height:25;"/>
 					</div>
 					<form:errors path="time" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
 					<label for="userid">User ID</label>
-				</div>
 				<div>
 					<form:input path="userid" placeholder="Enter User Id"
-						readonly="true" />
+						readonly="true" style="width:300;height:25;"/>
+				</div>
 				</div>
 				<form:errors path="userid" cssClass="text-danger"></form:errors>
 				<div>
 					<label for="registeredstation">Register Station</label>
 					<div>
 						<form:input path="registeredstation"
-							placeholder="Enter Registered Station" />
+							placeholder="Enter Registered Station" style="width:300;height:25;"/>
 					</div>
 				</div>
 				<div>
 					<label for="policeId">Police ID</label>
 					<div>
-						<form:input path="policeId" value="0" readonly="true" />
+						<form:input path="policeId" value="0" readonly="true" style="width:300;height:25;"/>
 					</div>
 					<form:errors path="policeId" cssClass="text-danger"></form:errors>
-				</div>
-				<label for="complaintId">Complaint ID</label>
-				<div>
-					<form:input path="complaintId" hidden="hidden" />
 				</div>
 				<div>
 					<label for="complaintstatus">Complaint Status</label>
 					<div>
-						<form:input path="complaintstatus" value="...Pending..." readonly="true" />
+						<form:input path="complaintstatus" value="...Pending..." readonly="true" style="width:300;height:25;"/>
 					</div>
 				</div>
+				<br>
 				<div>
 					<form:button id="log">Submit</form:button>
 

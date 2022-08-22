@@ -17,6 +17,7 @@ import com.chainsys.crimerecords.services.ComplaintService;
 @Controller
 @RequestMapping("/complaint")
 public class ComplaintController {
+	
 	@Autowired
 	ComplaintService comservice;
 
@@ -85,5 +86,4 @@ public class ComplaintController {
 		comservice.deleteById(id);
 		return "redirect:/crime/crimelist";
 	}
-
 }

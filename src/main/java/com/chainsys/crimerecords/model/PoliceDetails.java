@@ -100,5 +100,4 @@ public class PoliceDetails {
 	public void setStationName(String stationName) {
 		this.stationName = stationName;
 	}
-
 }

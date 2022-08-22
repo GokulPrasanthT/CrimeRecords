@@ -86,9 +86,9 @@ public class UsersController {
 		uservice.deleteById(id);
 		return "redirect:/users/userlist";
 	}
-	
+
 	@GetMapping("/usercomplaint")
-	public String getDto(){
+	public String getDto() {
 		return "user-complaint";
 	}
 
@@ -117,10 +117,10 @@ public class UsersController {
 			} else {
 				int id = user.getUserid();
 				return "redirect:/complaint/addcomplaintdetailform?userid=" + id;
-
 			}
 		} else {
-			return "invalid-user-error-form";
+			model.addAttribute("result", "Warning !! : Password and UserName Mismatch");
+			return "user-login-form";
 		}
 
 	}
