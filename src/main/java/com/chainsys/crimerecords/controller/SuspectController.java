@@ -31,34 +31,34 @@ public class SuspectController {
 
 	@GetMapping("/addsuspectform")
 	public String showAddForm(Model model) {
-		SuspectDetails thesus = new SuspectDetails();
-		model.addAttribute("addsuspectdetail", thesus);
+		SuspectDetails thesuspect = new SuspectDetails();
+		model.addAttribute("addsuspectdetail", thesuspect);
 		return "add-suspect-form";
 	}
 
 	@PostMapping("/addsuspects")
-	public String addNewSuspect(@ModelAttribute("addsuspect") SuspectDetails thesus) {
-		suservice.save(thesus);
+	public String addNewSuspect(@ModelAttribute("addsuspect") SuspectDetails thesuspect) {
+		suservice.save(thesuspect);
 		return LIST;
 	}
 
 	@GetMapping("/updatesuspectform")
 	public String showUpdateForm(@RequestParam("suspectId") int susid, Model model) {
-		SuspectDetails thesus = suservice.findById(susid);
-		model.addAttribute("updatsuspectDetails", thesus);
+		SuspectDetails thesuspect = suservice.findById(susid);
+		model.addAttribute("updatsuspectDetails", thesuspect);
 		return "update-suspect-form";
 	}
 
 	@PostMapping("/updatesuspect")
-	public String modifySuspectDetails(@ModelAttribute("updatsuspectDetails") SuspectDetails thesus) {
-		suservice.save(thesus);
+	public String updateSuspect(@ModelAttribute("updatsuspectDetails") SuspectDetails thesuspect) {
+		suservice.save(thesuspect);
 		return LIST;
 	}
 
 	@GetMapping("/findsuspectid")
 	public String findSuspectById(@RequestParam("suspectId") int id, Model model) {
-		SuspectDetails thesus = suservice.findById(id);
-		model.addAttribute("findsuspectById", thesus);
+		SuspectDetails thesuspect = suservice.findById(id);
+		model.addAttribute("findsuspectById", thesuspect);
 		return "find-suspect-id-form";
 	}
 

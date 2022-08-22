@@ -6,11 +6,6 @@ h1 {
 	text-align: center;
 }
 
-h1 {
-	float: center;
-	text-align: center;
-}
-
 tr {
 	color: red;
 }
@@ -106,7 +101,7 @@ body {
 	font-size: 20px;
 	color: crimson;
 	margin-top: 10px;
-	background-color: #f3eeee;;
+	background-color: #f3eeee;
 	margin-left: 2px;
 	border-radius: 10px;
 	height: 37px;
