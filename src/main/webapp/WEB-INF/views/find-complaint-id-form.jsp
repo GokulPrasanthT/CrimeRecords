@@ -8,6 +8,7 @@
 <style><%@include file="/WEB-INF/views/cssfile/findComplaint-Id.css"%></style>
 <meta charset="ISO-8859-1">
 <title>FindBy UserID</title>
+<link href='https://css.gg/arrow-left-r.css' rel='stylesheet'>
 </head>
 <body>
 <h1>S t a t u s</h1>
@@ -18,6 +19,12 @@
 					<label for="complaintId">Complaint ID</label>
 					<div>
 						<form:input path="complaintId" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="userid">User ID</label>
+					<div>
+						<form:input path="userid" readonly="true" />
 					</div>
 				</div>
 				<div>

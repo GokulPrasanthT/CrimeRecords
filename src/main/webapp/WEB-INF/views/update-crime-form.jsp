@@ -11,9 +11,10 @@
 <title>Update Crime Details</title>
 </head>
 <body>
+<h1> Update Crime </h1>
 	<div id="root">
 		<div id="form" class="box">
-			<form:form action="updatecrime" method="post"
+			<form:form action="updatecrimedetails" method="post"
 				modelAttribute="updatecrimeDetail">
 				<div>
 					<label for="suspectId">Suspect ID</label>
@@ -51,9 +52,9 @@
 						<form:input path="image" />
 					</div>
 				</div>
+				<br>
 				<div>
 				<form:button id="log">Submit</form:button></div>
-	
 		</form:form>
 	</div>
 	</div>

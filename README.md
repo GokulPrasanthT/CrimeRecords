@@ -45,8 +45,7 @@ A Crime Records Management System, to Police Stations all across the country . I
 2. DB Relational Data Handling.One to Many relation.
 3. Form validation in frontend level.
 4. Form validation in JavaScript level.
-5. Form null validation in Oracle DataBase level(SQL).
-6. Generating Id automatically.
+5. Generating Id automatically.
 
 # Programming Language
 

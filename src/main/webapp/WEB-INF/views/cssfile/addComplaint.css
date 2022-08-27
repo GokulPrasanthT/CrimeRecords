@@ -11,7 +11,7 @@ tr {
 }
 
 label {
-	color: black;
+	color: brown;
 	font-size: 1.2em;
 	display: flex;
 	margin: 5px;
@@ -58,6 +58,10 @@ body {
 	background-size: 100% 100%;
 }
 
+p.b {
+	font: italic small-caps bold 12px/30px Georgia, serif;
+}
+
 .button3 {
 	position: absolute;
 	top: 8px;
@@ -71,4 +75,9 @@ body {
 	height: 37px;
 	width: 25px;
 	border-color: transparent;
+}
+
+input[type=text] {
+	height: 25px;
+	width: 300px;
 }

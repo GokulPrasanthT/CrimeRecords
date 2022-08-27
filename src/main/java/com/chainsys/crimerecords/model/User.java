@@ -15,6 +15,7 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -35,6 +36,7 @@ public class User {
 	@Column(name = "User_id")
 	private int userid;
 	@Column(name = "date_Of_Birth")
+	@Past(message = "Future Date is Not Support")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
 	@NotNull(message = "*Give Correct Format Date")
 	private Date dateOfBirth;
@@ -46,7 +48,7 @@ public class User {
 	private Long phoneno;
 	@Column(name = "Email")
 	@Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
-	@NotEmpty(message = "*Please enter valid email")
+	@NotEmpty(message = " *Please enter valid email")
 	private String email;
 	@Column(name = "City")
 	@NotNull(message = "*City can't be Empty")

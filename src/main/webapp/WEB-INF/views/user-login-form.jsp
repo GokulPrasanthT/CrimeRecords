@@ -65,7 +65,7 @@
 					</div>
 				</div>
 				<br>
-				<div>
+				<%-- <div>
 					<label for="userRole">Role</label>
 					<div>
 						<form:select path="userRole" style="width: 300px;height: 25px;">
@@ -73,7 +73,7 @@
 							<form:option value="User">User</form:option>
 						</form:select>
 					</div>
-				</div>
+				</div> --%>
 				<br>
 				<div class="re">${result}</div>
 				<div>

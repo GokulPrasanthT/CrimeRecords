@@ -87,7 +87,7 @@ nav .menu {
 }
 
 .center .title {
-	color: 	#FF4500;
+	color: #FF4500;
 	font-size: 55px;
 	font-weight: 600;
 	border: black;
@@ -135,7 +135,7 @@ nav .menu {
 
 body {
 	background-image:
-		url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6k_zDRp_Y5Mw33LZS54DuEF6VHhKvzIsWlA&usqp=CAU');
+		url('https://media.istockphoto.com/photos/police-lights-picture-id1318531286?k=20&m=1318531286&s=612x612&w=0&h=J2K4YmakLpBtATVdXIIb7b3pT8CA3W7bjYEACIgMUiM=');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
@@ -144,17 +144,20 @@ body {
 </head>
 <body>
 	<nav>
-		<div class="menu">
-			<div class="logo">
-				<a href="#">Crime Records</a>
+		<div class="img">
+			<img alt="" src="https://wallpapercave.com/wp/wp7391069.jpg"
+				width="35" height="40">
+			<div class="menu">
+				<div class="logo">
+					<a href="#">Crime Records</a>
+				</div>
+				<ul>
+					<li><a href="/users/userlogin">Sign In</a></li>
+					<li><a href="/users/adduserform">Sign Up</a></li>
+					<li><a href="/police/addpolicedetailform">Police Login</a></li>
+					<li><a href="/users/about">About Us</a></li>
+				</ul>
 			</div>
-			<ul>
-				<li><a href="/users/userlogin">Sign In</a></li>
-				<li><a href="/users/adduserform">Sign Up</a></li>
-				<li><a href="/users/about">About Us</a></li>
-				<li><a href="/police/addpolicedetailform">Police Login</a></li>
-
-			</ul>
 		</div>
 	</nav>
 	<div class="img"></div>

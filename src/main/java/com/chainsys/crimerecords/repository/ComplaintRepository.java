@@ -15,7 +15,6 @@ public interface ComplaintRepository extends CrudRepository<ComplaintDetails, In
 	void deleteById(int comid);
 
 	List<ComplaintDetails> findAll();
-	
 	List<ComplaintDetails> findByUserid(int id);
 	
 	List<ComplaintDetails> findByPoliceId(int pid);

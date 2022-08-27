@@ -5,9 +5,10 @@
 <html lang="en">
 <head>
 <style>
-<%@include file="/WEB-INF/views/cssfile/userList.css"%></style>
+<%@include file="/WEB-INF/views/cssfile/complaintList.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Complaint Lists</title>
+<link href='https://css.gg/arrow-left-r.css' rel='stylesheet'>
 </head>
 <body>
 	<h1>C o m p l a i n t__L i s t</h1>
@@ -29,7 +30,6 @@
 						<th>User Id</th>
 						<th>Update</th>
 						<th>Delete</th>
-
 					</tr>
 				</thead>
 				<tbody>
@@ -59,5 +59,8 @@
 			</table>
 		</div>
 	</div>
+<div>
+     <a href="/users/admin"><button class="button3"><em class="gg-arrow-left-r"></em></button></a>
+</div>
 </body>
 </html>

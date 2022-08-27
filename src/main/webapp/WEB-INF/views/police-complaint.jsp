@@ -11,13 +11,13 @@
 <title>Police Complaint</title>
 </head>
 <body>
-	<h1>View Police_Complaint</h1>
+	<h1>View Police Complaint</h1>
 	<div>
 		<div id="form">
 			<div class="box">
 				<form action="getlistpolicecomplaint">
 					<div>
-						  <label for="policeId">Enter UserId</label>
+						  <label for="policeId">Enter PoliceId</label>
 						<div>
 							  <input type="text" id="policeId"
 								name="policeId" required placeholder="Enter Police Id"/>                        
@@ -28,5 +28,10 @@
 			</div>
 		</div>
 	</div>
+	
+<div>
+     <a href="/users/admin"><button class="button3"><em class="gg-arrow-left-r"></em></button></a>
+</div>
+
 </body>
 </html>

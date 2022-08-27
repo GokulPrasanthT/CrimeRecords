@@ -13,18 +13,31 @@ public class ComplaintService {
 	private ComplaintRepository comrepo;
 
 	public List<ComplaintDetails> findAll() {
+
 		return comrepo.findAll();
 	}
 
 	public ComplaintDetails findById(int comid) {
+
 		return comrepo.findById(comid);
+
+	}
+
+	public List<ComplaintDetails> getByUserId(int userId) {
+
+		return comrepo.findByUserid(userId);
+
 	}
 
 	public ComplaintDetails save(ComplaintDetails comd) {
+
 		return comrepo.save(comd);
+		
 	}
 
 	public void deleteById(int complaintid) {
+
 		comrepo.deleteById(complaintid);
+		
 	}
 }

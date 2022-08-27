@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Past;
 
 @Entity
 @Table(name = "Police_Detail")
@@ -30,6 +31,7 @@ public class PoliceDetails {
 	@Column(name = "Email")
 	private String email;
 	@Column(name = "DOB")
+	@Past(message = "Future Date is Not Support")
 	private Date dateOfbirth;
 	@Column(name = "Station_Name")
 	private String stationName;

@@ -1,6 +1,8 @@
 package com.chainsys.crimerecords.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,9 +19,11 @@ import com.chainsys.crimerecords.services.ComplaintService;
 @Controller
 @RequestMapping("/complaint")
 public class ComplaintController {
-	
+
 	@Autowired
 	ComplaintService comservice;
+
+	private static final String COMPLAINTFORM = "Complaint-form";
 
 	@GetMapping("/complaintlist")
 	public String getAllComplaintDetails(Model model) {
@@ -29,25 +33,25 @@ public class ComplaintController {
 	}
 
 	@GetMapping("/addcomplaintdetailform")
-	public String showAddForm(@RequestParam("userid") int id, Model model) {
+	public String showAddForm(@RequestParam("userId") int id, HttpServletRequest request, Model model) {
 		ComplaintDetails thecomplaint = new ComplaintDetails();
 		model.addAttribute("addcomplaintdetail", thecomplaint);
 		thecomplaint.setUserid(id);
-		return "Complaint-form";
+		return COMPLAINTFORM;
 	}
 
 	@PostMapping("/addcomplaints")
-	public String addNewComplaint(@Valid @ModelAttribute("addcomplaintdetail") ComplaintDetails thecomplaint, Errors errors,
-			Model model) {
+	public String addNewComplaint(@Valid @ModelAttribute("addcomplaintdetail") ComplaintDetails thecomplaint,
+			Errors errors, Model model, HttpSession session) {
 		int id = thecomplaint.getUserid();
 		model.addAttribute("userId", id);
 		if (errors.hasErrors()) {
-			return "Complaint-form";
+			session.setAttribute("userId", thecomplaint.getUserid());
+			return COMPLAINTFORM;
 		} else {
 			comservice.save(thecomplaint);
-			int cid = thecomplaint.getComplaintId();
-			model.addAttribute("comId", cid);
-			return "user-done";
+			model.addAttribute("result", " Sucessfully Complaint Added !! ");
+			return COMPLAINTFORM;
 		}
 	}
 
@@ -75,10 +79,10 @@ public class ComplaintController {
 	}
 
 	@GetMapping("/findcomplaintid")
-	public String findComplaintById(@RequestParam("comId") int id, Model model) {
-		ComplaintDetails thecomplaint = comservice.findById(id);
-		model.addAttribute("findcomplaintById", thecomplaint);
-		return "find-complaint-id-form";
+	public String findComplaintById(@RequestParam("userId") int id, Model model) {
+		List<ComplaintDetails> thecomplaint = comservice.getByUserId(id);
+		model.addAttribute("viewcomplaintDetails", thecomplaint);
+		return "list-complaint";
 	}
 
 	@GetMapping("/deletecomplaint")

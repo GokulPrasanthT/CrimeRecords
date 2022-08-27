@@ -8,6 +8,7 @@
 <%@include file="/WEB-INF/views/cssfile/policeList.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Police Lists</title>
+<link href='https://css.gg/arrow-left-r.css' rel='stylesheet'>
 </head>
 <body>
 	<h1>P o l i c e__L i s t</h1>
@@ -52,5 +53,8 @@
 			</table>
 		</div>
 	</div>
+<div>
+     <a href="/users/admin"><button class="button3"><em class="gg-arrow-left-r"></em></button></a>
+</div>
 </body>
 </html>

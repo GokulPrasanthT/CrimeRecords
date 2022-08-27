@@ -1,6 +1,9 @@
 package com.chainsys.crimerecords.controller;
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,6 +40,11 @@ public class UsersController {
 		return "aboutus";
 	}
 
+	@GetMapping("/welcome")
+	public String welcomeFrom(Model model) {
+		return "historycheck";
+	}
+
 	@GetMapping("/userlist")
 	public String getAllUsers(Model model) {
 		List<User> userlist = uservice.getUsers();
@@ -69,15 +77,15 @@ public class UsersController {
 	}
 
 	@PostMapping("/updateusers")
-	public String updateusers(@ModelAttribute("updateUser") User theuser) {
+	public String updateUsers(@ModelAttribute("updateUser") User theuser) {
 		uservice.save(theuser);
 		return "redirect:/users/userlist";
 	}
 
 	@GetMapping("/finduserid")
-	public String findUserById(@RequestParam("userId") int id, Model model) {
+	public String findUserById(@RequestParam("userId") int id, Model model,HttpServletRequest request) {
 		User theuser = uservice.findById(id);
-		model.addAttribute("finduserById", theuser);
+		model.addAttribute("finduserById",theuser);
 		return "find-user-id-form";
 	}
 
@@ -108,20 +116,18 @@ public class UsersController {
 	}
 
 	@PostMapping("/checkcuserlogin")
-	public String checkingAccess(@ModelAttribute("users") User us, Model model) {
-		User user = uservice.getUserNameAndUserPasswordAndUserRole(us.getUserName(), us.getUserPassword(),
-				us.getUserRole());
+	public String checkingAccess(@ModelAttribute("users") User us, Model model, HttpSession session) {
+		User user = uservice.getUserNameAndUserPassword(us.getUserName(), us.getUserPassword());
 		if (user != null) {
-			if ("Admin".equals(us.getUserRole())) {
+			if (user.getUserRole().equals("Admin")) {
 				return "redirect:/users/admin";
 			} else {
-				int id = user.getUserid();
-				return "redirect:/complaint/addcomplaintdetailform?userid=" + id;
+				session.setAttribute("userId", user.getUserid());
+				return "redirect:/users/welcome";
 			}
 		} else {
-			model.addAttribute("result", "Warning !! : Password and UserName Mismatch");
+			model.addAttribute("result", "Warning !: UserName or Password Mismatch");
 			return "user-login-form";
 		}
-
 	}
 }

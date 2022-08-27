@@ -9,6 +9,7 @@
 <%@include file="/WEB-INF/views/cssfile/listPoliceComplaint.css"%></style>
 <meta charset="ISO-8859-1">
 <title>police to complaint Details</title>
+<link href='https://css.gg/arrow-left-r.css' rel='stylesheet'>
 </head>
 <body>
 <h1>Police Complaint Details</h1>
@@ -96,5 +97,8 @@
 			</table>
 		</div>
 	</div>
+<div>
+     <a href="/users/admin"><button class="button3"><em class="gg-arrow-left-r"></em></button></a>
+</div>
 </body>
 </html>

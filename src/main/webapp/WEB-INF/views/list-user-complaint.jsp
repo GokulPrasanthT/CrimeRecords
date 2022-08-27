@@ -6,87 +6,10 @@
 <html lang="en">
 <head>
 <style>
-table, tb {
-	width: 50%;
-	padding: 15px;
-	text-align: center;
-}
-
-table {
-	backdrop-filter: blur(10px);
-}
-
-.center {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-th, td {
-	border: solid 1px #7FFF00;
-	padding: 10px;
-	border-color: #7FFFD4;
-}
-
-th {
-	color: #FFFF00;
-}
-
-td {
-	color: white;
-}
-
-body {
-	font-family: Arial, sans-serif;
-	background:
-		url('https://thumbs.dreamstime.com/b/tile-floor-brick-wall-background-lights-night-hd-image-large-resolution-can-be-used-as-desktop-wallpaper-real-zise-184215885.jpg')
-		no-repeat;
-	background-size: cover;
-	height: 100vh;
-}
-
-h1 {
-	text-align: center;
-	font-family: Tahoma, Arial, sans-serif;
-	color: #06D85F;
-	float: center;
-}
-
-.box {
-	width: 40%;
-	margin: 0 auto;
-	background: rgb(44 15 15/ 20%);
-	padding: 25px;
-	border: 2px solid #fff;
-	border-radius: 20px/50px;
-	background-clip: padding-box;
-	text-align: center;
-	backdrop-filter: blur(10px);
-}
-
-label {
-	display: block;
-	margin-right: 15px;
-	font-size: 18px;
-	font-weight: 500;
-	color: #DCDCDC;
-}
-
-input {
-	display: white;
-	height: 30px;
-	width: 80%;
-	background-color: rgba(255, 255, 255, 0.07);
-	border-radius: 40px;
-	padding: 0 10px;
-	margin-top: 8px;
-	font-size: 14px;
-	font-weight: 300;
-	border-bottom-color: currentcolor;
-	color: white;
-}
-</style>
+<%@include file="/WEB-INF/views/cssfile/listuserComplaint.css"%></style>
 <meta charset="ISO-8859-1">
 <title>User Complaint List</title>
+<link href='https://css.gg/arrow-left-r.css' rel='stylesheet'>
 </head>
 <body>
 	<h1>User Complaint List</h1>
@@ -183,5 +106,9 @@ input {
 			</table>
 		</div>
 	</div>
+
+<div>
+     <a href="/users/admin"><button class="button3"><em class="gg-arrow-left-r"></em></button></a>
+</div>
 </body>
 </html>

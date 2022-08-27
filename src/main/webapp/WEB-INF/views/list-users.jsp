@@ -8,6 +8,7 @@
 <%@include file="/WEB-INF/views/cssfile/userList.css"%></style>
 <meta charset="ISO-8859-1">
 <title>User Lists</title>
+<link href='https://css.gg/arrow-left-r.css' rel='stylesheet'>
 </head>
 <body>
 	<h1>Users List</h1>

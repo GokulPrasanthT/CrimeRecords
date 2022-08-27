@@ -8,6 +8,7 @@
 <%@include file="/WEB-INF/views/cssfile/suspectList.css"%></style>
 <meta charset="ISO-8859-1">
 <title>Suspect Records</title>
+<link href='https://css.gg/arrow-left-r.css' rel='stylesheet'>
 </head>
 <body>
 	<h1>S u s p e c t__R e c o r d s</h1>
@@ -48,5 +49,9 @@
 			</table>
 		</div>
 	</div>
+	
+<div>
+     <a href="/users/admin"><button class="button3"><em class="gg-arrow-left-r"></em></button></a>
+</div>
 </body>
 </html>

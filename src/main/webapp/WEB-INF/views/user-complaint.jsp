@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
 <%@include file="/WEB-INF/views/cssfile/user-complaint.css"%></style>
 </head>
 <body>
-	<h1>View Users_Complaint</h1>
+	<h1>View Users Complaint</h1>
 	   
 	<div>
 		       
@@ -39,5 +39,10 @@
 			       
 		</div>
 	</div>
+	
+	<div>
+     <a href="/users/admin"><button class="button3"><em class="gg-arrow-left-r"></em></button></a>
+</div>
+
 </body>
 </html>

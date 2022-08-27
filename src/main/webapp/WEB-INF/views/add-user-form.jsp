@@ -10,6 +10,7 @@
 <meta charset="ISO-8859-1">
 <title>Add Users</title>
 	<script type="text/javascript">
+	
 		var userNameCheck = function() {
 			var nameRegex = new RegExp("^[a-zA-z\s]+$");
 			if (!document.form.userName.value.match(nameRegex)) {
@@ -47,6 +48,18 @@
 			}
 
 		}
+		
+		 var dateOfBirthCheck = function(){
+		    let date = document.getElementById('dateOfBirth').value;
+		    let now = new Date();
+		    let dt1 = Date.parse(now),
+		        dt2 = Date.parse(date);
+		    
+		    if (dt2 > dt1) {
+		        alert("Date must be in the past or present");
+		    }
+		}
+		
 		var phoneNoCheck = function() {
 			var nameRegex = new RegExp("[0-9]{10}");
 			if (!document.form.phoneno.value.match(nameRegex)) {
@@ -58,6 +71,19 @@
 				return false;
 			}
 		}
+		
+		var cityCheck = function() {
+			var cityRegex = new RegExp("^[a-zA-z\s]+$");
+			if (!document.form.city.value.match(nameRegex)) {
+				if (alert("City can't be empty or must contain only alphabets")) {
+					document.form.city.focus();
+				} else
+					document.activeElement.blur();
+			} else {
+				return false;
+			}
+		}
+		
 	</script>
 </head>
 <body>
@@ -68,86 +94,76 @@
 				name="form">
 
 				<div>
-					<label for="userName"> User Name:</label>
+					<label for="userName"> User Name </label>
 					<div>
 						<form:input path="userName" class="form-control"
 							placeholder="Enter UserName" required="true"
-							pattern="^[a-zA-z\s]+$" onblur="userNameCheck();"
-							style="width: 300px;height: 25px;" />
+							pattern="^[a-zA-z\s]+$" name="userName" onblur="userNameCheck();"
+							style="width: 300px;height:25px;" />
 					</div>
 					<form:errors path="userName" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="userPassword"> User Password:</label>
+					<label for="userPassword"> User Password </label>
 					<div>
 						<form:input path="userPassword" class="form-control"
 							type="password" required="true" placeholder="Enter Password"
 							pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
 							name="password" onblur="passwordCheck();"
-							style="width: 300px;height=25px;" />
+							style="width: 300px;height:25px;" />
 					</div>
 					<form:errors path="userPassword" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="dateOfBirth"> Date of Birth:</label>
+					<label for="dateOfBirth"> Date of Birth </label>
 					<div>
-						<form:input path="dateOfBirth" class="form-control" type="date"
-							style="width: 300px;height=25px;" />
+						<form:input path="dateOfBirth" class="form-control" type="date" name="dateOfBirth" onblur="dateOfBirthCheck();"
+							style="width: 300px;height:25px;" />
 					</div>
 					<form:errors path="dateOfBirth" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="gender" id="label"> Gender:</label>
+					<label for="gender" id="label"> Gender </label>
 					<div>
 						<form:radiobutton path="gender" value="Male" />
-						Male:
+						Male
 						<form:radiobutton path="gender" value="Female" />
-						Female:
+						Female
 						<form:radiobutton path="gender" value="Others" />
-						Others:
+						Others
 					</div>
 					<form:errors path="gender" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="phoneno"> Phone No:</label>
+					<label for="phoneno"> Phone No </label>
 					<div>
 						<form:input path="phoneno" class="form-control" required="true"
 							placeholder="Enter PhoneNumber" pattern='[0-9]{10}'
 							name="phoneNo" onblur="numberCheck();"
-							style="width: 300px;height=25px;" />
+							style="width: 300px;height:25px;" />
 					</div>
 					<form:errors path="phoneno" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="email"> Email:</label>
+					<label for="email"> Email </label>
 					<div>
 						<form:input path="email" class="form-control"
 							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required="true"
 							placeholder="Enter Email" name="email" onblur="emailCheck();"
-							style="width: 300px;height=25px;" />
+							style="width: 300px;height:25px;" />
 					</div>
 					<form:errors path="email" cssClass="text-danger"></form:errors>
 				</div>
 				<div>
-					<label for="city"> City:</label>
+					<label for="city"> City </label>
 					<div>
 						<form:input path="city" class="form-control"
 							title="City can't be empty" required="true"
-							placeholder="Enter City" style="width: 300px;height=25px;" />
+							placeholder="Enter City" style="width: 300px;height:25px;" pattern="^[a-zA-z\s]+$" name="city" onblur="cityCheck();"/>
 					</div>
 					<form:errors path="city" cssClass="text-danger"></form:errors>
 				</div>
-				<div>
-					<div>
-						<label for="userRole" class="form-control"> Role: </label>
-					</div>
-					<div>
-						<form:radiobutton path="userRole" value="Admin" />
-						Admin:
-						<form:radiobutton path="userRole" value="User" />
-						User:
-					</div>
-				</div>
+				<form:input path="UserRole" value="User" type="hidden" />
 				<br>
 				<div>
 					<form:button id="log"> Submit </form:button>

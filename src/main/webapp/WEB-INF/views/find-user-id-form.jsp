@@ -69,7 +69,7 @@
 	</div>
 
 	<div>
-		<a href="/complaint/addcomplaintdone"><button class="button3">
+		<a href="/users/welcome"><button class="button3">
 				<em class="gg-arrow-left-r"></em>
 			</button></a>
 	</div>

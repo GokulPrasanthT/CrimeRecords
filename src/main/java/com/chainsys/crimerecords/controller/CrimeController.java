@@ -48,7 +48,7 @@ public class CrimeController {
 	}
 
 	@PostMapping("/updatecrimedetails")
-	public String getUpdateCrime(@ModelAttribute("updatecrime") CrimeDetails thecrime) {
+	public String getUpdateCrime(@ModelAttribute("updatecrimeDetail") CrimeDetails thecrime) {
 		cservice.save(thecrime);
 		return CRIMELIST;
 	}

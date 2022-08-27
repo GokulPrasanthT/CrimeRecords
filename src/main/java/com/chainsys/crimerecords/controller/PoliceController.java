@@ -13,7 +13,6 @@ import com.chainsys.crimerecords.dto.PoliceComplaintDTO;
 import com.chainsys.crimerecords.model.PoliceDetails;
 import com.chainsys.crimerecords.services.PoliceService;
 
-
 @Controller
 @RequestMapping("/police")
 public class PoliceController {
@@ -38,7 +37,7 @@ public class PoliceController {
 	}
 
 	@PostMapping("/addpolicedetail")
-	public String getAddNewUser(@ModelAttribute("addPolice") PoliceDetails thepolice) {
+	public String getAddNewPolice(@ModelAttribute("addpolicedetails") PoliceDetails thepolice) {
 		pservice.save(thepolice);
 		return POLICELIST;
 
